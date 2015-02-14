@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Embulk::LineGuessPlugin
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!Embulk/LineGuessPlugin.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (L)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Embulk.html" title="Embulk (module)">Embulk</a></span></span>
+     &raquo; 
+    <span class="title">LineGuessPlugin</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Embulk::LineGuessPlugin
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="GuessPlugin.html" title="Embulk::GuessPlugin (class)">GuessPlugin</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="GuessPlugin.html" title="Embulk::GuessPlugin (class)">GuessPlugin</a></span></li>
+          
+            <li class="next">Embulk::LineGuessPlugin</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/embulk/guess_plugin.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="GuessCsv.html" title="Embulk::GuessCsv (class)">GuessCsv</a></span></p>
+</div>
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#guess-instance_method" title="#guess (instance method)">- (Object) <strong>guess</strong>(config, sample) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#guess_lines-instance_method" title="#guess_lines (instance method)">- (Object) <strong>guess_lines</strong>(config, sample_lines) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="GuessPlugin.html" title="Embulk::GuessPlugin (class)">GuessPlugin</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="GuessPlugin.html#from_java-class_method" title="Embulk::GuessPlugin.from_java (method)">from_java</a></span>, <span class='object_link'><a href="GuessPlugin.html#new_java-class_method" title="Embulk::GuessPlugin.new_java (method)">new_java</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="guess-instance_method">
+  
+    - (<tt>Object</tt>) <strong>guess</strong>(config, sample) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/guess_plugin.rb', line 81</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample'>sample</span><span class='rparen'>)</span>
+  <span class='comment'># TODO pure-ruby LineDecoder implementation?
+</span>  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_task'>task</span> <span class='op'>=</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_load_config'>load_config</span><span class='lparen'>(</span><span class='const'>Java</span><span class='op'>::</span><span class='const'>LineDecoder</span><span class='op'>::</span><span class='const'>DecoderTask</span><span class='rparen'>)</span>
+  <span class='kw'>rescue</span>
+    <span class='comment'># TODO log?
+</span>    <span class='id identifier rubyid_p'>p</span> <span class='gvar'>$!</span>
+    <span class='id identifier rubyid_p'>p</span> <span class='gvar'>$!</span><span class='period'>.</span><span class='id identifier rubyid_backtrace'>backtrace</span>
+    <span class='kw'>return</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_decoder'>decoder</span> <span class='op'>=</span> <span class='const'>Java</span><span class='op'>::</span><span class='const'>LineDecoder</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Java</span><span class='op'>::</span><span class='const'>ListFileInput</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='lbracket'>[</span><span class='id identifier rubyid_sample'>sample</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_task'>task</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_sample_lines'>sample_lines</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='kw'>while</span> <span class='id identifier rubyid_decoder'>decoder</span><span class='period'>.</span><span class='id identifier rubyid_nextFile'>nextFile</span>
+    <span class='kw'>while</span> <span class='id identifier rubyid_line'>line</span> <span class='op'>=</span> <span class='id identifier rubyid_decoder'>decoder</span><span class='period'>.</span><span class='id identifier rubyid_poll'>poll</span>
+      <span class='id identifier rubyid_sample_lines'>sample_lines</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_line'>line</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>return</span> <span class='id identifier rubyid_guess_lines'>guess_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='rparen'>)</span><span class='semicolon'>;</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="guess_lines-instance_method">
+  
+    - (<tt>Object</tt>) <strong>guess_lines</strong>(config, sample_lines) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>NotImplementedError</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/guess_plugin.rb', line 103</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_guess_lines'>guess_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>LineGuessPlugin#guess_lines(config, sample_lines) must be implemented</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Fri Feb 13 16:43:31 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

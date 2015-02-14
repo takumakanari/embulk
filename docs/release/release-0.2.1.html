@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Release 0.2.1 &mdash; Embulk 0.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Embulk 0.4 documentation" href="../index.html" />
+    <link rel="up" title="Release Notes" href="../release.html" />
+    <link rel="next" title="Release 0.3.0" href="release-0.3.0.html" />
+    <link rel="prev" title="Release 0.2.0" href="release-0.2.0.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>Embulk 0.4 documentation</span></a></h1>
+        <h2 class="heading"><span>Release 0.2.1</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.2.0.html">Release 0.2.0</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="release-0.3.0.html">Release 0.3.0</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="release-0-2-1">
+<h1>Release 0.2.1<a class="headerlink" href="#release-0-2-1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="plugin-utility">
+<h2>Plugin Utility<a class="headerlink" href="#plugin-utility" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed <tt class="docutils literal"><span class="pre">spi.util.LineEncoder#finish</span></tt> to flush all remaining buffer (reported by &#64;aibou)</li>
+<li><tt class="docutils literal"><span class="pre">Embulk::PageBuilder#add</span></tt> accepts nil value</li>
+</ul>
+</div>
+<div class="section" id="general-changes">
+<h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed NextConfig to be merged to in: or out: rather than the top-level
+(reported by enukane) [#41]</li>
+<li>./bin/embulk shows warns to run <cite>rake</cite> if ./classpath doesn&#8217;t exist</li>
+</ul>
+</div>
+<div class="section" id="release-date">
+<h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
+<p>2015-01-29</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.2.0.html">Release 0.2.0</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="release-0.3.0.html">Release 0.3.0</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2015, Embulk Project.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

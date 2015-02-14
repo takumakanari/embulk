@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Embulk::GuessCharset
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!Embulk/GuessCharset.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (G)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Embulk.html" title="Embulk (module)">Embulk</a></span></span>
+     &raquo; 
+    <span class="title">GuessCharset</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Embulk::GuessCharset
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="GuessPlugin.html" title="Embulk::GuessPlugin (class)">GuessPlugin</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="GuessPlugin.html" title="Embulk::GuessPlugin (class)">GuessPlugin</a></span></li>
+          
+            <li class="next">Embulk::GuessCharset</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/embulk/guess_charset.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#guess-instance_method" title="#guess (instance method)">- (Object) <strong>guess</strong>(config, sample_buffer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="GuessPlugin.html" title="Embulk::GuessPlugin (class)">GuessPlugin</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="GuessPlugin.html#from_java-class_method" title="Embulk::GuessPlugin.from_java (method)">from_java</a></span>, <span class='object_link'><a href="GuessPlugin.html#new_java-class_method" title="Embulk::GuessPlugin.new_java (method)">new_java</a></span></p>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="guess-instance_method">
+  
+    - (<tt>Object</tt>) <strong>guess</strong>(config, sample_buffer) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/guess_charset.rb', line 6</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_buffer'>sample_buffer</span><span class='rparen'>)</span>
+  <span class='comment'># ICU4J
+</span>  <span class='id identifier rubyid_detector'>detector</span> <span class='op'>=</span> <span class='id identifier rubyid_com'>com</span><span class='period'>.</span><span class='id identifier rubyid_ibm'>ibm</span><span class='period'>.</span><span class='id identifier rubyid_icu'>icu</span><span class='period'>.</span><span class='id identifier rubyid_text'>text</span><span class='period'>.</span><span class='const'>CharsetDetector</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+  <span class='id identifier rubyid_detector'>detector</span><span class='period'>.</span><span class='id identifier rubyid_setText'>setText</span><span class='lparen'>(</span><span class='id identifier rubyid_sample_buffer'>sample_buffer</span><span class='period'>.</span><span class='id identifier rubyid_to_java_bytes'>to_java_bytes</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_best_match'>best_match</span> <span class='op'>=</span> <span class='id identifier rubyid_detector'>detector</span><span class='period'>.</span><span class='id identifier rubyid_detect'>detect</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_best_match'>best_match</span><span class='period'>.</span><span class='id identifier rubyid_getConfidence'>getConfidence</span> <span class='op'>&lt;</span> <span class='int'>50</span>
+    <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='id identifier rubyid_best_match'>best_match</span><span class='period'>.</span><span class='id identifier rubyid_getName'>getName</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_name'>name</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ISO-8859-1</span><span class='tstring_end'>&quot;</span></span>
+      <span class='comment'># ISO-8859-1 means ASCII which is a subset
+</span>      <span class='comment'># of UTF-8 in most of cases due to lack of
+</span>      <span class='comment'># sample data set
+</span>      <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>UTF-8</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>parser</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='lbrace'>{</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>charset</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Fri Feb 13 16:43:31 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

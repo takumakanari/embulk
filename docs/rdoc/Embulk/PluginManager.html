@@ -1,0 +1,1370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Embulk::PluginManager
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '../';
+  framesUrl = "../frames.html#!Embulk/PluginManager.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (P)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../Embulk.html" title="Embulk (module)">Embulk</a></span></span>
+     &raquo; 
+    <span class="title">PluginManager</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="../method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="../file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Embulk::PluginManager
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Embulk::PluginManager</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/embulk/plugin.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_guess-instance_method" title="#get_guess (instance method)">- (Object) <strong>get_guess</strong>(type) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>TODO EncoderPlugin::RubyAdapter is not written by anyone yet def
+get_encoder(type)  # TODO not implemented yet  lookup(:encoder, type) end.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (PluginManager) <strong>initialize</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A new instance of PluginManager.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_java_decoder-instance_method" title="#new_java_decoder (instance method)">- (Object) <strong>new_java_decoder</strong>(type) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_java_encoder-instance_method" title="#new_java_encoder (instance method)">- (Object) <strong>new_java_encoder</strong>(type) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_java_filter-instance_method" title="#new_java_filter (instance method)">- (Object) <strong>new_java_filter</strong>(type) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_java_formatter-instance_method" title="#new_java_formatter (instance method)">- (Object) <strong>new_java_formatter</strong>(type) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_java_guess-instance_method" title="#new_java_guess (instance method)">- (Object) <strong>new_java_guess</strong>(type) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_java_input-instance_method" title="#new_java_input (instance method)">- (Object) <strong>new_java_input</strong>(type) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_java_output-instance_method" title="#new_java_output (instance method)">- (Object) <strong>new_java_output</strong>(type) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_java_parser-instance_method" title="#new_java_parser (instance method)">- (Object) <strong>new_java_parser</strong>(type) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_filter-instance_method" title="#register_filter (instance method)">- (Object) <strong>register_filter</strong>(type, klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_guess-instance_method" title="#register_guess (instance method)">- (Object) <strong>register_guess</strong>(type, klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>TODO EncoderPlugin JRuby API is not written by anyone yet def
+register_encoder(type, klass)  register_plugin(:encoder, type, klass,
+EncoderPlugin) end.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_input-instance_method" title="#register_input (instance method)">- (Object) <strong>register_input</strong>(type, klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_java_decoder-instance_method" title="#register_java_decoder (instance method)">- (Object) <strong>register_java_decoder</strong>(type, klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_java_encoder-instance_method" title="#register_java_encoder (instance method)">- (Object) <strong>register_java_encoder</strong>(type, klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_java_filter-instance_method" title="#register_java_filter (instance method)">- (Object) <strong>register_java_filter</strong>(type, klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_java_formatter-instance_method" title="#register_java_formatter (instance method)">- (Object) <strong>register_java_formatter</strong>(type, klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_java_guess-instance_method" title="#register_java_guess (instance method)">- (Object) <strong>register_java_guess</strong>(type, klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_java_input-instance_method" title="#register_java_input (instance method)">- (Object) <strong>register_java_input</strong>(type, klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_java_output-instance_method" title="#register_java_output (instance method)">- (Object) <strong>register_java_output</strong>(type, klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_java_parser-instance_method" title="#register_java_parser (instance method)">- (Object) <strong>register_java_parser</strong>(type, klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#register_output-instance_method" title="#register_output (instance method)">- (Object) <strong>register_output</strong>(type, klass) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="Embulk::PluginManager (class)">PluginManager</a></span></tt>) <strong>initialize</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a new instance of PluginManager</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19
+20
+21
+22
+23
+24</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 19</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
+  <span class='ivar'>@registries</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='qwords_beg'>%w[</span><span class='tstring_content'>input</span><span class='words_sep'> </span><span class='tstring_content'>output</span><span class='words_sep'> </span><span class='tstring_content'>parser</span><span class='words_sep'> </span><span class='tstring_content'>formatter</span><span class='words_sep'> </span><span class='tstring_content'>decoder</span><span class='words_sep'> </span><span class='tstring_content'>encoder</span><span class='words_sep'> </span><span class='tstring_content'>line_filter</span><span class='words_sep'> </span><span class='tstring_content'>filter</span><span class='words_sep'> </span><span class='tstring_content'>guess</span><span class='words_sep'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_category'>category</span><span class='op'>|</span>
+    <span class='ivar'>@registries</span><span class='lbracket'>[</span><span class='id identifier rubyid_category'>category</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>PluginRegistry</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_category'>category</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>embulk/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_category'>category</span><span class='rbrace'>}</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="get_guess-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get_guess</strong>(type) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>TODO EncoderPlugin::RubyAdapter is not written by anyone yet def
+get_encoder(type)</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># TODO not implemented yet
+</span><span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:encoder</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span></code></pre>
+
+<p>end</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 103</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_guess'>get_guess</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:guess</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_java_decoder-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new_java_decoder</strong>(type) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+169
+170
+171</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 169</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new_java_decoder'>new_java_decoder</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:decoder</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_java_encoder-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new_java_encoder</strong>(type) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+173
+174
+175</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 173</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new_java_encoder'>new_java_encoder</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:encoder</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_java_filter-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new_java_filter</strong>(type) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+157
+158
+159</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 157</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new_java_filter'>new_java_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:filter</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_java_formatter-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new_java_formatter</strong>(type) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+165
+166
+167</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 165</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new_java_formatter'>new_java_formatter</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:formatter</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_java_guess-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new_java_guess</strong>(type) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+177
+178
+179</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 177</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new_java_guess'>new_java_guess</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:guess</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_java_input-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new_java_input</strong>(type) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+149
+150
+151</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 149</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new_java_input'>new_java_input</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:input</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_java_output-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new_java_output</strong>(type) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+153
+154
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 153</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new_java_output'>new_java_output</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:output</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_java_parser-instance_method">
+  
+    - (<tt>Object</tt>) <strong>new_java_parser</strong>(type) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+161
+162
+163</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 161</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_new_java_parser'>new_java_parser</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:parser</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_filter-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_filter</strong>(type, klass) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_filter'>register_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='symbol'>:filter</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span> <span class='const'>FilterPlugin</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_guess-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_guess</strong>(type, klass) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>TODO EncoderPlugin JRuby API is not written by anyone yet def
+register_encoder(type, klass)</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='symbol'>:encoder</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span> <span class='const'>EncoderPlugin</span><span class='rparen'>)</span></code></pre>
+
+<p>end</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_guess'>register_guess</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='symbol'>:guess</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span> <span class='const'>GuessPlugin</span><span class='comma'>,</span>
+                 <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Guess plugin </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_klass'>klass</span><span class='rbrace'>}</span><span class='tstring_content'> must extend GuessPlugin, LineGuessPlugin, or TextGuessPlugin class</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_input-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_input</strong>(type, klass) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+26
+27
+28</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 26</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_input'>register_input</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='symbol'>:input</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span> <span class='const'>InputPlugin</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_java_decoder-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_java_decoder</strong>(type, klass) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+134
+135
+136
+137</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 134</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_java_decoder'>register_java_decoder</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:decoder</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
+                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>org.embulk.spi.DecoderPlugin</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='const'>DecoderPlugin</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_java_encoder-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_java_encoder</strong>(type, klass) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+139
+140
+141
+142</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 139</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_java_encoder'>register_java_encoder</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:encoder</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
+                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>org.embulk.spi.EncoderPlugin</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='const'>EncoderPlugin</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_java_filter-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_java_filter</strong>(type, klass) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+119
+120
+121
+122</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 119</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_java_filter'>register_java_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:filter</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
+                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>org.embulk.spi.FilterPlugin</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='const'>FilterPlugin</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_java_formatter-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_java_formatter</strong>(type, klass) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+129
+130
+131
+132</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 129</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_java_formatter'>register_java_formatter</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:formatter</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
+                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>org.embulk.spi.FormatterPlugin</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='const'>FormatterPlugin</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_java_guess-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_java_guess</strong>(type, klass) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+144
+145
+146
+147</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 144</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_java_guess'>register_java_guess</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:guess</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
+                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>org.embulk.spi.GuessPlugin</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='const'>GuessPlugin</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_java_input-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_java_input</strong>(type, klass) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+107
+108
+109
+110
+111</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 107</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_java_input'>register_java_input</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:input</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
+                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>org.embulk.spi.InputPlugin</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='const'>InputPlugin</span><span class='comma'>,</span>
+                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>org.embulk.spi.FileInputPlugin</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='const'>FileInputPlugin</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_java_output-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_java_output</strong>(type, klass) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+113
+114
+115
+116
+117</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 113</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_java_output'>register_java_output</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:output</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
+                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>org.embulk.spi.OutputPlugin</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='const'>OutputPlugin</span><span class='comma'>,</span>
+                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>org.embulk.spi.FileOutputPlugin</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='const'>FileOutputPlugin</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_java_parser-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_java_parser</strong>(type, klass) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+124
+125
+126
+127</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 124</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_java_parser'>register_java_parser</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:parser</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
+                       <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>org.embulk.spi.ParserPlugin</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='const'>ParserPlugin</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="register_output-instance_method">
+  
+    - (<tt>Object</tt>) <strong>register_output</strong>(type, klass) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/plugin.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_register_output'>register_output</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='symbol'>:output</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span> <span class='const'>OutputPlugin</span><span class='comma'>,</span>
+                  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Output plugin </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_klass'>klass</span><span class='rbrace'>}</span><span class='tstring_content'> must extend OutputPlugin</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Fri Feb 13 16:43:30 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Release 0.3.0 &mdash; Embulk 0.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Embulk 0.4 documentation" href="../index.html" />
+    <link rel="up" title="Release Notes" href="../release.html" />
+    <link rel="next" title="Release 0.3.1" href="release-0.3.1.html" />
+    <link rel="prev" title="Release 0.2.1" href="release-0.2.1.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>Embulk 0.4 documentation</span></a></h1>
+        <h2 class="heading"><span>Release 0.3.0</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.2.1.html">Release 0.2.1</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="release-0.3.1.html">Release 0.3.1</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="release-0-3-0">
+<h1>Release 0.3.0<a class="headerlink" href="#release-0-3-0" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="resume-feature">
+<h2>Resume Feature<a class="headerlink" href="#resume-feature" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added resume functionality.</li>
+</ul>
+</div>
+<div class="section" id="filter-feature">
+<h2>Filter Feature<a class="headerlink" href="#filter-feature" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added new filter plugin type.</li>
+</ul>
+</div>
+<div class="section" id="plugin-spi">
+<h2>Plugin SPI<a class="headerlink" href="#plugin-spi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">spi.InputPlugin</span></tt> and <tt class="docutils literal"><span class="pre">spi.OutputPlugin</span></tt> need to implement <tt class="docutils literal"><span class="pre">resume</span></tt> and <tt class="docutils literal"><span class="pre">cleanup</span></tt> methods.</li>
+<li>Added <tt class="docutils literal"><span class="pre">spi.FilterInputPlugin</span></tt> Java API.</li>
+<li>Added <tt class="docutils literal"><span class="pre">Embulk::FilterInputPlugin</span></tt> JRuby API.</li>
+</ul>
+</div>
+<div class="section" id="cli">
+<h2>CLI<a class="headerlink" href="#cli" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">run</span></tt> subcommand supports <tt class="docutils literal"><span class="pre">-r,</span> <span class="pre">--resume-state</span> <span class="pre">PATH</span></tt> option.</li>
+</ul>
+</div>
+<div class="section" id="general-changes">
+<h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added gradle-versions-plugin to build.gradle (&#64;seratch++)</li>
+<li>Fixed broken dependencies at build.gradle (&#64;thagikura++)</li>
+</ul>
+</div>
+<div class="section" id="release-date">
+<h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
+<p>2015-02-03</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.2.1.html">Release 0.2.1</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="release-0.3.1.html">Release 0.3.1</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2015, Embulk Project.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

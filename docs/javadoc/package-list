@@ -1,0 +1,10 @@
+org.embulk
+org.embulk.command
+org.embulk.config
+org.embulk.exec
+org.embulk.jruby
+org.embulk.plugin
+org.embulk.spi
+org.embulk.spi.time
+org.embulk.spi.type
+org.embulk.spi.util

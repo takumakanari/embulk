@@ -1,0 +1,1450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Embulk
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Embulk.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (E)</a> &raquo;
+    
+    
+    <span class="title">Embulk</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Module: Embulk
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/embulk.rb<span class="defines">,<br />
+  lib/embulk/page.rb,<br /> lib/embulk/error.rb,<br /> lib/embulk/schema.rb,<br /> lib/embulk/column.rb,<br /> lib/embulk/plugin.rb,<br /> lib/embulk/buffer.rb,<br /> lib/embulk/version.rb,<br /> lib/embulk/guess_csv.rb,<br /> lib/embulk/guess_gzip.rb,<br /> lib/embulk/data_source.rb,<br /> lib/embulk/java_plugin.rb,<br /> lib/embulk/guess_plugin.rb,<br /> lib/embulk/page_builder.rb,<br /> lib/embulk/input_plugin.rb,<br /> lib/embulk/parser_plugin.rb,<br /> lib/embulk/filter_plugin.rb,<br /> lib/embulk/guess_newline.rb,<br /> lib/embulk/output_plugin.rb,<br /> lib/embulk/guess_charset.rb,<br /> lib/embulk/encoder_plugin.rb,<br /> lib/embulk/decoder_plugin.rb,<br /> lib/embulk/java/bootstrap.rb,<br /> lib/embulk/plugin_registry.rb,<br /> lib/embulk/formatter_plugin.rb,<br /> lib/embulk/java/time_helper.rb,<br /> lib/embulk/file_input_plugin.rb,<br /> lib/embulk/data/package_data.rb,<br /> lib/embulk/command/embulk_run.rb,<br /> lib/embulk/file_output_plugin.rb,<br /> lib/embulk/command/embulk_example.rb,<br /> lib/embulk/command/embulk_new_plugin.rb,<br /> lib/embulk/command/embulk_generate_bin.rb,<br /> lib/embulk/data/bundle/embulk/input/example.rb,<br /> lib/embulk/data/bundle/embulk/output/example.rb,<br /> lib/embulk/data/bundle/embulk/filter/example.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Embulk/Filter.html" title="Embulk::Filter (module)">Filter</a></span>, <span class='object_link'><a href="Embulk/Input.html" title="Embulk::Input (module)">Input</a></span>, <span class='object_link'><a href="Embulk/Java.html" title="Embulk::Java (module)">Java</a></span>, <span class='object_link'><a href="Embulk/Output.html" title="Embulk::Output (module)">Output</a></span>, <span class='object_link'><a href="Embulk/Plugin.html" title="Embulk::Plugin (module)">Plugin</a></span>, <span class='object_link'><a href="Embulk/TimeFormatGuess.html" title="Embulk::TimeFormatGuess (module)">TimeFormatGuess</a></span>, <span class='object_link'><a href="Embulk/Type.html" title="Embulk::Type (module)">Type</a></span>
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Embulk/Buffer.html" title="Embulk::Buffer (class)">Buffer</a></span>, <span class='object_link'><a href="Embulk/Column.html" title="Embulk::Column (class)">Column</a></span>, <span class='object_link'><a href="Embulk/ConfigError.html" title="Embulk::ConfigError (class)">ConfigError</a></span>, <span class='object_link'><a href="Embulk/DataSource.html" title="Embulk::DataSource (class)">DataSource</a></span>, <span class='object_link'><a href="Embulk/DecoderPlugin.html" title="Embulk::DecoderPlugin (class)">DecoderPlugin</a></span>, <span class='object_link'><a href="Embulk/EncoderPlugin.html" title="Embulk::EncoderPlugin (class)">EncoderPlugin</a></span>, <span class='object_link'><a href="Embulk/FileInputPlugin.html" title="Embulk::FileInputPlugin (class)">FileInputPlugin</a></span>, <span class='object_link'><a href="Embulk/FileOutputPlugin.html" title="Embulk::FileOutputPlugin (class)">FileOutputPlugin</a></span>, <span class='object_link'><a href="Embulk/FilterPlugin.html" title="Embulk::FilterPlugin (class)">FilterPlugin</a></span>, <span class='object_link'><a href="Embulk/FormatterPlugin.html" title="Embulk::FormatterPlugin (class)">FormatterPlugin</a></span>, <span class='object_link'><a href="Embulk/GuessCharset.html" title="Embulk::GuessCharset (class)">GuessCharset</a></span>, <span class='object_link'><a href="Embulk/GuessCsv.html" title="Embulk::GuessCsv (class)">GuessCsv</a></span>, <span class='object_link'><a href="Embulk/GuessNewline.html" title="Embulk::GuessNewline (class)">GuessNewline</a></span>, <span class='object_link'><a href="Embulk/GuessPlugin.html" title="Embulk::GuessPlugin (class)">GuessPlugin</a></span>, <span class='object_link'><a href="Embulk/GzipGuess.html" title="Embulk::GzipGuess (class)">GzipGuess</a></span>, <span class='object_link'><a href="Embulk/InputPlugin.html" title="Embulk::InputPlugin (class)">InputPlugin</a></span>, <span class='object_link'><a href="Embulk/JavaPlugin.html" title="Embulk::JavaPlugin (class)">JavaPlugin</a></span>, <span class='object_link'><a href="Embulk/LineGuessPlugin.html" title="Embulk::LineGuessPlugin (class)">LineGuessPlugin</a></span>, <span class='object_link'><a href="Embulk/OutputPlugin.html" title="Embulk::OutputPlugin (class)">OutputPlugin</a></span>, <span class='object_link'><a href="Embulk/PackageData.html" title="Embulk::PackageData (class)">PackageData</a></span>, <span class='object_link'><a href="Embulk/Page.html" title="Embulk::Page (class)">Page</a></span>, <span class='object_link'><a href="Embulk/PageBuilder.html" title="Embulk::PageBuilder (class)">PageBuilder</a></span>, <span class='object_link'><a href="Embulk/ParserPlugin.html" title="Embulk::ParserPlugin (class)">ParserPlugin</a></span>, <span class='object_link'><a href="Embulk/PluginLoadError.html" title="Embulk::PluginLoadError (class)">PluginLoadError</a></span>, <span class='object_link'><a href="Embulk/PluginManager.html" title="Embulk::PluginManager (class)">PluginManager</a></span>, <span class='object_link'><a href="Embulk/PluginRegistry.html" title="Embulk::PluginRegistry (class)">PluginRegistry</a></span>, <span class='object_link'><a href="Embulk/Schema.html" title="Embulk::Schema (class)">Schema</a></span>, <span class='object_link'><a href="Embulk/TextGuessPlugin.html" title="Embulk::TextGuessPlugin (class)">TextGuessPlugin</a></span>
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.4.0</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#b-class_method" title="b (class method)">+ (Object) <strong>b</strong>(s) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_example-class_method" title="create_example (class method)">+ (Object) <strong>create_example</strong>(path) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_bin-class_method" title="generate_bin (class method)">+ (Object) <strong>generate_bin</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#generate_bin_data-class_method" title="generate_bin_data (class method)">+ (Object) <strong>generate_bin_data</strong>(jruby_jar_path, ruby_script_path, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#home-class_method" title="home (class method)">+ (Object) <strong>home</strong>(dir) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#java%3F-class_method" title="java? (class method)">+ (Boolean) <strong>java?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#new_plugin-class_method" title="new_plugin (class method)">+ (Object) <strong>new_plugin</strong>(name, language, category) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#run-class_method" title="run (class method)">+ (Object) <strong>run</strong>(argv) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="b-class_method">
+  
+    + (<tt>Object</tt>) <strong>b</strong>(s) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_generate_bin.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_b'>b</span><span class='lparen'>(</span><span class='id identifier rubyid_s'>s</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_s'>s</span><span class='period'>.</span><span class='id identifier rubyid_force_encoding'>force_encoding</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ASCII-8BIT</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_example-class_method">
+  
+    + (<tt>Object</tt>) <strong>create_example</strong>(path) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_example.rb', line 2</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_create_example'>create_example</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>fileutils</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>zlib</span><span class='tstring_end'>'</span></span>
+
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  Creating </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='rbrace'>}</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_mkdir_p'>mkdir_p</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>csv</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  Creating </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='rbrace'>}</span><span class='tstring_content'>/csv/</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  Creating </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='rbrace'>}</span><span class='tstring_content'>/csv/sample_01.csv.gz</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'>Zlib</span><span class='op'>::</span><span class='const'>GzipWriter</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>csv</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sample_01.csv.gz</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span> <span class='heredoc_beg'>&lt;&lt;EOF</span>
+<span class='tstring_content'>id,account,time,purchase,comment
+1,32864,2015-01-27 19:23:49,20150127,embulk
+2,14824,2015-01-27 19:01:23,20150127,embulk jruby
+3,27559,2015-01-28 02:20:02,20150128,embulk core
+4,11270,2015-01-29 11:54:36,20150129,&quot;Embulk &quot;&quot;csv&quot;&quot; parser plugin&quot;
+</span><span class='heredoc_end'>EOF
+</span>  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>  Creating </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='rbrace'>}</span><span class='tstring_content'>/example.yml</span><span class='tstring_end'>&quot;</span></span>
+  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>example.yml</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>w</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span>
+    <span class='id identifier rubyid_f'>f</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span> <span class='heredoc_beg'>&lt;&lt;EOF</span>
+<span class='tstring_content'>in:
+type: file
+</span><span class='embexpr_beg'>path_prefix: &quot;#{</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>csv</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sample_</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>&quot;
+out:
+type: stdout
+</span><span class='heredoc_end'>EOF
+</span>  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_bin-class_method">
+  
+    + (<tt>Object</tt>) <strong>generate_bin</strong>(options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_generate_bin.rb', line 2</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_generate_bin'>generate_bin</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_jruby_jar_path'>jruby_jar_path</span> <span class='op'>=</span> <span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_jruby'>jruby</span><span class='period'>.</span><span class='const'>Main</span><span class='period'>.</span><span class='id identifier rubyid_java_class'>java_class</span><span class='period'>.</span><span class='id identifier rubyid_protection_domain'>protection_domain</span><span class='period'>.</span><span class='id identifier rubyid_code_source'>code_source</span><span class='period'>.</span><span class='id identifier rubyid_location'>location</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='kw'>if</span> <span class='kw'>__FILE__</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^classpath:</span><span class='regexp_end'>/</span></span> <span class='op'>||</span> <span class='kw'>__FILE__</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>!/</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_resource_class'>resource_class</span> <span class='op'>=</span> <span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_embulk'>embulk</span><span class='period'>.</span><span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='const'>Runner</span><span class='period'>.</span><span class='id identifier rubyid_java_class'>java_class</span>
+    <span class='id identifier rubyid_ruby_script_path'>ruby_script_path</span> <span class='op'>=</span> <span class='id identifier rubyid_resource_class'>resource_class</span><span class='period'>.</span><span class='id identifier rubyid_resource'>resource</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/embulk/command/embulk.rb</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_ruby_script_path'>ruby_script_path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_dirname'>dirname</span><span class='lparen'>(</span><span class='kw'>__FILE__</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>embulk.rb</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_java_home'>java_home</span> <span class='op'>=</span> <span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_lang'>lang</span><span class='period'>.</span><span class='const'>System</span><span class='period'>.</span><span class='id identifier rubyid_properties'>properties</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>java.home</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_generate_bin_data'>generate_bin_data</span><span class='lparen'>(</span><span class='id identifier rubyid_jruby_jar_path'>jruby_jar_path</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_script_path'>ruby_script_path</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='label'>java_home:</span> <span class='id identifier rubyid_java_home'>java_home</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="generate_bin_data-class_method">
+  
+    + (<tt>Object</tt>) <strong>generate_bin_data</strong>(jruby_jar_path, ruby_script_path, options = {}) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_generate_bin.rb', line 15</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_generate_bin_data'>generate_bin_data</span><span class='lparen'>(</span><span class='id identifier rubyid_jruby_jar_path'>jruby_jar_path</span><span class='comma'>,</span> <span class='id identifier rubyid_ruby_script_path'>ruby_script_path</span><span class='comma'>,</span> <span class='id identifier rubyid_options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_java_home'>java_home</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:java_home</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_java_home_script'>java_home_script</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>%{</span><span class='tstring_content'>export JAVA_HOME='</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_java_home'>java_home</span><span class='rbrace'>}</span><span class='tstring_content'>'</span><span class='tstring_end'>}</span></span>
+    <span class='id identifier rubyid_java_path'>java_path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>%{</span><span class='tstring_content'>&quot;$JAVA_HOME&quot;/bin/java</span><span class='tstring_end'>}</span></span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_java_home_script'>java_home_script</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>%{</span><span class='tstring_end'>}</span></span>
+    <span class='id identifier rubyid_java_path'>java_path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>%{</span><span class='tstring_content'>java</span><span class='tstring_end'>}</span></span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># TODO parse -D options to set them to java
+</span>  <span class='id identifier rubyid_shell_script'>shell_script</span> <span class='op'>=</span> <span class='heredoc_beg'>&lt;&lt;EOF</span>
+<span class='tstring_content'>#!/bin/sh
+=begin 2&gt;/dev/null
+</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_java_home_script'>java_home_script</span><span class='rbrace'>}</span><span class='tstring_content'>
+</span><span class='embexpr_beg'>exec #{</span><span class='id identifier rubyid_java_path'>java_path</span><span class='rbrace'>}</span><span class='tstring_content'> -classpath &quot;$0&quot; org.jruby.Main &quot;$0&quot; &quot;$@&quot;
+exit 127
+=end
+</span><span class='heredoc_end'>EOF
+</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:bundle_path</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='symbol'>:here</span>
+    <span class='id identifier rubyid_bundle_path_script'>bundle_path_script</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>%{</span><span class='tstring_content'>ENV['EMBULK_BUNDLE_PATH'] = File.expand_path('..', File.dirname(__FILE__))</span><span class='tstring_end'>}</span></span>
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:bundle_path</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_bundle_path_script'>bundle_path_script</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>%{</span><span class='tstring_content'>ENV['EMBULK_BUNDLE_PATH'] = '</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='rbrace'>}</span><span class='tstring_content'>'</span><span class='tstring_end'>}</span></span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_bundle_path_script'>bundle_path_script</span> <span class='op'>=</span> <span class='id identifier rubyid_b'>b</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_ruby_init_script'>ruby_init_script</span> <span class='op'>=</span> <span class='id identifier rubyid_b'>b</span> <span class='heredoc_beg'>&lt;&lt;EOF</span>
+<span class='embexpr_beg'>#{</span><span class='id identifier rubyid_bundle_path_script'>bundle_path_script</span><span class='rbrace'>}</span><span class='tstring_content'>
+ENV.delete 'GEM_HOME'
+ENV.delete 'GEM_PATH'
+</span><span class='heredoc_end'>EOF
+</span>
+  <span class='id identifier rubyid_ruby_script'>ruby_script</span> <span class='op'>=</span> <span class='id identifier rubyid_b'>b</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_script_path'>ruby_script_path</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_ruby_script'>ruby_script</span><span class='period'>.</span><span class='id identifier rubyid_index'>index</span><span class='lparen'>(</span><span class='id identifier rubyid_b'>b</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n__END__\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='comment'># delete contents after __END__
+</span>    <span class='id identifier rubyid_ruby_script'>ruby_script</span> <span class='op'>=</span> <span class='id identifier rubyid_ruby_script'>ruby_script</span><span class='lbracket'>[</span><span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_jruby_jar'>jruby_jar</span> <span class='op'>=</span> <span class='id identifier rubyid_b'>b</span><span class='lparen'>(</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_read'>read</span><span class='lparen'>(</span><span class='id identifier rubyid_jruby_jar_path'>jruby_jar_path</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_data'>data</span> <span class='op'>=</span> <span class='id identifier rubyid_shell_script'>shell_script</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_ruby_init_script'>ruby_init_script</span> <span class='op'>+</span> <span class='id identifier rubyid_ruby_script'>ruby_script</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_b'>b</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n__END__\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_jruby_jar'>jruby_jar</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="home-class_method">
+  
+    + (<tt>Object</tt>) <strong>home</strong>(dir) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+279
+280
+281
+282</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_run.rb', line 279</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_home'>home</span><span class='lparen'>(</span><span class='id identifier rubyid_dir'>dir</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_home'>home</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>../../..</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_dirname'>dirname</span><span class='lparen'>(</span><span class='kw'>__FILE__</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_home'>home</span><span class='comma'>,</span> <span class='id identifier rubyid_dir'>dir</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="java?-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>java?</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+3
+4
+5</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk.rb', line 3</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_java?'>java?</span>
+  <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="new_plugin-class_method">
+  
+    + (<tt>Object</tt>) <strong>new_plugin</strong>(name, language, category) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_new_plugin.rb', line 2</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_new_plugin'>new_plugin</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_language'>language</span><span class='comma'>,</span> <span class='id identifier rubyid_category'>category</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>embulk/data/package_data</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>embulk/version</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>fileutils</span><span class='tstring_end'>'</span></span>
+
+  <span class='id identifier rubyid_embulk_category'>embulk_category</span> <span class='op'>=</span> <span class='id identifier rubyid_category'>category</span>
+  <span class='id identifier rubyid_embulk_category'>embulk_category</span> <span class='op'>=</span> <span class='symbol'>:input</span> <span class='kw'>if</span> <span class='id identifier rubyid_category'>category</span> <span class='op'>==</span> <span class='symbol'>:file_input</span>
+  <span class='id identifier rubyid_embulk_category'>embulk_category</span> <span class='op'>=</span> <span class='symbol'>:output</span> <span class='kw'>if</span> <span class='id identifier rubyid_category'>category</span> <span class='op'>==</span> <span class='symbol'>:file_output</span>
+
+  <span class='id identifier rubyid_project_name'>project_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>embulk-</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_embulk_category'>embulk_category</span><span class='rbrace'>}</span><span class='tstring_content'>-</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_plugin_path'>plugin_path</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>lib/embulk/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_embulk_category'>embulk_category</span><span class='rbrace'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_name'>name</span><span class='rbrace'>}</span><span class='tstring_content'>.rb</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='kw'>if</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_exist?'>exist?</span><span class='lparen'>(</span><span class='id identifier rubyid_project_name'>project_name</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_project_name'>project_name</span><span class='rbrace'>}</span><span class='tstring_content'> already exists. Please delete it first.</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+  <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_mkdir_p'>mkdir_p</span><span class='lparen'>(</span><span class='id identifier rubyid_project_name'>project_name</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Creating </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_project_name'>project_name</span><span class='rbrace'>}</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id identifier rubyid_success'>success</span> <span class='op'>=</span> <span class='kw'>false</span>
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_author'>author</span> <span class='op'>=</span> <span class='backtick'>`</span><span class='tstring_content'>git config user.name</span><span class='tstring_end'>`</span></span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span>
+    <span class='id identifier rubyid_author'>author</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>YOUR_NAME</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_author'>author</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='id identifier rubyid_email'>email</span> <span class='op'>=</span> <span class='backtick'>`</span><span class='tstring_content'>git config user.email</span><span class='tstring_end'>`</span></span><span class='period'>.</span><span class='id identifier rubyid_strip'>strip</span>
+    <span class='id identifier rubyid_email'>email</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>YOUR_NAME</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id identifier rubyid_email'>email</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+
+    <span class='id identifier rubyid_ruby_class_name'>ruby_class_name</span> <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_capitalize'>capitalize</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='op'>+</span> <span class='id identifier rubyid_category'>category</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>_</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_capitalize'>capitalize</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plugin</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_java_iface'>java_iface</span> <span class='op'>=</span> <span class='id identifier rubyid_category'>category</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>_</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_capitalize'>capitalize</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span>
+    <span class='id identifier rubyid_java_class_name'>java_class_name</span> <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_capitalize'>capitalize</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span> <span class='op'>+</span> <span class='id identifier rubyid_java_iface'>java_iface</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Plugin</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_display_name'>display_name</span> <span class='op'>=</span> <span class='id identifier rubyid_name'>name</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_a'>a</span><span class='op'>|</span> <span class='id identifier rubyid_a'>a</span><span class='period'>.</span><span class='id identifier rubyid_capitalize'>capitalize</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'> </span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_display_category'>display_category</span> <span class='op'>=</span> <span class='id identifier rubyid_category'>category</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='period'>.</span><span class='id identifier rubyid_gsub'>gsub</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>_</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'> </span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_description'>description</span> <span class='op'>=</span>
+      <span class='kw'>case</span> <span class='id identifier rubyid_category'>category</span>
+      <span class='kw'>when</span> <span class='symbol'>:input</span>
+        <span class='tstring'><span class='tstring_beg'>%[</span><span class='tstring_content'>that loads records from </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_display_name'>display_name</span><span class='rbrace'>}</span><span class='tstring_content'> so that any output plugins can receive the records. Search the output plugins by &quot;embulk-output&quot; keyword.</span><span class='tstring_end'>]</span></span>
+      <span class='kw'>when</span> <span class='symbol'>:file_input</span>
+        <span class='tstring'><span class='tstring_beg'>%[</span><span class='tstring_content'>that reads files from </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_display_name'>display_name</span><span class='rbrace'>}</span><span class='tstring_content'> and parses the file using any parser plugins. Search the parser plugins by &quot;embulk-parser&quot; keyword.</span><span class='tstring_end'>]</span></span>
+      <span class='kw'>when</span> <span class='symbol'>:parser</span>
+        <span class='tstring'><span class='tstring_beg'>%[</span><span class='tstring_content'>that parses </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_display_name'>display_name</span><span class='rbrace'>}</span><span class='tstring_content'> file format read by any file input plugins. Search the file input plugins by &quot;embulk-input file&quot; keywords.</span><span class='tstring_end'>]</span></span>
+      <span class='kw'>when</span> <span class='symbol'>:decoder</span>
+        <span class='tstring'><span class='tstring_beg'>%[</span><span class='tstring_content'>that decodes files encoded by </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_display_name'>display_name</span><span class='rbrace'>}</span><span class='tstring_content'> read by any file input plugins. Search the file input plugins by &quot;embulk-input file&quot; keywords.</span><span class='tstring_end'>]</span></span>
+      <span class='kw'>when</span> <span class='symbol'>:output</span>
+        <span class='tstring'><span class='tstring_beg'>%[</span><span class='tstring_content'>that loads records to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_display_name'>display_name</span><span class='rbrace'>}</span><span class='tstring_content'> read by any input plugins. Search the input plugins by &quot;embulk-input&quot; keyword.</span><span class='tstring_end'>]</span></span>
+      <span class='kw'>when</span> <span class='symbol'>:file_output</span>
+        <span class='tstring'><span class='tstring_beg'>%[</span><span class='tstring_content'>that stores files to </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_display_name'>display_name</span><span class='rbrace'>}</span><span class='tstring_content'> formatted by any formatter plugins. Search the formatter plugins by &quot;embulk-formatter&quot; keyword.</span><span class='tstring_end'>]</span></span>
+      <span class='kw'>when</span> <span class='symbol'>:formtter</span>
+        <span class='tstring'><span class='tstring_beg'>%[</span><span class='tstring_content'>that formats records using </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_display_name'>display_name</span><span class='rbrace'>}</span><span class='tstring_content'> file format and so that any file output plugins can store the files. Search the file output plugins by &quot;embulk-output file&quot; keywords.</span><span class='tstring_end'>]</span></span>
+      <span class='kw'>when</span> <span class='symbol'>:encoder</span>
+        <span class='tstring'><span class='tstring_beg'>%[</span><span class='tstring_content'>that encodes files using </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_display_name'>display_name</span><span class='rbrace'>}</span><span class='tstring_content'> so that any file output plugins can store the files. Search the file output plugins by &quot;embulk-output file&quot; keywords.</span><span class='tstring_end'>]</span></span>
+      <span class='kw'>when</span> <span class='symbol'>:filter</span>
+        <span class='tstring'><span class='tstring_beg'>%[</span><span class='tstring_content'>that converts records read by an input plugin before passing it to an output plugins. Search the input and plugins by &quot;embulk-input&quot; and &quot;embulk-output&quot; plugins.</span><span class='tstring_end'>]</span></span>
+      <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_pkg'>pkg</span> <span class='op'>=</span> <span class='const'>Embulk</span><span class='op'>::</span><span class='const'>PackageData</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>new</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_project_name'>project_name</span><span class='comma'>,</span> <span class='id identifier rubyid_binding'>binding</span><span class='lparen'>(</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp_erb'>cp_erb</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>README.md.erb</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>README.md</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>LICENSE.txt</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>LICENSE.txt</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp_erb'>cp_erb</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gitignore.erb</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>.gitignore</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+    <span class='kw'>case</span> <span class='id identifier rubyid_language'>language</span>
+    <span class='kw'>when</span> <span class='symbol'>:ruby</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby/Rakefile</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Rakefile</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby/Gemfile</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Gemfile</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp_erb'>cp_erb</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby/gemspec.erb</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_project_name'>project_name</span><span class='rbrace'>}</span><span class='tstring_content'>.gemspec</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp_erb'>cp_erb</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_category'>category</span><span class='rbrace'>}</span><span class='tstring_content'>.rb.erb</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_plugin_path'>plugin_path</span><span class='rparen'>)</span>
+
+    <span class='kw'>when</span> <span class='symbol'>:java</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java/gradle/wrapper/gradle-wrapper.jar</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gradle/wrapper/gradle-wrapper.jar</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java/gradle/wrapper/gradle-wrapper.properties</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gradle/wrapper/gradle-wrapper.properties</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java/gradlew.bat</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gradlew.bat</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java/gradlew</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gradlew</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_set_executable'>set_executable</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>gradlew</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp_erb'>cp_erb</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java/build.gradle.erb</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>build.gradle</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp_erb'>cp_erb</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java/plugin_loader.rb.erb</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_plugin_path'>plugin_path</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp_erb'>cp_erb</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_category'>category</span><span class='rbrace'>}</span><span class='tstring_content'>.java.erb</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>src/main/java/org/embulk/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_embulk_category'>embulk_category</span><span class='rbrace'>}</span><span class='tstring_content'>/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_java_class_name'>java_class_name</span><span class='rbrace'>}</span><span class='tstring_content'>.java</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp_erb'>cp_erb</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java/test.java.erb</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>src/test/java/org/embulk/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_embulk_category'>embulk_category</span><span class='rbrace'>}</span><span class='tstring_content'>/Test</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_java_class_name'>java_class_name</span><span class='rbrace'>}</span><span class='tstring_content'>.java</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_success'>success</span> <span class='op'>=</span> <span class='kw'>true</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>ensure</span>
+    <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_rm_rf'>rm_rf</span> <span class='id identifier rubyid_project_name'>project_name</span> <span class='kw'>unless</span> <span class='id identifier rubyid_success'>success</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="run-class_method">
+  
+    + (<tt>Object</tt>) <strong>run</strong>(argv) 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/embulk/command/embulk_run.rb', line 2</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_argv'>argv</span><span class='rparen'>)</span>
+  <span class='comment'># default_bundle_path
+</span>  <span class='id identifier rubyid_default_bundle_path'>default_bundle_path</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='id identifier rubyid_gemfile_path'>gemfile_path</span> <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BUNDLE_GEMFILE</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='id identifier rubyid_gemfile_path'>gemfile_path</span> <span class='op'>=</span> <span class='kw'>nil</span> <span class='kw'>if</span> <span class='id identifier rubyid_gemfile_path'>gemfile_path</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+  <span class='id identifier rubyid_default_bundle_path'>default_bundle_path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_dirname'>dirname</span><span class='lparen'>(</span><span class='id identifier rubyid_gemfile_path'>gemfile_path</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_gemfile_path'>gemfile_path</span>
+
+  <span class='comment'># default GEM_HOME is ~/.embulk/jruby/1.9/. If -b option is set,
+</span>  <span class='comment'># GEM_HOME is already set by embulk/command/embulk.rb
+</span>  <span class='id identifier rubyid_gem_home'>gem_home</span> <span class='op'>=</span> <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>GEM_HOME</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_gem_home'>gem_home</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+    <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>GEM_HOME</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>HOME</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>.embulk</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='const'>Gem</span><span class='period'>.</span><span class='id identifier rubyid_ruby_engine'>ruby_engine</span><span class='comma'>,</span> <span class='const'>RbConfig</span><span class='op'>::</span><span class='const'>CONFIG</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ruby_version</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='const'>Gem</span><span class='period'>.</span><span class='id identifier rubyid_clear_paths'>clear_paths</span>  <span class='comment'># force rubygems to reload GEM_HOME
+</span>  <span class='kw'>end</span>
+
+  <span class='comment'># to make sure org.embulk.jruby.JRubyScriptingModule can require 'embulk/java/bootstrap'
+</span>  <span class='gvar'>$LOAD_PATH</span> <span class='op'>&lt;&lt;</span> <span class='const'>Embulk</span><span class='period'>.</span><span class='id identifier rubyid_home'>home</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>lib</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--version</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>embulk/version</span><span class='tstring_end'>'</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>embulk </span><span class='embexpr_beg'>#{</span><span class='const'>Embulk</span><span class='op'>::</span><span class='const'>VERSION</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_exit'>exit</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_i'>i</span> <span class='op'>=</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_find_index'>find_index</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_arg'>arg</span><span class='op'>|</span> <span class='id identifier rubyid_arg'>arg</span> <span class='op'>!~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\-</span><span class='regexp_end'>/</span></span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_usage'>usage</span> <span class='kw'>nil</span> <span class='kw'>unless</span> <span class='id identifier rubyid_i'>i</span>
+  <span class='id identifier rubyid_subcmd'>subcmd</span> <span class='op'>=</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_slice!'>slice!</span><span class='lparen'>(</span><span class='id identifier rubyid_i'>i</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>java</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>optparse</span><span class='tstring_end'>'</span></span>
+  <span class='id identifier rubyid_op'>op</span> <span class='op'>=</span> <span class='const'>OptionParser</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+
+  <span class='id identifier rubyid_load_paths'>load_paths</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_classpaths'>classpaths</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_classpath_separator'>classpath_separator</span> <span class='op'>=</span> <span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_io'>io</span><span class='period'>.</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_pathSeparator'>pathSeparator</span>
+  <span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+
+  <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-b</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--bundle BUNDLE_DIR</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Path to a Gemfile directory</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_path'>path</span><span class='op'>|</span>
+    <span class='comment'># only for help message. implemented at lib/embulk/command/embulk.rb
+</span>  <span class='kw'>end</span>
+
+  <span class='kw'>case</span> <span class='id identifier rubyid_subcmd'>subcmd</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
+  <span class='kw'>when</span> <span class='symbol'>:bundle</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span>  <span class='comment'># remove --bundle
+</span>    <span class='kw'>if</span> <span class='id identifier rubyid_default_bundle_path'>default_bundle_path</span>
+      <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: bundle [directory=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_default_bundle_path'>default_bundle_path</span><span class='rbrace'>}</span><span class='tstring_content'>]</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='int'>0</span><span class='op'>..</span><span class='int'>1</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: bundle &lt;directory&gt;</span><span class='tstring_end'>&quot;</span></span>
+      <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='int'>1</span><span class='op'>..</span><span class='int'>1</span>
+    <span class='kw'>end</span>
+
+  <span class='kw'>when</span> <span class='symbol'>:run</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: run &lt;config.yml&gt;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-I</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--load-path PATH</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Add ruby script directory path ($LOAD_PATH)</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_load_path'>load_path</span><span class='op'>|</span>
+      <span class='id identifier rubyid_load_paths'>load_paths</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_load_path'>load_path</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-C</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--classpath PATH</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Add java classpath separated by </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_classpath_separator'>classpath_separator</span><span class='rbrace'>}</span><span class='tstring_content'> (CLASSPATH)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_classpath'>classpath</span><span class='op'>|</span>
+      <span class='id identifier rubyid_classpaths'>classpaths</span><span class='period'>.</span><span class='id identifier rubyid_concat'>concat</span> <span class='id identifier rubyid_classpath'>classpath</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='id identifier rubyid_classpath_separator'>classpath_separator</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-o</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--output PATH</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Path to a file to write the next configuration</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_path'>path</span><span class='op'>|</span>
+      <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:nextConfigOutputPath</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-r</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--resume-state PATH</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Path to a file to write or read resume state</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_path'>path</span><span class='op'>|</span>
+      <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:resumeStatePath</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='int'>1</span><span class='op'>..</span><span class='int'>1</span>
+
+  <span class='kw'>when</span> <span class='symbol'>:cleanup</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: run &lt;config.yml&gt;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-I</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--load-path PATH</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Add ruby script directory path ($LOAD_PATH)</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_load_path'>load_path</span><span class='op'>|</span>
+      <span class='id identifier rubyid_load_paths'>load_paths</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_load_path'>load_path</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-C</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--classpath PATH</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Add java classpath separated by </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_classpath_separator'>classpath_separator</span><span class='rbrace'>}</span><span class='tstring_content'> (CLASSPATH)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_classpath'>classpath</span><span class='op'>|</span>
+      <span class='id identifier rubyid_classpaths'>classpaths</span><span class='period'>.</span><span class='id identifier rubyid_concat'>concat</span> <span class='id identifier rubyid_classpath'>classpath</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='id identifier rubyid_classpath_separator'>classpath_separator</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-r</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--resume-state PATH</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Path to a file to write or read resume state</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_path'>path</span><span class='op'>|</span>
+      <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:resumeStatePath</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='int'>1</span><span class='op'>..</span><span class='int'>1</span>
+
+  <span class='kw'>when</span> <span class='symbol'>:preview</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: preview &lt;config.yml&gt;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-I</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--load-path PATH</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Add ruby script directory path ($LOAD_PATH)</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_load_path'>load_path</span><span class='op'>|</span>
+      <span class='id identifier rubyid_load_paths'>load_paths</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_load_path'>load_path</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-C</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--classpath PATH</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Add java classpath separated by </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_classpath_separator'>classpath_separator</span><span class='rbrace'>}</span><span class='tstring_content'> (CLASSPATH)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_classpath'>classpath</span><span class='op'>|</span>
+      <span class='id identifier rubyid_classpaths'>classpaths</span><span class='period'>.</span><span class='id identifier rubyid_concat'>concat</span> <span class='id identifier rubyid_classpath'>classpath</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='id identifier rubyid_classpath_separator'>classpath_separator</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='int'>1</span><span class='op'>..</span><span class='int'>1</span>
+
+  <span class='kw'>when</span> <span class='symbol'>:guess</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: guess &lt;partial-config.yml&gt;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-o</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--output PATH</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Path to a file to write the guessed configuration</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_path'>path</span><span class='op'>|</span>
+      <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:nextConfigOutputPath</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_path'>path</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-I</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--load-path PATH</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Add ruby script directory path ($LOAD_PATH)</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_load_path'>load_path</span><span class='op'>|</span>
+      <span class='id identifier rubyid_load_paths'>load_paths</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_load_path'>load_path</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_on'>on</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-C</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--classpath PATH</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Add java classpath separated by </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_classpath_separator'>classpath_separator</span><span class='rbrace'>}</span><span class='tstring_content'> (CLASSPATH)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_classpath'>classpath</span><span class='op'>|</span>
+      <span class='id identifier rubyid_classpaths'>classpaths</span><span class='period'>.</span><span class='id identifier rubyid_concat'>concat</span> <span class='id identifier rubyid_classpath'>classpath</span><span class='period'>.</span><span class='id identifier rubyid_split'>split</span><span class='lparen'>(</span><span class='id identifier rubyid_classpath_separator'>classpath_separator</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='int'>1</span><span class='op'>..</span><span class='int'>1</span>
+
+  <span class='kw'>when</span> <span class='symbol'>:new</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_remove'>remove</span>  <span class='comment'># remove --bundle
+</span>    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_banner'>banner</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Usage: new &lt;category&gt; &lt;name&gt;</span><span class='tstring_end'>&quot;</span></span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>%[</span><span class='tstring_content'>
+categories:
+  ruby-input                 Ruby record input plugin    (like &quot;mysql&quot;)
+  ruby-output                Ruby record output plugin   (like &quot;mysql&quot;)
+  ruby-filter                Ruby record filter plugin   (like &quot;add-hostname&quot;)
+  #ruby-file-input           Ruby file input plugin      (like &quot;ftp&quot;)          # not implemented yet [#21]
+  #ruby-file-output          Ruby file output plugin     (like &quot;ftp&quot;)          # not implemented yet [#22]
+  #ruby-parser               Ruby file parser plugin     (like &quot;csv&quot;)          # not implemented yet [#33]
+  #ruby-formatter            Ruby file formatter plugin  (like &quot;csv&quot;)          # not implemented yet [#34]
+  #ruby-decoder              Ruby file decoder plugin    (like &quot;gzip&quot;)         # not implemented yet [#31]
+  #ruby-encoder              Ruby file encoder plugin    (like &quot;gzip&quot;)         # not implemented yet [#32]
+  java-input                 Java record input plugin    (like &quot;mysql&quot;)
+  java-output                Java record output plugin   (like &quot;mysql&quot;)
+  java-filter                Java record filter plugin   (like &quot;add-hostname&quot;)
+  java-file-input            Java file input plugin      (like &quot;ftp&quot;)
+  java-file-output           Java file output plugin     (like &quot;ftp&quot;)
+  java-parser                Java file parser plugin     (like &quot;csv&quot;)
+  java-formatter             Java file formatter plugin  (like &quot;csv&quot;)
+  java-decoder               Java file decoder plugin    (like &quot;gzip&quot;)
+  java-encoder               Java file encoder plugin    (like &quot;gzip&quot;)
+
+examples:
+  new ruby-output hbase
+  new ruby-filter int-to-string
+</span><span class='tstring_end'>]</span></span>
+    <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='int'>2</span><span class='op'>..</span><span class='int'>2</span>
+
+  <span class='kw'>when</span> <span class='symbol'>:gem</span>
+    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>rubygems/gem_runner</span><span class='tstring_end'>'</span></span>
+    <span class='const'>Gem</span><span class='op'>::</span><span class='const'>GemRunner</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span> <span class='id identifier rubyid_argv'>argv</span>
+    <span class='id identifier rubyid_exit'>exit</span> <span class='int'>0</span>
+
+  <span class='kw'>when</span> <span class='symbol'>:example</span>
+    <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='int'>0</span><span class='op'>..</span><span class='int'>1</span>
+
+  <span class='kw'>when</span> <span class='symbol'>:exec</span>
+    <span class='id identifier rubyid_exec'>exec</span> <span class='op'>*</span><span class='id identifier rubyid_argv'>argv</span>
+    <span class='id identifier rubyid_exit'>exit</span> <span class='int'>127</span>
+
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_usage'>usage</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unknown subcommand </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_subcmd'>subcmd</span><span class='period'>.</span><span class='id identifier rubyid_dump'>dump</span><span class='rbrace'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_op'>op</span><span class='period'>.</span><span class='id identifier rubyid_parse!'>parse!</span><span class='lparen'>(</span><span class='id identifier rubyid_argv'>argv</span><span class='rparen'>)</span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_usage_op'>usage_op</span> <span class='id identifier rubyid_op'>op</span><span class='comma'>,</span> <span class='kw'>nil</span>
+    <span class='kw'>end</span>
+  <span class='kw'>rescue</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+    <span class='id identifier rubyid_usage_op'>usage_op</span> <span class='id identifier rubyid_op'>op</span><span class='comma'>,</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>case</span> <span class='id identifier rubyid_subcmd'>subcmd</span><span class='period'>.</span><span class='id identifier rubyid_to_sym'>to_sym</span>
+  <span class='kw'>when</span> <span class='symbol'>:bundle</span>
+    <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_argv'>argv</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='id identifier rubyid_default_bundle_path'>default_bundle_path</span>
+
+    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>fileutils</span><span class='tstring_end'>'</span></span>
+    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>rubygems/gem_runner</span><span class='tstring_end'>'</span></span>
+    <span class='id identifier rubyid_setup_load_paths'>setup_load_paths</span><span class='lparen'>(</span><span class='id identifier rubyid_load_paths'>load_paths</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_setup_classpaths'>setup_classpaths</span><span class='lparen'>(</span><span class='id identifier rubyid_classpaths'>classpaths</span><span class='rparen'>)</span>
+
+    <span class='kw'>unless</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_exists?'>exists?</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Initializing </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='rbrace'>}</span><span class='tstring_content'>...</span><span class='tstring_end'>&quot;</span></span>
+      <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_mkdir_p'>mkdir_p</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_dirname'>dirname</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+      <span class='kw'>begin</span>
+        <span class='id identifier rubyid_success'>success</span> <span class='op'>=</span> <span class='kw'>false</span>
+
+        <span class='comment'># copy embulk/data/bundle/ directory
+</span>        <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>embulk/data/package_data</span><span class='tstring_end'>'</span></span>
+        <span class='id identifier rubyid_pkg'>pkg</span> <span class='op'>=</span> <span class='const'>PackageData</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>bundle</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+        <span class='qwords_beg'>%w[</span><span class='tstring_content'>.bundle/config</span><span class='words_sep'> </span><span class='tstring_content'>embulk/input/example.rb</span><span class='words_sep'> </span><span class='tstring_content'>embulk/output/example.rb</span><span class='words_sep'> </span><span class='tstring_content'>embulk/filter/example.rb</span><span class='words_sep'> </span><span class='tstring_content'>Gemfile</span><span class='words_sep'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_file'>file</span><span class='op'>|</span>
+          <span class='id identifier rubyid_pkg'>pkg</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='id identifier rubyid_file'>file</span><span class='comma'>,</span> <span class='id identifier rubyid_file'>file</span><span class='rparen'>)</span>
+        <span class='kw'>end</span>
+
+        <span class='comment'>## TODO this is disabled for now. enable this if you want to use
+</span>        <span class='comment'>## create bin/embulk
+</span>        <span class='comment'>#bin_embulk_path = File.join(path, 'bin', 'embulk')
+</span>        <span class='comment'>#FileUtils.mkdir_p File.dirname(bin_embulk_path)
+</span>        <span class='comment'>#require 'embulk/command/embulk_generate_bin'  # defines Embulk.generate_bin
+</span>        <span class='comment'>#File.open(bin_embulk_path, 'wb', 0755) {|f| f.write Embulk.generate_bin(bundle_path: :here) }
+</span>
+        <span class='comment'># install bundler
+</span>        <span class='id identifier rubyid_setup_gem_paths'>setup_gem_paths</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+        <span class='const'>Gem</span><span class='op'>::</span><span class='const'>GemRunner</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span> <span class='qwords_beg'>%w[</span><span class='tstring_content'>install</span><span class='words_sep'> </span><span class='tstring_content'>bundler</span><span class='words_sep'>]</span>
+
+        <span class='id identifier rubyid_success'>success</span> <span class='op'>=</span> <span class='kw'>true</span>
+      <span class='kw'>rescue</span> <span class='const'>Gem</span><span class='op'>::</span><span class='const'>SystemExitException</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+        <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_e'>e</span> <span class='kw'>if</span> <span class='id identifier rubyid_e'>e</span><span class='period'>.</span><span class='id identifier rubyid_exit_code'>exit_code</span> <span class='op'>!=</span> <span class='int'>0</span>
+        <span class='id identifier rubyid_success'>success</span> <span class='op'>=</span> <span class='kw'>true</span>
+      <span class='kw'>ensure</span>
+        <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_rm_rf'>rm_rf</span> <span class='id identifier rubyid_path'>path</span> <span class='kw'>unless</span> <span class='id identifier rubyid_success'>success</span>
+      <span class='kw'>end</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_setup_gem_paths'>setup_gem_paths</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+    <span class='const'>ENV</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BUNDLE_GEMFILE</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_expand_path'>expand_path</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Gemfile</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='const'>Dir</span><span class='period'>.</span><span class='id identifier rubyid_chdir'>chdir</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>bundler</span><span class='tstring_end'>'</span></span>
+      <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>bundler/friendly_errors</span><span class='tstring_end'>'</span></span>
+      <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>bundler/cli</span><span class='tstring_end'>'</span></span>
+      <span class='const'>Bundler</span><span class='period'>.</span><span class='id identifier rubyid_with_friendly_errors'>with_friendly_errors</span> <span class='kw'>do</span>
+        <span class='comment'># run &gt; bundle install
+</span>        <span class='const'>Bundler</span><span class='op'>::</span><span class='const'>CLI</span><span class='period'>.</span><span class='id identifier rubyid_start'>start</span><span class='lparen'>(</span><span class='qwords_beg'>%w[</span><span class='tstring_content'>install</span><span class='words_sep'>]</span><span class='comma'>,</span> <span class='label'>debug:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+  <span class='kw'>when</span> <span class='symbol'>:example</span>
+    <span class='id identifier rubyid_require_relative'>require_relative</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>embulk_example</span><span class='tstring_end'>'</span></span>
+    <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='const'>ARGV</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>embulk-example</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Creating </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_path'>path</span><span class='rbrace'>}</span><span class='tstring_content'> directory...</span><span class='tstring_end'>&quot;</span></span>
+    <span class='const'>Embulk</span><span class='period'>.</span><span class='id identifier rubyid_create_example'>create_example</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Run following subcommands to try embulk:</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>   1. guess </span><span class='embexpr_beg'>#{</span><span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>example.yml</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'> -o config.yml</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>   2. preview config.yml</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>   3. run config.yml</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='kw'>when</span> <span class='symbol'>:new</span>
+    <span class='id identifier rubyid_lang_cate'>lang_cate</span> <span class='op'>=</span> <span class='const'>ARGV</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_name'>name</span> <span class='op'>=</span> <span class='const'>ARGV</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+
+    <span class='id identifier rubyid_language'>language</span><span class='comma'>,</span> <span class='id identifier rubyid_category'>category</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id identifier rubyid_lang_cate'>lang_cate</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java-input</span><span class='tstring_end'>&quot;</span></span>       <span class='kw'>then</span> <span class='lbracket'>[</span><span class='symbol'>:java</span><span class='comma'>,</span> <span class='symbol'>:input</span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java-output</span><span class='tstring_end'>&quot;</span></span>      <span class='kw'>then</span> <span class='lbracket'>[</span><span class='symbol'>:java</span><span class='comma'>,</span> <span class='symbol'>:output</span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java-filter</span><span class='tstring_end'>&quot;</span></span>      <span class='kw'>then</span> <span class='lbracket'>[</span><span class='symbol'>:java</span><span class='comma'>,</span> <span class='symbol'>:filter</span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java-file-input</span><span class='tstring_end'>&quot;</span></span>  <span class='kw'>then</span> <span class='lbracket'>[</span><span class='symbol'>:java</span><span class='comma'>,</span> <span class='symbol'>:file_input</span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java-file-output</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>then</span> <span class='lbracket'>[</span><span class='symbol'>:java</span><span class='comma'>,</span> <span class='symbol'>:file_output</span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java-parser</span><span class='tstring_end'>&quot;</span></span>      <span class='kw'>then</span> <span class='lbracket'>[</span><span class='symbol'>:java</span><span class='comma'>,</span> <span class='symbol'>:parser</span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java-formatter</span><span class='tstring_end'>&quot;</span></span>   <span class='kw'>then</span> <span class='lbracket'>[</span><span class='symbol'>:java</span><span class='comma'>,</span> <span class='symbol'>:formatter</span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java-decoder</span><span class='tstring_end'>&quot;</span></span>     <span class='kw'>then</span> <span class='lbracket'>[</span><span class='symbol'>:java</span><span class='comma'>,</span> <span class='symbol'>:decoder</span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>java-encoder</span><span class='tstring_end'>&quot;</span></span>     <span class='kw'>then</span> <span class='lbracket'>[</span><span class='symbol'>:java</span><span class='comma'>,</span> <span class='symbol'>:encoder</span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-input</span><span class='tstring_end'>&quot;</span></span>       <span class='kw'>then</span> <span class='lbracket'>[</span><span class='symbol'>:ruby</span><span class='comma'>,</span> <span class='symbol'>:input</span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-output</span><span class='tstring_end'>&quot;</span></span>      <span class='kw'>then</span> <span class='lbracket'>[</span><span class='symbol'>:ruby</span><span class='comma'>,</span> <span class='symbol'>:output</span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-filter</span><span class='tstring_end'>&quot;</span></span>      <span class='kw'>then</span> <span class='lbracket'>[</span><span class='symbol'>:ruby</span><span class='comma'>,</span> <span class='symbol'>:filter</span><span class='rbracket'>]</span>
+      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-file-input</span><span class='tstring_end'>&quot;</span></span>  <span class='kw'>then</span> <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-file-input is not implemented yet. See #21 on github.</span><span class='tstring_end'>&quot;</span></span> <span class='comment'>#[:ruby, :file_input]
+</span>      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-file-output</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>then</span> <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-file-output is not implemented yet. See #22 on github.</span><span class='tstring_end'>&quot;</span></span> <span class='comment'>#[:ruby, :file_output]
+</span>      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-parser</span><span class='tstring_end'>&quot;</span></span>      <span class='kw'>then</span> <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-parser is not implemented yet. See #33 on github.</span><span class='tstring_end'>&quot;</span></span> <span class='comment'>#[:ruby, :parser]
+</span>      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-formatter</span><span class='tstring_end'>&quot;</span></span>   <span class='kw'>then</span> <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-formatter is not implemented yet. See #34 on github.</span><span class='tstring_end'>&quot;</span></span> <span class='comment'>#[:ruby, :formatter]
+</span>      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-decoder</span><span class='tstring_end'>&quot;</span></span>     <span class='kw'>then</span> <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-decoder is not implemented yet. See #31 on github.</span><span class='tstring_end'>&quot;</span></span> <span class='comment'>#[:ruby, :decoder]
+</span>      <span class='kw'>when</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-encoder</span><span class='tstring_end'>&quot;</span></span>     <span class='kw'>then</span> <span class='id identifier rubyid_raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>ruby-decoder is not implemented yet. See #32 on github.</span><span class='tstring_end'>&quot;</span></span> <span class='comment'>#[:ruby, :encoder]
+</span>      <span class='kw'>else</span>
+        <span class='id identifier rubyid_usage_op'>usage_op</span> <span class='id identifier rubyid_op'>op</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unknown category '</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_lang_cate'>lang_cate</span><span class='rbrace'>}</span><span class='tstring_content'>'</span><span class='tstring_end'>&quot;</span></span>
+      <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>embulk/command/embulk_new_plugin</span><span class='tstring_end'>'</span></span>
+    <span class='const'>Embulk</span><span class='period'>.</span><span class='id identifier rubyid_new_plugin'>new_plugin</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_language'>language</span><span class='comma'>,</span> <span class='id identifier rubyid_category'>category</span><span class='rparen'>)</span>
+
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>json</span><span class='tstring_end'>'</span></span>
+
+    <span class='kw'>begin</span>
+      <span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_lang'>lang</span><span class='period'>.</span><span class='const'>Class</span><span class='period'>.</span><span class='id identifier rubyid_forName'>forName</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>org.embulk.command.Runner</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+    <span class='kw'>rescue</span> <span class='id identifier rubyid_java'>java</span><span class='period'>.</span><span class='id identifier rubyid_lang'>lang</span><span class='period'>.</span><span class='const'>ClassNotFoundException</span>
+      <span class='comment'># load classpath
+</span>      <span class='id identifier rubyid_classpath_dir'>classpath_dir</span> <span class='op'>=</span> <span class='const'>Embulk</span><span class='period'>.</span><span class='id identifier rubyid_home'>home</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>classpath</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_jars'>jars</span> <span class='op'>=</span> <span class='const'>Dir</span><span class='period'>.</span><span class='id identifier rubyid_entries'>entries</span><span class='lparen'>(</span><span class='id identifier rubyid_classpath_dir'>classpath_dir</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_select'>select</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_f'>f</span><span class='op'>|</span> <span class='id identifier rubyid_f'>f</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\.jar$</span><span class='regexp_end'>/</span></span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span>
+      <span class='id identifier rubyid_jars'>jars</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_jar'>jar</span><span class='op'>|</span>
+        <span class='id identifier rubyid_require'>require</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='id identifier rubyid_classpath_dir'>classpath_dir</span><span class='comma'>,</span> <span class='id identifier rubyid_jar'>jar</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_setup_load_paths'>setup_load_paths</span><span class='lparen'>(</span><span class='id identifier rubyid_load_paths'>load_paths</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_setup_classpaths'>setup_classpaths</span><span class='lparen'>(</span><span class='id identifier rubyid_classpaths'>classpaths</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_org'>org</span><span class='period'>.</span><span class='id identifier rubyid_embulk'>embulk</span><span class='period'>.</span><span class='id identifier rubyid_command'>command</span><span class='period'>.</span><span class='const'>Runner</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span><span class='period'>.</span><span class='id identifier rubyid_to_json'>to_json</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_main'>main</span><span class='lparen'>(</span><span class='id identifier rubyid_subcmd'>subcmd</span><span class='comma'>,</span> <span class='id identifier rubyid_argv'>argv</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='lparen'>(</span><span class='symbol'>:string</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Fri Feb 13 16:43:30 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>
