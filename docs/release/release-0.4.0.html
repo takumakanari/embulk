@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Release 0.4.0 &mdash; Embulk 0.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Embulk 0.4 documentation" href="../index.html" />
+    <link rel="up" title="Release Notes" href="../release.html" />
+    <link rel="prev" title="Release 0.3.2" href="release-0.3.2.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>Embulk 0.4 documentation</span></a></h1>
+        <h2 class="heading"><span>Release 0.4.0</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.3.2.html">Release 0.3.2</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="release-0-4-0">
+<h1>Release 0.4.0<a class="headerlink" href="#release-0-4-0" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="plugin-template-generator">
+<h2>Plugin Template Generator<a class="headerlink" href="#plugin-template-generator" title="Permalink to this headline">¶</a></h2>
+<p>A new CLI subcommand <tt class="docutils literal"><span class="pre">new</span></tt> generate a plugin template.</p>
+<p>For example, <tt class="docutils literal"><span class="pre">new</span> <span class="pre">ruby-output</span> <span class="pre">&lt;name&gt;</span></tt> generates a template of output plugin written in Ruby:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ embulk new ruby-output foo
+Creating embulk-output-foo/
+  Creating embulk-output-foo/README.md
+  Creating embulk-output-foo/LICENSE.txt
+  Creating embulk-output-foo/.gitignore
+  Creating embulk-output-foo/Rakefile
+  Creating embulk-output-foo/Gemfile
+  Creating embulk-output-foo/embulk-output-foo.gemspec
+  Creating embulk-output-foo/lib/embulk/output/foo.rb
+</pre></div>
+</div>
+<p>The template generate supports most of plugin types. ruby-file-input and output, ruby-parser and formatter, ruby-decoder and encoder are not available yet because plugin SPI is not implemented yet.</p>
+</div>
+<div class="section" id="java-plugin-loader">
+<h2>Java Plugin Loader<a class="headerlink" href="#java-plugin-loader" title="Permalink to this headline">¶</a></h2>
+<p>Now, we can write plugins in Java.</p>
+<p>The plugin loader creates a dedicated classloader for each plugin so that plugins can depend on different versions of libraries. To develop a Java plugin, you can use use <tt class="docutils literal"><span class="pre">new</span> <span class="pre">java-&lt;category&gt;</span> <span class="pre">&lt;name&gt;</span></tt> command which generates a template. The generated directory has <tt class="docutils literal"><span class="pre">build.gradle</span></tt> file so that you can run <tt class="docutils literal"><span class="pre">./gradlew</span> <span class="pre">gem</span></tt> command to build a gem package.</p>
+</div>
+<div class="section" id="plugin-spi">
+<h2>Plugin SPI<a class="headerlink" href="#plugin-spi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>IMPORTANT</strong>: Changed plugin path name from <tt class="docutils literal"><span class="pre">lib/embulk/&lt;caetgory&gt;_&lt;name&gt;.rb</span></tt> to <tt class="docutils literal"><span class="pre">lib/embulk/&lt;category&gt;/&lt;name&gt;.rb</span></tt>.</li>
+<li>Added <tt class="docutils literal"><span class="pre">&#64;ConfigInject</span></tt> annotation to set resources injected by Guice to a Task.</li>
+<li>Removed support for <tt class="docutils literal"><span class="pre">&#64;JacksonInject</span></tt> annotation on a Task. <tt class="docutils literal"><span class="pre">&#64;ConfigInject</span></tt> is the drop-in replacement.</li>
+<li>Changed class name <tt class="docutils literal"><span class="pre">spi.NextConfig</span></tt> to <tt class="docutils literal"><span class="pre">spi.ConfigDiff</span></tt>.</li>
+</ul>
+</div>
+<div class="section" id="built-in-plugins">
+<h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">csv</span></tt> parser plugin and its guess plugin assume &#8220;true&#8221;, &#8220;yes&#8221;, &#8220;Y&#8221; and &#8220;on&#8221; as a boolean true value.</li>
+<li><tt class="docutils literal"><span class="pre">file</span></tt> input plugin changed parameters.<ul>
+<li>Added <tt class="docutils literal"><span class="pre">path_prefix</span></tt> parameter (string, required).</li>
+<li>Added <tt class="docutils literal"><span class="pre">last_path</span></tt> parameter (string, optional) which skips files older than or same with the specified file path.</li>
+<li>Removed <tt class="docutils literal"><span class="pre">paths</span></tt> parameter.</li>
+</ul>
+</li>
+<li><tt class="docutils literal"><span class="pre">file</span></tt> output plugin changed parameters.<ul>
+<li>Added <tt class="docutils literal"><span class="pre">sequence_format</span></tt> parameter.</li>
+<li>Removed <tt class="docutils literal"><span class="pre">directory</span></tt> parameters.</li>
+<li>Removed <tt class="docutils literal"><span class="pre">file_name</span></tt> parameters.</li>
+<li>The actual file name is <tt class="docutils literal"><span class="pre">${path_prefix}${sequence_format</span> <span class="pre">%</span> <span class="pre">[processorIndex,</span> <span class="pre">sequenceNumber}${ext_name}</span></tt>.</li>
+</ul>
+</li>
+<li>Removed <tt class="docutils literal"><span class="pre">s3</span></tt> file input plugin. It is now embulk-input-s3 gem.</li>
+</ul>
+</div>
+<div class="section" id="general-changes">
+<h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>PluginManager reports the cause of exceptions when it failed to load a plugin.</li>
+<li>Removed pom.xml.</li>
+<li>Set locale = &#8216;en_US&#8217; when gradle builds javadoc.</li>
+<li>Added documentation scripts using Sphinx, YARD and JavaDoc.</li>
+</ul>
+</div>
+<div class="section" id="release-date">
+<h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
+<p>2015-02-15</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.3.2.html">Release 0.3.2</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2015, Embulk Project.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

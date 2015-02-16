@@ -95,7 +95,7 @@
 <p>The single-file package is the simplest way to try Embulk. You can download the latest embulk-VERSION.jar from <a href="https://bintray.com/embulk/maven/embulk/view#files">the releases page</a> and run it with java:</p>
 
 <p><code>
-wget https://bintray.com/artifact/download/embulk/maven/embulk-0.3.2.jar -O embulk.jar
+wget https://bintray.com/artifact/download/embulk/maven/embulk-0.4.0.jar -O embulk.jar
 java -jar embulk.jar --help
 </code></p>
 
@@ -223,9 +223,9 @@ bintray_api_key=(bintray api key)
 <p>Update following files:</p>
 
 <ul>
-  <li>ChangeLog: release note</li>
-  <li>build.gradle: version number</li>
-  <li>lib/embulk/version.rb: version number</li>
+  <li>embulk-docs/src/release/release-VERSION.rst (release note)</li>
+  <li>build.gradle (version number)</li>
+  <li>lib/embulk/version.rb (version number)</li>
 </ul>
 
 <p>Then, build and upload using gradle:</p>
@@ -244,7 +244,7 @@ open "https://bintray.com/embulk/maven/embulk"  # and upload pkg/embulk-....jar
 </div></div>
 
     <div id="footer">
-  Generated on Fri Feb 13 16:53:10 2015 by
+  Generated on Sun Feb 15 16:23:37 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
