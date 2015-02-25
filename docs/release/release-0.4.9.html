@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.4.8 &mdash; Embulk 0.4 documentation</title>
+    <title>Release 0.4.9 &mdash; Embulk 0.4 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,43 +25,50 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.4 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.4.9" href="release-0.4.9.html" />
-    <link rel="prev" title="Release 0.4.7" href="release-0.4.7.html" /> 
+    <link rel="prev" title="Release 0.4.8" href="release-0.4.8.html" /> 
   </head>
   <body>
       <div class="header"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.4 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.4.8</span></h2>
+        <h2 class="heading"><span>Release 0.4.9</span></h2>
       </div>
       <div class="topnav">
       
         <p>
-        «&#160;&#160;<a href="release-0.4.7.html">Release 0.4.7</a>
+        «&#160;&#160;<a href="release-0.4.8.html">Release 0.4.8</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
-        &#160;&#160;::&#160;&#160;
-        <a href="release-0.4.9.html">Release 0.4.9</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-4-8">
-<h1>Release 0.4.8<a class="headerlink" href="#release-0-4-8" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-0-4-9">
+<h1>Release 0.4.9<a class="headerlink" href="#release-0-4-9" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cli">
+<h2>CLI<a class="headerlink" href="#cli" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed execution script for Windows</li>
+</ul>
+</div>
+<div class="section" id="built-in-plugins">
+<h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Fixed a problem that <tt class="docutils literal"><span class="pre">encoder/gzip</span></tt> plugin didn&#8217;t flush last buffer in memory.</li>
+<li><tt class="docutils literal"><span class="pre">encoder/gzip</span></tt> plugin supports <tt class="docutils literal"><span class="pre">level</span></tt> option (&#64;yaggytter++).</li>
+</ul>
+</div>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">spi.time.TimestampParser</span></tt> supports microseconds.</li>
-<li><tt class="docutils literal"><span class="pre">spi.time.TimestampFormatter</span></tt> supports milliseconds, microseconds and nanoseconds.</li>
-<li>Fixed a bug at <tt class="docutils literal"><span class="pre">spi.time.TimestampParser</span></tt> that returns wrong timestamp if format string is <tt class="docutils literal"><span class="pre">%s</span></tt> which means epoch seconds (&#64;hiroyuki-sato++)</li>
-<li><tt class="docutils literal"><span class="pre">embulk</span></tt> command installed by <tt class="docutils literal"><span class="pre">gem</span> <span class="pre">install</span> <span class="pre">embulk</span></tt> sets JVM optimization flags. This behavior is same with embulk.jar updated since 0.4.6.</li>
-<li><tt class="docutils literal"><span class="pre">preview</span></tt> subcommand with <tt class="docutils literal"><span class="pre">-G,</span> <span class="pre">--vertical</span></tt> option uses CRLF on Windows</li>
+<li>Fixed a problem of timestamp parser that ignores milliseconds if format is <tt class="docutils literal"><span class="pre">%s.%N</span></tt>.</li>
+<li>Plugin template generator generates shorter description to fit in a table at the new plugin list page.</li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2015-02-24</p>
+<p>2015-02-25</p>
 </div>
 </div>
 
@@ -70,11 +77,9 @@
       <div class="bottomnav">
       
         <p>
-        «&#160;&#160;<a href="release-0.4.7.html">Release 0.4.7</a>
+        «&#160;&#160;<a href="release-0.4.8.html">Release 0.4.8</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
-        &#160;&#160;::&#160;&#160;
-        <a href="release-0.4.9.html">Release 0.4.9</a>&#160;&#160;»
         </p>
 
       </div>
