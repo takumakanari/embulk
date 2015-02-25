@@ -98,7 +98,7 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/embulk/input_plugin.rb</dd>
+    <dd class="r1 last">/Users/frsyuki/project/embulk/lib/embulk/input_plugin.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -121,7 +121,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#cleanup-instance_method" title="#cleanup (instance method)">- (Object) <strong>cleanup</strong>(java_task_source, java_schema, processor_count, java_commit_reports) </a>
+      <a href="#cleanup-instance_method" title="#cleanup (instance method)">- (Object) <strong>cleanup</strong>(java_task_source, java_schema, task_count, java_commit_reports) </a>
     
 
     
@@ -169,7 +169,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#resume-instance_method" title="#resume (instance method)">- (Object) <strong>resume</strong>(java_task_source, java_schema, processor_count, java_control) </a>
+      <a href="#resume-instance_method" title="#resume (instance method)">- (Object) <strong>resume</strong>(java_task_source, java_schema, task_count, java_control) </a>
     
 
     
@@ -265,12 +265,12 @@
       <pre class="lines">
 
 
-43
-44
-45</pre>
+45
+46
+47</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 43</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/input_plugin.rb', line 45</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_class'>ruby_class</span><span class='rparen'>)</span>
   <span class='ivar'>@ruby_class</span> <span class='op'>=</span> <span class='id identifier rubyid_ruby_class'>ruby_class</span>
@@ -290,7 +290,7 @@
       <div class="method_details first">
   <h3 class="signature first" id="cleanup-instance_method">
   
-    - (<tt>Object</tt>) <strong>cleanup</strong>(java_task_source, java_schema, processor_count, java_commit_reports) 
+    - (<tt>Object</tt>) <strong>cleanup</strong>(java_task_source, java_schema, task_count, java_commit_reports) 
   
 
   
@@ -302,22 +302,22 @@
       <pre class="lines">
 
 
-76
-77
 78
 79
 80
 81
-82</pre>
+82
+83
+84</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 76</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/input_plugin.rb', line 78</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_cleanup'>cleanup</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_processor_count'>processor_count</span><span class='comma'>,</span> <span class='id identifier rubyid_java_commit_reports'>java_commit_reports</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_cleanup'>cleanup</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_task_count'>task_count</span><span class='comma'>,</span> <span class='id identifier rubyid_java_commit_reports'>java_commit_reports</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_task_source'>task_source</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_schema'>schema</span> <span class='op'>=</span> <span class='const'>Schema</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_schema'>java_schema</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_commit_reports'>commit_reports</span> <span class='op'>=</span> <span class='id identifier rubyid_java_commit_reports'>java_commit_reports</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_c'>c</span><span class='op'>|</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_c'>c</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
-  <span class='ivar'>@ruby_class</span><span class='period'>.</span><span class='id identifier rubyid_cleanup'>cleanup</span><span class='lparen'>(</span><span class='id identifier rubyid_task_source'>task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_processor_count'>processor_count</span><span class='comma'>,</span> <span class='id identifier rubyid_commit_reports'>commit_reports</span><span class='rparen'>)</span>
+  <span class='ivar'>@ruby_class</span><span class='period'>.</span><span class='id identifier rubyid_cleanup'>cleanup</span><span class='lparen'>(</span><span class='id identifier rubyid_task_source'>task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_task_count'>task_count</span><span class='comma'>,</span> <span class='id identifier rubyid_commit_reports'>commit_reports</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>nil</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -328,7 +328,7 @@
       <div class="method_details ">
   <h3 class="signature " id="resume-instance_method">
   
-    - (<tt>Object</tt>) <strong>resume</strong>(java_task_source, java_schema, processor_count, java_control) 
+    - (<tt>Object</tt>) <strong>resume</strong>(java_task_source, java_schema, task_count, java_control) 
   
 
   
@@ -340,8 +340,6 @@
       <pre class="lines">
 
 
-61
-62
 63
 64
 65
@@ -353,18 +351,20 @@
 71
 72
 73
-74</pre>
+74
+75
+76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 61</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/input_plugin.rb', line 63</span>
 
-<span class='kw'>def</span> <span class='id identifier rubyid_resume'>resume</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_processor_count'>processor_count</span><span class='comma'>,</span> <span class='id identifier rubyid_java_control'>java_control</span><span class='rparen'>)</span>
+<span class='kw'>def</span> <span class='id identifier rubyid_resume'>resume</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_task_count'>task_count</span><span class='comma'>,</span> <span class='id identifier rubyid_java_control'>java_control</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_task_source'>task_source</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_schema'>schema</span> <span class='op'>=</span> <span class='const'>Schema</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_schema'>java_schema</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_config_diff_hash'>config_diff_hash</span> <span class='op'>=</span> <span class='ivar'>@ruby_class</span><span class='period'>.</span><span class='id identifier rubyid_resume'>resume</span><span class='lparen'>(</span><span class='id identifier rubyid_task_source'>task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_processor_count'>processor_count</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_task_source_hash'>task_source_hash</span><span class='comma'>,</span><span class='id identifier rubyid_columns'>columns</span><span class='comma'>,</span><span class='id identifier rubyid_processor_count'>processor_count</span><span class='op'>|</span>
+  <span class='id identifier rubyid_config_diff_hash'>config_diff_hash</span> <span class='op'>=</span> <span class='ivar'>@ruby_class</span><span class='period'>.</span><span class='id identifier rubyid_resume'>resume</span><span class='lparen'>(</span><span class='id identifier rubyid_task_source'>task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_schema'>schema</span><span class='comma'>,</span> <span class='id identifier rubyid_task_count'>task_count</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_task_source_hash'>task_source_hash</span><span class='comma'>,</span><span class='id identifier rubyid_columns'>columns</span><span class='comma'>,</span><span class='id identifier rubyid_task_count'>task_count</span><span class='op'>|</span>
     <span class='id identifier rubyid_java_task_source'>java_task_source</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_ruby_hash'>from_ruby_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_task_source_hash'>task_source_hash</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span>
     <span class='id identifier rubyid_java_schema'>java_schema</span> <span class='op'>=</span> <span class='const'>Schema</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_columns'>columns</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span>
-    <span class='id identifier rubyid_java_commit_reports'>java_commit_reports</span> <span class='op'>=</span> <span class='id identifier rubyid_java_control'>java_control</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_processor_count'>processor_count</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_java_commit_reports'>java_commit_reports</span> <span class='op'>=</span> <span class='id identifier rubyid_java_control'>java_control</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_task_count'>task_count</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_java_commit_reports'>java_commit_reports</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_java_commit_report'>java_commit_report</span><span class='op'>|</span>
       <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_commit_report'>java_commit_report</span><span class='rparen'>)</span>
     <span class='rbrace'>}</span>
@@ -392,8 +392,6 @@
       <pre class="lines">
 
 
-84
-85
 86
 87
 88
@@ -402,10 +400,12 @@
 91
 92
 93
-94</pre>
+94
+95
+96</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 84</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/input_plugin.rb', line 86</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_processor_index'>processor_index</span><span class='comma'>,</span> <span class='id identifier rubyid_java_output'>java_output</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_task_source'>task_source</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='rparen'>)</span>
@@ -438,8 +438,6 @@
       <pre class="lines">
 
 
-47
-48
 49
 50
 51
@@ -450,17 +448,19 @@
 56
 57
 58
-59</pre>
+59
+60
+61</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/input_plugin.rb', line 47</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/input_plugin.rb', line 49</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_transaction'>transaction</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='comma'>,</span> <span class='id identifier rubyid_java_control'>java_control</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_config_diff_hash'>config_diff_hash</span> <span class='op'>=</span> <span class='ivar'>@ruby_class</span><span class='period'>.</span><span class='id identifier rubyid_transaction'>transaction</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_task_source_hash'>task_source_hash</span><span class='comma'>,</span><span class='id identifier rubyid_columns'>columns</span><span class='comma'>,</span><span class='id identifier rubyid_processor_count'>processor_count</span><span class='op'>|</span>
+  <span class='id identifier rubyid_config_diff_hash'>config_diff_hash</span> <span class='op'>=</span> <span class='ivar'>@ruby_class</span><span class='period'>.</span><span class='id identifier rubyid_transaction'>transaction</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_task_source_hash'>task_source_hash</span><span class='comma'>,</span><span class='id identifier rubyid_columns'>columns</span><span class='comma'>,</span><span class='id identifier rubyid_task_count'>task_count</span><span class='op'>|</span>
     <span class='id identifier rubyid_java_task_source'>java_task_source</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_ruby_hash'>from_ruby_hash</span><span class='lparen'>(</span><span class='id identifier rubyid_task_source_hash'>task_source_hash</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span>
     <span class='id identifier rubyid_java_schema'>java_schema</span> <span class='op'>=</span> <span class='const'>Schema</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_columns'>columns</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span>
-    <span class='id identifier rubyid_java_commit_reports'>java_commit_reports</span> <span class='op'>=</span> <span class='id identifier rubyid_java_control'>java_control</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_processor_count'>processor_count</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_java_commit_reports'>java_commit_reports</span> <span class='op'>=</span> <span class='id identifier rubyid_java_control'>java_control</span><span class='period'>.</span><span class='id identifier rubyid_run'>run</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_task_count'>task_count</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_java_commit_reports'>java_commit_reports</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_java_commit_report'>java_commit_report</span><span class='op'>|</span>
       <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_commit_report'>java_commit_report</span><span class='rparen'>)</span>
     <span class='rbrace'>}</span>
@@ -478,7 +478,7 @@
 </div>
 
     <div id="footer">
-  Generated on Sun Feb 15 16:23:38 2015 by
+  Generated on Wed Feb 25 13:08:22 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>

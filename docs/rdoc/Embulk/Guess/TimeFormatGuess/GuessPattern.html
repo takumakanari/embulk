@@ -4,26 +4,26 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>
-  Class: Embulk::TimeFormatGuess::GuessPattern
+  Class: Embulk::Guess::TimeFormatGuess::GuessPattern
   
     &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
-  <link rel="stylesheet" href="../../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" charset="utf-8" />
 
-  <link rel="stylesheet" href="../../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
   hasFrames = window.top.frames.main ? true : false;
-  relpath = '../../';
-  framesUrl = "../../frames.html#!Embulk/TimeFormatGuess/GuessPattern.html";
+  relpath = '../../../';
+  framesUrl = "../../../frames.html#!Embulk/Guess/TimeFormatGuess/GuessPattern.html";
 </script>
 
 
-  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
 
-  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
 
 
   </head>
@@ -31,8 +31,8 @@
     <div id="header">
       <div id="menu">
   
-    <a href="../../_index.html">Index (G)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../../Embulk.html" title="Embulk (module)">Embulk</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../TimeFormatGuess.html" title="Embulk::TimeFormatGuess (module)">TimeFormatGuess</a></span></span>
+    <a href="../../../_index.html">Index (G)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../../../Embulk.html" title="Embulk (module)">Embulk</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Guess.html" title="Embulk::Guess (module)">Guess</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../TimeFormatGuess.html" title="Embulk::Guess::TimeFormatGuess (module)">TimeFormatGuess</a></span></span>
      &raquo; 
     <span class="title">GuessPattern</span>
   
@@ -43,17 +43,17 @@
       <div id="search">
   
     <a class="full_list_link" id="class_list_link"
-        href="../../class_list.html">
+        href="../../../class_list.html">
       Class List
     </a>
   
     <a class="full_list_link" id="method_list_link"
-        href="../../method_list.html">
+        href="../../../method_list.html">
       Method List
     </a>
   
     <a class="full_list_link" id="file_list_link"
-        href="../../file_list.html">
+        href="../../../file_list.html">
       File List
     </a>
   
@@ -63,7 +63,7 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><h1>Class: Embulk::TimeFormatGuess::GuessPattern
+    <div id="content"><h1>Class: Embulk::Guess::TimeFormatGuess::GuessPattern
   
   
   
@@ -78,7 +78,7 @@
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next">Embulk::TimeFormatGuess::GuessPattern</li>
+            <li class="next">Embulk::Guess::TimeFormatGuess::GuessPattern</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -91,14 +91,14 @@
   
     
       <dt class="r2">Includes:</dt>
-      <dd class="r2"><span class='object_link'><a href="Parts.html" title="Embulk::TimeFormatGuess::Parts (module)">Parts</a></span></dd>
+      <dd class="r2"><span class='object_link'><a href="Parts.html" title="Embulk::Guess::TimeFormatGuess::Parts (module)">Parts</a></span></dd>
       
     
   
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">lib/embulk/time_format_guess.rb</dd>
+    <dd class="r1 last">/Users/frsyuki/project/embulk/lib/embulk/guess/time_format_guess.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -129,11 +129,11 @@
         </dt>
         <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;year&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>YEAR</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;month&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>MONTH_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;day&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>DAY_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span></pre></dd>
       
-        <dt id="DMY-constant" class="">DMY =
+        <dt id="MDY-constant" class="">MDY =
           <div class="docstring">
   <div class="discussion">
     
-<p>dd/MM/yyyy</p>
+<p>MM/dd/yyyy</p>
 
 
   </div>
@@ -143,27 +143,48 @@
 
 </div>
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;year&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>YEAR</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;date_delim&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_date_delims'>date_delims</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;month&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>MONTH</span><span class='rbrace'>}</span><span class='tstring_content'>)\k&lt;date_delim&gt;(?&lt;day&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>DAY</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;month&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>MONTH</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;date_delim&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_date_delims'>date_delims</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;day&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>DAY</span><span class='rbrace'>}</span><span class='tstring_content'>)\k&lt;date_delim&gt;(?&lt;year&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>YEAR</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span></pre></dd>
+      
+        <dt id="MDY_NODELIM-constant" class="">MDY_NODELIM =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;month&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>MONTH_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;day&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>DAY_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;year&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>YEAR</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span></pre></dd>
+      
+        <dt id="DMY-constant" class="">DMY =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>dd.MM.yyyy</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;day&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>DAY</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;date_delim&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_date_delims'>date_delims</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;month&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>MONTH</span><span class='rbrace'>}</span><span class='tstring_content'>)\k&lt;date_delim&gt;(?&lt;year&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>YEAR</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span></pre></dd>
       
         <dt id="DMY_NODELIM-constant" class="">DMY_NODELIM =
           
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;year&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>YEAR</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;month&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>MONTH_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;day&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>DAY_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;day&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>DAY_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;month&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>MONTH_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;year&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>YEAR</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span></pre></dd>
       
         <dt id="TIME-constant" class="">TIME =
           
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;hour&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>HOUR</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;time_delim&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_time_delims'>time_delims</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;minute&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>MINUTE</span><span class='rbrace'>}</span><span class='tstring_content'>)(?:\k&lt;time_delim&gt;(?&lt;second&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>SECOND</span><span class='rbrace'>}</span><span class='tstring_content'>)(?:(?&lt;frac_delim&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_frac_delims'>frac_delims</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;frac&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_frac'>frac</span><span class='rbrace'>}</span><span class='tstring_content'>))?)?</span><span class='regexp_end'>/</span></span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;hour&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>HOUR</span><span class='rbrace'>}</span><span class='tstring_content'>)(?:(?&lt;time_delim&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_time_delims'>time_delims</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;minute&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>MINUTE</span><span class='rbrace'>}</span><span class='tstring_content'>)(?:\k&lt;time_delim&gt;(?&lt;second&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>SECOND</span><span class='rbrace'>}</span><span class='tstring_content'>)(?:(?&lt;frac_delim&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_frac_delims'>frac_delims</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;frac&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_frac'>frac</span><span class='rbrace'>}</span><span class='tstring_content'>))?)?)?</span><span class='regexp_end'>/</span></span></pre></dd>
       
         <dt id="TIME_NODELIM-constant" class="">TIME_NODELIM =
           
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;hour&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>HOUR_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;minute&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>MINUTE_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)((?&lt;second&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>SECOND_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)(?:(?&lt;frac_delim&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_frac_delims'>frac_delims</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;frac&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_frac'>frac</span><span class='rbrace'>}</span><span class='tstring_content'>))?)?</span><span class='regexp_end'>/</span></span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;hour&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>HOUR_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)(?:(?&lt;minute&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>MINUTE_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)((?&lt;second&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>SECOND_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>)(?:(?&lt;frac_delim&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_frac_delims'>frac_delims</span><span class='rbrace'>}</span><span class='tstring_content'>)(?&lt;frac&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_frac'>frac</span><span class='rbrace'>}</span><span class='tstring_content'>))?)?)?</span><span class='regexp_end'>/</span></span></pre></dd>
       
-        <dt id="TZ-constant" class="">TZ =
+        <dt id="ZONE-constant" class="">ZONE =
           
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;zone_space&gt; )?(?&lt;zone&gt;(?&lt;zone_off&gt;[\-\+]\d\d(?::?\d\d)?)|(?&lt;zone_abb&gt;[A-Z]{3}))|(?&lt;z&gt;Z)</span><span class='regexp_end'>/</span></span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?&lt;zone_space&gt; )?(?&lt;zone&gt;(?&lt;zone_off&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>ZONE_OFF</span><span class='rbrace'>}</span><span class='tstring_content'>)|(?&lt;zone_abb&gt;</span><span class='embexpr_beg'>#{</span><span class='const'>ZONE_ABB</span><span class='rbrace'>}</span><span class='tstring_content'>))</span><span class='regexp_end'>/</span></span></pre></dd>
       
     </dl>
   
@@ -173,8 +194,8 @@
   
   
   <h3 class="inherited">Constants included
-     from <span class='object_link'><a href="Parts.html" title="Embulk::TimeFormatGuess::Parts (module)">Parts</a></span></h3>
-  <p class="inherited"><span class='object_link'><a href="Parts.html#DAY-constant" title="Embulk::TimeFormatGuess::Parts::DAY (constant)">Parts::DAY</a></span>, <span class='object_link'><a href="Parts.html#DAY_NODELIM-constant" title="Embulk::TimeFormatGuess::Parts::DAY_NODELIM (constant)">Parts::DAY_NODELIM</a></span>, <span class='object_link'><a href="Parts.html#HOUR-constant" title="Embulk::TimeFormatGuess::Parts::HOUR (constant)">Parts::HOUR</a></span>, <span class='object_link'><a href="Parts.html#HOUR_NODELIM-constant" title="Embulk::TimeFormatGuess::Parts::HOUR_NODELIM (constant)">Parts::HOUR_NODELIM</a></span>, <span class='object_link'><a href="Parts.html#MINUTE-constant" title="Embulk::TimeFormatGuess::Parts::MINUTE (constant)">Parts::MINUTE</a></span>, <span class='object_link'><a href="Parts.html#MINUTE_NODELIM-constant" title="Embulk::TimeFormatGuess::Parts::MINUTE_NODELIM (constant)">Parts::MINUTE_NODELIM</a></span>, <span class='object_link'><a href="Parts.html#MONTH-constant" title="Embulk::TimeFormatGuess::Parts::MONTH (constant)">Parts::MONTH</a></span>, <span class='object_link'><a href="Parts.html#MONTH_NAME_FULL-constant" title="Embulk::TimeFormatGuess::Parts::MONTH_NAME_FULL (constant)">Parts::MONTH_NAME_FULL</a></span>, <span class='object_link'><a href="Parts.html#MONTH_NAME_SHORT-constant" title="Embulk::TimeFormatGuess::Parts::MONTH_NAME_SHORT (constant)">Parts::MONTH_NAME_SHORT</a></span>, <span class='object_link'><a href="Parts.html#MONTH_NODELIM-constant" title="Embulk::TimeFormatGuess::Parts::MONTH_NODELIM (constant)">Parts::MONTH_NODELIM</a></span>, <span class='object_link'><a href="Parts.html#WEEKDAY_NAME_FULL-constant" title="Embulk::TimeFormatGuess::Parts::WEEKDAY_NAME_FULL (constant)">Parts::WEEKDAY_NAME_FULL</a></span>, <span class='object_link'><a href="Parts.html#WEEKDAY_NAME_SHORT-constant" title="Embulk::TimeFormatGuess::Parts::WEEKDAY_NAME_SHORT (constant)">Parts::WEEKDAY_NAME_SHORT</a></span>, <span class='object_link'><a href="Parts.html#YEAR-constant" title="Embulk::TimeFormatGuess::Parts::YEAR (constant)">Parts::YEAR</a></span></p>
+     from <span class='object_link'><a href="Parts.html" title="Embulk::Guess::TimeFormatGuess::Parts (module)">Parts</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Parts.html#DAY-constant" title="Embulk::Guess::TimeFormatGuess::Parts::DAY (constant)">Parts::DAY</a></span>, <span class='object_link'><a href="Parts.html#DAY_NODELIM-constant" title="Embulk::Guess::TimeFormatGuess::Parts::DAY_NODELIM (constant)">Parts::DAY_NODELIM</a></span>, <span class='object_link'><a href="Parts.html#HOUR-constant" title="Embulk::Guess::TimeFormatGuess::Parts::HOUR (constant)">Parts::HOUR</a></span>, <span class='object_link'><a href="Parts.html#HOUR_NODELIM-constant" title="Embulk::Guess::TimeFormatGuess::Parts::HOUR_NODELIM (constant)">Parts::HOUR_NODELIM</a></span>, <span class='object_link'><a href="Parts.html#MINUTE-constant" title="Embulk::Guess::TimeFormatGuess::Parts::MINUTE (constant)">Parts::MINUTE</a></span>, <span class='object_link'><a href="Parts.html#MINUTE_NODELIM-constant" title="Embulk::Guess::TimeFormatGuess::Parts::MINUTE_NODELIM (constant)">Parts::MINUTE_NODELIM</a></span>, <span class='object_link'><a href="Parts.html#MONTH-constant" title="Embulk::Guess::TimeFormatGuess::Parts::MONTH (constant)">Parts::MONTH</a></span>, <span class='object_link'><a href="Parts.html#MONTH_NAME_FULL-constant" title="Embulk::Guess::TimeFormatGuess::Parts::MONTH_NAME_FULL (constant)">Parts::MONTH_NAME_FULL</a></span>, <span class='object_link'><a href="Parts.html#MONTH_NAME_SHORT-constant" title="Embulk::Guess::TimeFormatGuess::Parts::MONTH_NAME_SHORT (constant)">Parts::MONTH_NAME_SHORT</a></span>, <span class='object_link'><a href="Parts.html#MONTH_NODELIM-constant" title="Embulk::Guess::TimeFormatGuess::Parts::MONTH_NODELIM (constant)">Parts::MONTH_NODELIM</a></span>, <span class='object_link'><a href="Parts.html#WEEKDAY_NAME_FULL-constant" title="Embulk::Guess::TimeFormatGuess::Parts::WEEKDAY_NAME_FULL (constant)">Parts::WEEKDAY_NAME_FULL</a></span>, <span class='object_link'><a href="Parts.html#WEEKDAY_NAME_SHORT-constant" title="Embulk::Guess::TimeFormatGuess::Parts::WEEKDAY_NAME_SHORT (constant)">Parts::WEEKDAY_NAME_SHORT</a></span>, <span class='object_link'><a href="Parts.html#YEAR-constant" title="Embulk::Guess::TimeFormatGuess::Parts::YEAR (constant)">Parts::YEAR</a></span>, <span class='object_link'><a href="Parts.html#ZONE_ABB-constant" title="Embulk::Guess::TimeFormatGuess::Parts::ZONE_ABB (constant)">Parts::ZONE_ABB</a></span>, <span class='object_link'><a href="Parts.html#ZONE_OFF-constant" title="Embulk::Guess::TimeFormatGuess::Parts::ZONE_OFF (constant)">Parts::ZONE_OFF</a></span></p>
 
 
 
@@ -262,35 +283,6 @@
       <pre class="lines">
 
 
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179
-180
-181
-182
-183
-184
-185
-186
-187
-188
 189
 190
 191
@@ -354,10 +346,53 @@
 249
 250
 251
-252</pre>
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/time_format_guess.rb', line 160</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/guess/time_format_guess.rb', line 189</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_delimiters'>delimiters</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
@@ -377,6 +412,21 @@
 
     <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:day</span>
     <span class='id identifier rubyid_part_options'>part_options</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_part_heading_option'>part_heading_option</span><span class='lparen'>(</span><span class='id identifier rubyid_dm'>dm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>day</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='kw'>elsif</span> <span class='id identifier rubyid_dm'>dm</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^</span><span class='embexpr_beg'>#{</span><span class='const'>MDY</span><span class='rbrace'>}</span><span class='tstring_content'>(?&lt;rest&gt;.*?)$</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span> <span class='kw'>or</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^</span><span class='embexpr_beg'>#{</span><span class='const'>MDY_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>(?&lt;rest&gt;.*?)$</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_date_delim'>date_delim</span> <span class='op'>=</span> <span class='id identifier rubyid_dm'>dm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>date_delim</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='kw'>rescue</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
+
+    <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:month</span>
+    <span class='id identifier rubyid_part_options'>part_options</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_part_heading_option'>part_heading_option</span><span class='lparen'>(</span><span class='id identifier rubyid_dm'>dm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>month</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_delimiters'>delimiters</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_date_delim'>date_delim</span>
+
+    <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:day</span>
+    <span class='id identifier rubyid_part_options'>part_options</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_part_heading_option'>part_heading_option</span><span class='lparen'>(</span><span class='id identifier rubyid_dm'>dm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>day</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_delimiters'>delimiters</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_date_delim'>date_delim</span>
+
+    <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:year</span>
+    <span class='id identifier rubyid_part_options'>part_options</span> <span class='op'>&lt;&lt;</span> <span class='kw'>nil</span>
+    <span class='id identifier rubyid_delimiters'>delimiters</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_date_delim'>date_delim</span>
 
   <span class='kw'>elsif</span> <span class='id identifier rubyid_dm'>dm</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^</span><span class='embexpr_beg'>#{</span><span class='const'>DMY</span><span class='rbrace'>}</span><span class='tstring_content'>(?&lt;rest&gt;.*?)$</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span> <span class='kw'>or</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^</span><span class='embexpr_beg'>#{</span><span class='const'>DMY_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>(?&lt;rest&gt;.*?)$</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_date_delim'>date_delim</span> <span class='op'>=</span> <span class='id identifier rubyid_dm'>dm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>date_delim</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='kw'>rescue</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span>
@@ -399,7 +449,7 @@
   <span class='kw'>end</span>
   <span class='id identifier rubyid_rest'>rest</span> <span class='op'>=</span> <span class='id identifier rubyid_dm'>dm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>rest</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
 
-  <span class='id identifier rubyid_date_time_delims'>date_time_delims</span> <span class='op'>=</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>[ _T]</span><span class='regexp_end'>/</span></span>
+  <span class='id identifier rubyid_date_time_delims'>date_time_delims</span> <span class='op'>=</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(:? |_|T|\. ?)</span><span class='regexp_end'>/</span></span>
   <span class='kw'>if</span> <span class='id identifier rubyid_tm'>tm</span> <span class='op'>=</span> <span class='lparen'>(</span>
         <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(?&lt;date_time_delim&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_date_time_delims'>date_time_delims</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='embexpr_beg'>#{</span><span class='const'>TIME</span><span class='rbrace'>}</span><span class='tstring_content'>(?&lt;rest&gt;.*?)?$</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_rest'>rest</span><span class='rparen'>)</span> <span class='kw'>or</span>
         <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(?&lt;date_time_delim&gt;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_date_time_delims'>date_time_delims</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='embexpr_beg'>#{</span><span class='const'>TIME_NODELIM</span><span class='rbrace'>}</span><span class='tstring_content'>(?&lt;rest&gt;.*?)?$</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_rest'>rest</span><span class='rparen'>)</span> <span class='kw'>or</span>
@@ -412,31 +462,30 @@
     <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:hour</span>
     <span class='id identifier rubyid_part_options'>part_options</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_part_heading_option'>part_heading_option</span><span class='lparen'>(</span><span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hour</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
 
-    <span class='id identifier rubyid_delimiters'>delimiters</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_time_delim'>time_delim</span>
-    <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:minute</span>
-    <span class='id identifier rubyid_part_options'>part_options</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_part_heading_option'>part_heading_option</span><span class='lparen'>(</span><span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>minute</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-
-    <span class='kw'>if</span> <span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>second</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>minute</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
       <span class='id identifier rubyid_delimiters'>delimiters</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_time_delim'>time_delim</span>
-      <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:second</span>
-      <span class='id identifier rubyid_part_options'>part_options</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_part_heading_option'>part_heading_option</span><span class='lparen'>(</span><span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>second</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
+      <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:minute</span>
+      <span class='id identifier rubyid_part_options'>part_options</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_part_heading_option'>part_heading_option</span><span class='lparen'>(</span><span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>minute</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
 
-    <span class='kw'>if</span> <span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>frac</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-      <span class='id identifier rubyid_delimiters'>delimiters</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>frac_delim</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-      <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:frac</span>
-      <span class='id identifier rubyid_part_options'>part_options</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>frac</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>second</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+        <span class='id identifier rubyid_delimiters'>delimiters</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_time_delim'>time_delim</span>
+        <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:second</span>
+        <span class='id identifier rubyid_part_options'>part_options</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_part_heading_option'>part_heading_option</span><span class='lparen'>(</span><span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>second</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+        <span class='kw'>if</span> <span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>frac</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+          <span class='id identifier rubyid_delimiters'>delimiters</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>frac_delim</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+          <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:frac</span>
+          <span class='id identifier rubyid_part_options'>part_options</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>frac</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_size'>size</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
     <span class='kw'>end</span>
 
     <span class='id identifier rubyid_rest'>rest</span> <span class='op'>=</span> <span class='id identifier rubyid_tm'>tm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>rest</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
   <span class='kw'>end</span>
 
-  <span class='kw'>if</span> <span class='id identifier rubyid_zm'>zm</span> <span class='op'>=</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^</span><span class='embexpr_beg'>#{</span><span class='const'>TZ</span><span class='rbrace'>}</span><span class='tstring_content'>$</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_rest'>rest</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_delimiters'>delimiters</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_zm'>zm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>zone_space</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
-    <span class='kw'>if</span> <span class='id identifier rubyid_zm'>zm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>z</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
-      <span class='comment'># TODO ISO 8601
-</span>      <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:zone_off</span>
-    <span class='kw'>elsif</span> <span class='id identifier rubyid_zm'>zm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>zone_off</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_zm'>zm</span> <span class='op'>=</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^</span><span class='embexpr_beg'>#{</span><span class='const'>ZONE</span><span class='rbrace'>}</span><span class='tstring_content'>$</span><span class='regexp_end'>/</span></span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_rest'>rest</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_delimiters'>delimiters</span> <span class='op'>&lt;&lt;</span> <span class='lparen'>(</span><span class='id identifier rubyid_zm'>zm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>zone_space</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_zm'>zm</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>zone_off</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span>
       <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:zone_off</span>
     <span class='kw'>else</span>
       <span class='id identifier rubyid_parts'>parts</span> <span class='op'>&lt;&lt;</span> <span class='symbol'>:zone_abb</span>
@@ -472,20 +521,20 @@
       <pre class="lines">
 
 
-254
-255
-256
-257
-258
-259
-260
-261
-262
-263
-264</pre>
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/time_format_guess.rb', line 254</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/guess/time_format_guess.rb', line 297</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_part_heading_option'>part_heading_option</span><span class='lparen'>(</span><span class='id identifier rubyid_text'>text</span><span class='rparen'>)</span>
   <span class='kw'>if</span> <span class='id identifier rubyid_text'>text</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>0</span><span class='tstring_end'>'</span></span>
@@ -508,7 +557,7 @@
 </div>
 
     <div id="footer">
-  Generated on Sun Feb 15 16:23:39 2015 by
+  Generated on Wed Feb 25 13:08:24 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>

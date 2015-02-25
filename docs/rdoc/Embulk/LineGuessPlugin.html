@@ -96,14 +96,14 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">lib/embulk/guess_plugin.rb</dd>
+    <dd class="r2 last">/Users/frsyuki/project/embulk/lib/embulk/guess_plugin.rb</dd>
   
 </dl>
 <div class="clear"></div>
 
 <div id="subclasses">
   <h2>Direct Known Subclasses</h2>
-  <p class="children"><span class='object_link'><a href="GuessCsv.html" title="Embulk::GuessCsv (class)">GuessCsv</a></span></p>
+  <p class="children"><span class='object_link'><a href="Guess/CsvGuessPlugin.html" title="Embulk::Guess::CsvGuessPlugin (class)">Guess::CsvGuessPlugin</a></span></p>
 </div>
 
 
@@ -222,12 +222,12 @@
 101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/guess_plugin.rb', line 81</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/guess_plugin.rb', line 81</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_guess'>guess</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample'>sample</span><span class='rparen'>)</span>
   <span class='comment'># TODO pure-ruby LineDecoder implementation?
 </span>  <span class='kw'>begin</span>
-    <span class='id identifier rubyid_task'>task</span> <span class='op'>=</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_load_config'>load_config</span><span class='lparen'>(</span><span class='const'>Java</span><span class='op'>::</span><span class='const'>LineDecoder</span><span class='op'>::</span><span class='const'>DecoderTask</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_parser_task'>parser_task</span> <span class='op'>=</span> <span class='id identifier rubyid_config'>config</span><span class='period'>.</span><span class='id identifier rubyid_param'>param</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>parser</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='symbol'>:hash</span><span class='comma'>,</span> <span class='label'>default:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_load_config'>load_config</span><span class='lparen'>(</span><span class='const'>Java</span><span class='op'>::</span><span class='const'>LineDecoder</span><span class='op'>::</span><span class='const'>DecoderTask</span><span class='rparen'>)</span>
   <span class='kw'>rescue</span>
     <span class='comment'># TODO log?
 </span>    <span class='id identifier rubyid_p'>p</span> <span class='gvar'>$!</span>
@@ -235,7 +235,7 @@
     <span class='kw'>return</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
   <span class='kw'>end</span>
 
-  <span class='id identifier rubyid_decoder'>decoder</span> <span class='op'>=</span> <span class='const'>Java</span><span class='op'>::</span><span class='const'>LineDecoder</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Java</span><span class='op'>::</span><span class='const'>ListFileInput</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='lbracket'>[</span><span class='id identifier rubyid_sample'>sample</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_task'>task</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_decoder'>decoder</span> <span class='op'>=</span> <span class='const'>Java</span><span class='op'>::</span><span class='const'>LineDecoder</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='const'>Java</span><span class='op'>::</span><span class='const'>ListFileInput</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='lbracket'>[</span><span class='id identifier rubyid_sample'>sample</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_parser_task'>parser_task</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_sample_lines'>sample_lines</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
   <span class='kw'>while</span> <span class='id identifier rubyid_decoder'>decoder</span><span class='period'>.</span><span class='id identifier rubyid_nextFile'>nextFile</span>
     <span class='kw'>while</span> <span class='id identifier rubyid_line'>line</span> <span class='op'>=</span> <span class='id identifier rubyid_decoder'>decoder</span><span class='period'>.</span><span class='id identifier rubyid_poll'>poll</span>
@@ -292,7 +292,7 @@
 105</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/embulk/guess_plugin.rb', line 103</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/guess_plugin.rb', line 103</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_guess_lines'>guess_lines</span><span class='lparen'>(</span><span class='id identifier rubyid_config'>config</span><span class='comma'>,</span> <span class='id identifier rubyid_sample_lines'>sample_lines</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_raise'>raise</span> <span class='const'>NotImplementedError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>LineGuessPlugin#guess_lines(config, sample_lines) must be implemented</span><span class='tstring_end'>&quot;</span></span>
@@ -307,7 +307,7 @@
 </div>
 
     <div id="footer">
-  Generated on Sun Feb 15 16:23:38 2015 by
+  Generated on Wed Feb 25 13:08:22 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
