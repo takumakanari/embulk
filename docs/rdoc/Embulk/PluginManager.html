@@ -94,7 +94,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/Users/frsyuki/project/embulk/lib/embulk/plugin.rb</dd>
+    <dd class="r2 last">/home/travis/build/embulk/embulk/lib/embulk/plugin.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -693,7 +693,7 @@ EncoderPlugin) end.</p>
 24</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 19</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 19</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
   <span class='ivar'>@registries</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
@@ -750,7 +750,7 @@ get_encoder(type)</p>
 103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 101</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 101</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_get_guess'>get_guess</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:guess</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
@@ -780,7 +780,7 @@ get_encoder(type)</p>
 169</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 167</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 167</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_java_decoder'>new_java_decoder</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:decoder</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
@@ -810,7 +810,7 @@ get_encoder(type)</p>
 173</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 171</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 171</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_java_encoder'>new_java_encoder</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:encoder</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
@@ -840,7 +840,7 @@ get_encoder(type)</p>
 157</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 155</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 155</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_java_filter'>new_java_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:filter</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
@@ -870,7 +870,7 @@ get_encoder(type)</p>
 165</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 163</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 163</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_java_formatter'>new_java_formatter</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:formatter</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
@@ -900,7 +900,7 @@ get_encoder(type)</p>
 177</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 175</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 175</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_java_guess'>new_java_guess</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:guess</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
@@ -930,7 +930,7 @@ get_encoder(type)</p>
 149</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 147</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 147</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_java_input'>new_java_input</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:input</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
@@ -960,7 +960,7 @@ get_encoder(type)</p>
 153</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 151</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 151</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_java_output'>new_java_output</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:output</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
@@ -990,7 +990,7 @@ get_encoder(type)</p>
 161</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 159</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 159</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_java_parser'>new_java_parser</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_lookup'>lookup</span><span class='lparen'>(</span><span class='symbol'>:parser</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_new_java'>new_java</span>
@@ -1020,7 +1020,7 @@ get_encoder(type)</p>
 37</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 35</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 35</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_filter'>register_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='symbol'>:filter</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span> <span class='const'>FilterPlugin</span><span class='rparen'>)</span>
@@ -1050,7 +1050,7 @@ get_encoder(type)</p>
 45</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 43</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 43</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_formatter'>register_formatter</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='symbol'>:formatter</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span> <span class='const'>FormatterPlugin</span><span class='rparen'>)</span>
@@ -1097,7 +1097,7 @@ register_encoder(type, klass)</p>
 60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 57</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_guess'>register_guess</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='symbol'>:guess</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span> <span class='const'>GuessPlugin</span><span class='comma'>,</span>
@@ -1128,7 +1128,7 @@ register_encoder(type, klass)</p>
 28</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 26</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 26</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_input'>register_input</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='symbol'>:input</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span> <span class='const'>InputPlugin</span><span class='rparen'>)</span>
@@ -1159,7 +1159,7 @@ register_encoder(type, klass)</p>
 135</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 132</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 132</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_java_decoder'>register_java_decoder</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:decoder</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
@@ -1191,7 +1191,7 @@ register_encoder(type, klass)</p>
 140</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 137</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 137</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_java_encoder'>register_java_encoder</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:encoder</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
@@ -1223,7 +1223,7 @@ register_encoder(type, klass)</p>
 120</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 117</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 117</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_java_filter'>register_java_filter</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:filter</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
@@ -1255,7 +1255,7 @@ register_encoder(type, klass)</p>
 130</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 127</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 127</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_java_formatter'>register_java_formatter</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:formatter</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
@@ -1287,7 +1287,7 @@ register_encoder(type, klass)</p>
 145</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 142</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 142</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_java_guess'>register_java_guess</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:guess</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
@@ -1320,7 +1320,7 @@ register_encoder(type, klass)</p>
 109</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 105</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 105</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_java_input'>register_java_input</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:input</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
@@ -1354,7 +1354,7 @@ register_encoder(type, klass)</p>
 115</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 111</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 111</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_java_output'>register_java_output</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:output</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
@@ -1387,7 +1387,7 @@ register_encoder(type, klass)</p>
 125</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 122</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 122</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_java_parser'>register_java_parser</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_java_plugin'>register_java_plugin</span><span class='lparen'>(</span><span class='symbol'>:parser</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span>
@@ -1419,7 +1419,7 @@ register_encoder(type, klass)</p>
 33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 30</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 30</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_output'>register_output</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='symbol'>:output</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span> <span class='const'>OutputPlugin</span><span class='comma'>,</span>
@@ -1450,7 +1450,7 @@ register_encoder(type, klass)</p>
 41</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/plugin.rb', line 39</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/plugin.rb', line 39</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_register_parser'>register_parser</span><span class='lparen'>(</span><span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_register_plugin'>register_plugin</span><span class='lparen'>(</span><span class='symbol'>:parser</span><span class='comma'>,</span> <span class='id identifier rubyid_type'>type</span><span class='comma'>,</span> <span class='id identifier rubyid_klass'>klass</span><span class='comma'>,</span> <span class='const'>ParserPlugin</span><span class='rparen'>)</span>
@@ -1465,7 +1465,7 @@ register_encoder(type, klass)</p>
 </div>
 
     <div id="footer">
-  Generated on Wed Feb 25 15:50:01 2015 by
+  Generated on Wed Feb 25 23:50:35 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
