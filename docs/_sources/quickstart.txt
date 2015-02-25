@@ -1,7 +1,0 @@
-Install & Quick Start
-==================================
-
-Installing Embulk
-------------------
-
-
