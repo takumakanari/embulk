@@ -98,7 +98,7 @@
   
   
     <dt class="r1 last">Defined in:</dt>
-    <dd class="r1 last">/Users/frsyuki/project/embulk/lib/embulk/output_plugin.rb</dd>
+    <dd class="r1 last">/home/travis/build/embulk/embulk/lib/embulk/output_plugin.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -280,7 +280,7 @@
 60</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/output_plugin.rb', line 58</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/output_plugin.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_ruby_class'>ruby_class</span><span class='rparen'>)</span>
   <span class='ivar'>@ruby_class</span> <span class='op'>=</span> <span class='id identifier rubyid_ruby_class'>ruby_class</span>
@@ -321,7 +321,7 @@
 96</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/output_plugin.rb', line 90</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/output_plugin.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_cleanup'>cleanup</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_task_count'>task_count</span><span class='comma'>,</span> <span class='id identifier rubyid_java_commit_reports'>java_commit_reports</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_task_source'>task_source</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='rparen'>)</span>
@@ -358,7 +358,7 @@
 103</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/output_plugin.rb', line 98</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/output_plugin.rb', line 98</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_processor_index'>processor_index</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_task_source'>task_source</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='rparen'>)</span>
@@ -401,7 +401,7 @@
 88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/output_plugin.rb', line 76</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/output_plugin.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_resume'>resume</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_task_count'>task_count</span><span class='comma'>,</span> <span class='id identifier rubyid_java_control'>java_control</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_task_source'>task_source</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_task_source'>java_task_source</span><span class='rparen'>)</span>
@@ -451,7 +451,7 @@
 74</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/output_plugin.rb', line 62</span>
+      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/output_plugin.rb', line 62</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_transaction'>transaction</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='comma'>,</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='comma'>,</span> <span class='id identifier rubyid_task_count'>task_count</span><span class='comma'>,</span> <span class='id identifier rubyid_java_control'>java_control</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_config'>config</span> <span class='op'>=</span> <span class='const'>DataSource</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_config'>java_config</span><span class='rparen'>)</span>
@@ -476,7 +476,7 @@
 </div>
 
     <div id="footer">
-  Generated on Wed Feb 25 16:08:01 2015 by
+  Generated on Thu Feb 26 00:10:26 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
