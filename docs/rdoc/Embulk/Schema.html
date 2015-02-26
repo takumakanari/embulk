@@ -96,7 +96,7 @@
   
   
     <dt class="r2 last">Defined in:</dt>
-    <dd class="r2 last">/home/travis/build/embulk/embulk/lib/embulk/schema.rb</dd>
+    <dd class="r2 last">/Users/frsyuki/project/embulk/lib/embulk/schema.rb</dd>
   
 </dl>
 <div class="clear"></div>
@@ -404,7 +404,7 @@
 72</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/schema.rb', line 6</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/schema.rb', line 6</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_src'>src</span><span class='rparen'>)</span>
   <span class='kw'>super</span>
@@ -516,7 +516,7 @@
 76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/schema.rb', line 74</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/schema.rb', line 74</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_names'>names</span>
   <span class='ivar'>@names</span>
@@ -559,7 +559,7 @@
 76</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/schema.rb', line 74</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/schema.rb', line 74</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_types'>types</span>
   <span class='ivar'>@types</span>
@@ -596,7 +596,7 @@
 87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/schema.rb', line 85</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/schema.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_java_schema'>java_schema</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_new'>new</span> <span class='id identifier rubyid_java_schema'>java_schema</span><span class='period'>.</span><span class='id identifier rubyid_getColumns'>getColumns</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_column'>column</span><span class='op'>|</span> <span class='const'>Column</span><span class='period'>.</span><span class='id identifier rubyid_from_java'>from_java</span><span class='lparen'>(</span><span class='id identifier rubyid_column'>column</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
@@ -632,7 +632,7 @@
 78</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/schema.rb', line 76</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/schema.rb', line 76</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_read_record'>read_record</span><span class='lparen'>(</span><span class='id identifier rubyid_page_reader'>page_reader</span><span class='rparen'>)</span>
   <span class='ivar'>@record_reader</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_page_reader'>page_reader</span><span class='rparen'>)</span>
@@ -663,7 +663,7 @@
 92</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/schema.rb', line 89</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/schema.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_java'>to_java</span>
   <span class='id identifier rubyid_columns'>columns</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_column'>column</span><span class='op'>|</span> <span class='id identifier rubyid_column'>column</span><span class='period'>.</span><span class='id identifier rubyid_to_java'>to_java</span> <span class='rbrace'>}</span>
@@ -694,7 +694,7 @@
 82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File '/home/travis/build/embulk/embulk/lib/embulk/schema.rb', line 80</span>
+      <pre class="code"><span class="info file"># File '/Users/frsyuki/project/embulk/lib/embulk/schema.rb', line 80</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_write_record'>write_record</span><span class='lparen'>(</span><span class='id identifier rubyid_page_builder'>page_builder</span><span class='comma'>,</span> <span class='id identifier rubyid_record'>record</span><span class='rparen'>)</span>
   <span class='ivar'>@record_writer</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_page_builder'>page_builder</span><span class='comma'>,</span> <span class='id identifier rubyid_record'>record</span><span class='rparen'>)</span>
@@ -709,7 +709,7 @@
 </div>
 
     <div id="footer">
-  Generated on Wed Feb 25 23:50:35 2015 by
+  Generated on Wed Feb 25 16:08:00 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
