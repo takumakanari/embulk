@@ -313,7 +313,7 @@
 <span class='kw'>def</span> <span class='id identifier rubyid_types_from_array_records'>types_from_array_records</span><span class='lparen'>(</span><span class='id identifier rubyid_samples'>samples</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_columnar_types'>columnar_types</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_samples'>samples</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_record'>record</span><span class='op'>|</span>
-    <span class='id identifier rubyid_record'>record</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_str'>str</span><span class='comma'>,</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span> <span class='lparen'>(</span><span class='id identifier rubyid_columnar_types'>columnar_types</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_guess_type'>guess_type</span><span class='lparen'>(</span><span class='id identifier rubyid_str'>str</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+    <span class='id identifier rubyid_record'>record</span><span class='period'>.</span><span class='id identifier rubyid_each_with_index'>each_with_index</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_value'>value</span><span class='comma'>,</span><span class='id identifier rubyid_i'>i</span><span class='op'>|</span> <span class='lparen'>(</span><span class='id identifier rubyid_columnar_types'>columnar_types</span><span class='lbracket'>[</span><span class='id identifier rubyid_i'>i</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_guess_type'>guess_type</span><span class='lparen'>(</span><span class='id identifier rubyid_value'>value</span><span class='period'>.</span><span class='id identifier rubyid_to_s'>to_s</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
   <span class='kw'>end</span>
   <span class='id identifier rubyid_columnar_types'>columnar_types</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id identifier rubyid_types'>types</span><span class='op'>|</span> <span class='id identifier rubyid_merge_types'>merge_types</span><span class='lparen'>(</span><span class='id identifier rubyid_types'>types</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
 <span class='kw'>end</span></pre>
@@ -327,7 +327,7 @@
 </div>
 
     <div id="footer">
-  Generated on Tue Mar  3 00:22:05 2015 by
+  Generated on Tue Mar  3 04:21:48 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
