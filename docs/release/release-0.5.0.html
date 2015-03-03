@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Release 0.5.0 &mdash; Embulk 0.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Embulk 0.4 documentation" href="../index.html" />
+    <link rel="up" title="Release Notes" href="../release.html" />
+    <link rel="prev" title="Release 0.4.10" href="release-0.4.10.html" /> 
+  </head>
+  <body>
+      <div class="header"><h1 class="heading"><a href="../index.html">
+          <span>Embulk 0.4 documentation</span></a></h1>
+        <h2 class="heading"><span>Release 0.5.0</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.4.10.html">Release 0.4.10</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="release-0-5-0">
+<h1>Release 0.5.0<a class="headerlink" href="#release-0-5-0" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="new-guess-plugin-architecture">
+<h2>New Guess Plugin Architecture<a class="headerlink" href="#new-guess-plugin-architecture" title="Permalink to this headline">¶</a></h2>
+<p>Embulk v0.5.0 supports dynamically loadable guess plugins.</p>
+<ul class="simple">
+<li>For parser and decoder plugins:<ul>
+<li>CLI subcommand <tt class="docutils literal"><span class="pre">guess</span></tt> accepts new <tt class="docutils literal"><span class="pre">-g,</span> <span class="pre">--guess</span> <span class="pre">NAMES</span></tt> argument to load parser and decoder guess plugins.</li>
+<li>Plugin template generator creates stub code of guess plugin for parser and decoder plugins.</li>
+</ul>
+</li>
+<li>For input plugins:<ul>
+<li>Added <tt class="docutils literal"><span class="pre">Embulk::InputPlugin.guess(config)</span></tt> and <tt class="docutils literal"><span class="pre">spi.InputPlugin#guess(config)</span></tt> methods for Ruby and Java plugins.</li>
+<li><tt class="docutils literal"><span class="pre">guess</span></tt> subcommand executes the new guess method and takes the return value of the method.</li>
+</ul>
+</li>
+</ul>
+<p>For example, if you write a parser plugin named <tt class="docutils literal"><span class="pre">myparser</span></tt>, you can use this configuration file first:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">in</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">file</span>
+  <span class="l-Scalar-Plain">path_prefix</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">path/to/myfiles</span>
+<span class="l-Scalar-Plain">out</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">stdout</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">embulk</span> <span class="pre">guess</span></tt> command with <tt class="docutils literal"><span class="pre">-g</span> <span class="pre">myparser</span></tt> argument calls the guess plugin bundled in the plugin:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> embulk gem install embulk-parser-myparser
+<span class="gp">$</span> embulk guess config.yml -o guessed.yml -g myparser
+</pre></div>
+</div>
+<p>On the other hand, if the plugin type is input, you don&#8217;t need additional command-line arguments. For example, if the input plugin name is <tt class="docutils literal"><span class="pre">myinput</span></tt>, you can use this configuration file:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">in</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">myinput</span>
+<span class="l-Scalar-Plain">out</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">stdout</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">embulk</span> <span class="pre">guess</span></tt> command finds the <tt class="docutils literal"><span class="pre">InputPlugin.guess</span></tt> of the input plugin and calls it:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> embulk gem install embulk-input-myinput
+<span class="gp">$</span> embulk guess config.yml -o guessed.yml
+</pre></div>
+</div>
+</div>
+<div class="section" id="plugin-spi">
+<h2>Plugin SPI<a class="headerlink" href="#plugin-spi" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added <tt class="docutils literal"><span class="pre">Embulk::InputPlugin.guess(config)</span></tt> method for Ruby input plugins.<ul>
+<li>Backward compatibility: existent plugins don&#8217;t have to implement the method. The default behavior is raising <tt class="docutils literal"><span class="pre">NotImplementedError</span></tt>.</li>
+</ul>
+</li>
+<li>Added <tt class="docutils literal"><span class="pre">spi.InputPlugin#guess(ConfigSource</span> <span class="pre">config)</span></tt> method for Java input plugins.<ul>
+<li>Backward compatibility: existent plugins don&#8217;t have to implement the method. Mehtod linkage errors are handled at embulk-core. The default behavior is raising <tt class="docutils literal"><span class="pre">UnsupportedOperationException</span></tt>.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="built-in-plugins">
+<h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">csv</span></tt> parser plugin implements <tt class="docutils literal"><span class="pre">max_quoted_size_limit</span></tt> option. Default value is 131072 (128KB).<ul>
+<li>This option is useful when a column value includes a quote character accidentally. If the plugin detects those values, it skips the line and continues parsing from the next line.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="general-changes">
+<h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">spi.util.FileInputInputStream#skip</span></tt> method never returns -1 to follow the Java API standard (&#64;hata++).</li>
+<li>Plugin template generator creates appropriate &#8220;Overview&#8221; section in README.md file depending on the plugin type.</li>
+</ul>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.4.10.html">Release 0.4.10</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2015, Embulk Project.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
