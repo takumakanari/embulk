@@ -110,6 +110,9 @@ page</a> and run it with java.</p>
 
 <h3 id="label-Linux+%26+Mac+%26+BSD">Linux &amp; Mac &amp; BSD</h3>
 
+<p>Embulk is a Java application. Please make sure that you installed <a
+href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java</a>.</p>
+
 <p>Following 4 commands install embulk to your home directory:</p>
 
 <pre class="code ruby"><code class="ruby">curl --create-dirs -o ~/.embulk/bin/embulk -L https://bintray.com/artifact/download/embulk/maven/embulk-0.5.1.jar
@@ -117,11 +120,18 @@ chmod +x ~/.embulk/bin/embulk
 echo 'export PATH=&quot;$HOME/.embulk/bin:$PATH&quot;' &gt;&gt; ~/.bashrc
 source ~/.bashrc</code></pre>
 
+<p>Next step: <a href="#trying-examples">Trying examples</a></p>
+
 <h3 id="label-Windows">Windows</h3>
+
+<p>Embulk is a Java application. Please make sure that you installed <a
+href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java</a>.</p>
 
 <p>You can assume the jar file is a .bat file.</p>
 
 <pre class="code ruby"><code class="ruby">PowerShell -Command &quot;&amp; {Invoke-WebRequest https://bintray.com/artifact/download/embulk/maven/embulk-0.5.1.jar -OutFile embulk.bat}&quot;</code></pre>
+
+<p>Next step: <a href="#trying-examples">Trying examples</a></p>
 
 <h3 id="label-Trying+examples">Trying examples</h3>
 
@@ -132,6 +142,8 @@ generates a csv file and config file for you.</p>
 embulk guess   ./try1/example.yml -o config.yml
 embulk preview config.yml
 embulk run     config.yml</code></pre>
+
+<p>Next step: <a href="#using-plugins">Using plugins</a></p>
 
 <h3 id="label-Using+plugins">Using plugins</h3>
 
@@ -248,7 +260,7 @@ to acquire bintray API Keys</a></p>
 </div></div>
 
     <div id="footer">
-  Generated on Thu Mar  5 08:03:41 2015 by
+  Generated on Fri Mar  6 23:21:50 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
