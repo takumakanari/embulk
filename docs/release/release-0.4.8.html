@@ -28,12 +28,12 @@
     <link rel="next" title="Release 0.4.9" href="release-0.4.9.html" />
     <link rel="prev" title="Release 0.4.7" href="release-0.4.7.html" /> 
   </head>
-  <body>
-      <div class="header"><h1 class="heading"><a href="../index.html">
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.5 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.4.8</span></h2>
       </div>
-      <div class="topnav">
+      <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
         «&#160;&#160;<a href="release-0.4.7.html">Release 0.4.7</a>
@@ -52,11 +52,11 @@
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">spi.time.TimestampParser</span></tt> supports microseconds.</li>
-<li><tt class="docutils literal"><span class="pre">spi.time.TimestampFormatter</span></tt> supports milliseconds, microseconds and nanoseconds.</li>
-<li>Fixed a bug at <tt class="docutils literal"><span class="pre">spi.time.TimestampParser</span></tt> that returns wrong timestamp if format string is <tt class="docutils literal"><span class="pre">%s</span></tt> which means epoch seconds (&#64;hiroyuki-sato++)</li>
-<li><tt class="docutils literal"><span class="pre">embulk</span></tt> command installed by <tt class="docutils literal"><span class="pre">gem</span> <span class="pre">install</span> <span class="pre">embulk</span></tt> sets JVM optimization flags. This behavior is same with embulk.jar updated since 0.4.6.</li>
-<li><tt class="docutils literal"><span class="pre">preview</span></tt> subcommand with <tt class="docutils literal"><span class="pre">-G,</span> <span class="pre">--vertical</span></tt> option uses CRLF on Windows</li>
+<li><code class="docutils literal"><span class="pre">spi.time.TimestampParser</span></code> supports microseconds.</li>
+<li><code class="docutils literal"><span class="pre">spi.time.TimestampFormatter</span></code> supports milliseconds, microseconds and nanoseconds.</li>
+<li>Fixed a bug at <code class="docutils literal"><span class="pre">spi.time.TimestampParser</span></code> that returns wrong timestamp if format string is <code class="docutils literal"><span class="pre">%s</span></code> which means epoch seconds (&#64;hiroyuki-sato++)</li>
+<li><code class="docutils literal"><span class="pre">embulk</span></code> command installed by <code class="docutils literal"><span class="pre">gem</span> <span class="pre">install</span> <span class="pre">embulk</span></code> sets JVM optimization flags. This behavior is same with embulk.jar updated since 0.4.6.</li>
+<li><code class="docutils literal"><span class="pre">preview</span></code> subcommand with <code class="docutils literal"><span class="pre">-G,</span> <span class="pre">--vertical</span></code> option uses CRLF on Windows</li>
 </ul>
 </div>
 <div class="section" id="release-date">
@@ -67,7 +67,7 @@
 
 
       </div>
-      <div class="bottomnav">
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
         «&#160;&#160;<a href="release-0.4.7.html">Release 0.4.7</a>
@@ -79,9 +79,9 @@
 
       </div>
 
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.
     </div>
   </body>
 </html>

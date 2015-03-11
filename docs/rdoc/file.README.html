@@ -155,18 +155,19 @@ plugin. It outputs data into PostgreSQL server using "json" column type.</p>
 <pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_embulk'>embulk</span> <span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_embulk'>embulk</span><span class='op'>-</span><span class='id identifier rubyid_output'>output</span><span class='op'>-</span><span class='id identifier rubyid_postgres'>postgres</span><span class='op'>-</span><span class='id identifier rubyid_json'>json</span>
 <span class='id identifier rubyid_embulk'>embulk</span> <span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_list'>list</span></code></pre>
 
-<p>You can search plugins on RubyGems: <a
-href="https://rubygems.org/search?utf8=%E2%9C%93&query=embulk">search for
-"embulk"</a>.</p>
+<p>You can find plugins at the <a href="http://www.embulk.org/plugins/">list
+of plugins by category</a>.</p>
 
 <h3 id="label-Using+plugin+bundle">Using plugin bundle</h3>
 
 <p><code>embulk bundle</code> subcommand creates (or updates if already
-exists) a <em>plugin bundle</em> directory. You can use the bundle using
-<code>-b &lt;bundle_dir&gt;</code> option. <code>embulk bundle</code> also
-generates some example plugins to &lt;bundle_dir&gt;/embulk/*.rb directory.</p>
+exists) a private (isolated) bundle of a plugins. You can use the bundle
+using <code>-b &lt;bundle_dir&gt;</code> option. <code>embulk bundle</code>
+also generates some example plugins to &lt;bundle_dir&gt;/embulk/*.rb
+directory.</p>
 
-<p>See generated &lt;bundle_dir&gt;/Gemfile file how to plugin bundles work.</p>
+<p>See the generated &lt;bundle_dir&gt;/Gemfile file how to plugin bundles
+work.</p>
 
 <pre class="code ruby"><code class="ruby">embulk bundle ./embulk_bundle
 embulk guess  -b ./embulk_bundle ...
@@ -260,7 +261,7 @@ to acquire bintray API Keys</a></p>
 </div></div>
 
     <div id="footer">
-  Generated on Fri Mar  6 23:21:50 2015 by
+  Generated on Wed Mar 11 02:40:43 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>

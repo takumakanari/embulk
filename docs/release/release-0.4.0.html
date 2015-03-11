@@ -28,12 +28,12 @@
     <link rel="next" title="Release 0.4.1" href="release-0.4.1.html" />
     <link rel="prev" title="Release 0.3.2" href="release-0.3.2.html" /> 
   </head>
-  <body>
-      <div class="header"><h1 class="heading"><a href="../index.html">
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.5 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.4.0</span></h2>
       </div>
-      <div class="topnav">
+      <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
         «&#160;&#160;<a href="release-0.3.2.html">Release 0.3.2</a>
@@ -51,8 +51,8 @@
 <h1>Release 0.4.0<a class="headerlink" href="#release-0-4-0" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="plugin-template-generator">
 <h2>Plugin Template Generator<a class="headerlink" href="#plugin-template-generator" title="Permalink to this headline">¶</a></h2>
-<p>A new CLI subcommand <tt class="docutils literal"><span class="pre">new</span></tt> generate a plugin template.</p>
-<p>For example, <tt class="docutils literal"><span class="pre">new</span> <span class="pre">ruby-output</span> <span class="pre">&lt;name&gt;</span></tt> generates a template of output plugin written in Ruby:</p>
+<p>A new CLI subcommand <code class="docutils literal"><span class="pre">new</span></code> generate a plugin template.</p>
+<p>For example, <code class="docutils literal"><span class="pre">new</span> <span class="pre">ruby-output</span> <span class="pre">&lt;name&gt;</span></code> generates a template of output plugin written in Ruby:</p>
 <div class="highlight-python"><div class="highlight"><pre>$ embulk new ruby-output foo
 Creating embulk-output-foo/
   Creating embulk-output-foo/README.md
@@ -69,35 +69,35 @@ Creating embulk-output-foo/
 <div class="section" id="java-plugin-loader">
 <h2>Java Plugin Loader<a class="headerlink" href="#java-plugin-loader" title="Permalink to this headline">¶</a></h2>
 <p>Now, we can write plugins in Java.</p>
-<p>The plugin loader creates a dedicated classloader for each plugin so that plugins can depend on different versions of libraries. To develop a Java plugin, you can use use <tt class="docutils literal"><span class="pre">new</span> <span class="pre">java-&lt;category&gt;</span> <span class="pre">&lt;name&gt;</span></tt> command which generates a template. The generated directory has <tt class="docutils literal"><span class="pre">build.gradle</span></tt> file so that you can run <tt class="docutils literal"><span class="pre">./gradlew</span> <span class="pre">gem</span></tt> command to build a gem package.</p>
+<p>The plugin loader creates a dedicated classloader for each plugin so that plugins can depend on different versions of libraries. To develop a Java plugin, you can use use <code class="docutils literal"><span class="pre">new</span> <span class="pre">java-&lt;category&gt;</span> <span class="pre">&lt;name&gt;</span></code> command which generates a template. The generated directory has <code class="docutils literal"><span class="pre">build.gradle</span></code> file so that you can run <code class="docutils literal"><span class="pre">./gradlew</span> <span class="pre">gem</span></code> command to build a gem package.</p>
 </div>
 <div class="section" id="plugin-spi">
 <h2>Plugin SPI<a class="headerlink" href="#plugin-spi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><strong>IMPORTANT</strong>: Changed plugin path name from <tt class="docutils literal"><span class="pre">lib/embulk/&lt;caetgory&gt;_&lt;name&gt;.rb</span></tt> to <tt class="docutils literal"><span class="pre">lib/embulk/&lt;category&gt;/&lt;name&gt;.rb</span></tt>.</li>
-<li>Added <tt class="docutils literal"><span class="pre">&#64;ConfigInject</span></tt> annotation to set resources injected by Guice to a Task.</li>
-<li>Removed support for <tt class="docutils literal"><span class="pre">&#64;JacksonInject</span></tt> annotation on a Task. <tt class="docutils literal"><span class="pre">&#64;ConfigInject</span></tt> is the drop-in replacement.</li>
-<li>Changed class name <tt class="docutils literal"><span class="pre">spi.NextConfig</span></tt> to <tt class="docutils literal"><span class="pre">spi.ConfigDiff</span></tt>.</li>
+<li><strong>IMPORTANT</strong>: Changed plugin path name from <code class="docutils literal"><span class="pre">lib/embulk/&lt;caetgory&gt;_&lt;name&gt;.rb</span></code> to <code class="docutils literal"><span class="pre">lib/embulk/&lt;category&gt;/&lt;name&gt;.rb</span></code>.</li>
+<li>Added <code class="docutils literal"><span class="pre">&#64;ConfigInject</span></code> annotation to set resources injected by Guice to a Task.</li>
+<li>Removed support for <code class="docutils literal"><span class="pre">&#64;JacksonInject</span></code> annotation on a Task. <code class="docutils literal"><span class="pre">&#64;ConfigInject</span></code> is the drop-in replacement.</li>
+<li>Changed class name <code class="docutils literal"><span class="pre">spi.NextConfig</span></code> to <code class="docutils literal"><span class="pre">spi.ConfigDiff</span></code>.</li>
 </ul>
 </div>
 <div class="section" id="built-in-plugins">
 <h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">csv</span></tt> parser plugin and its guess plugin assume &#8220;true&#8221;, &#8220;yes&#8221;, &#8220;Y&#8221; and &#8220;on&#8221; as a boolean true value.</li>
-<li><tt class="docutils literal"><span class="pre">file</span></tt> input plugin changed parameters.<ul>
-<li>Added <tt class="docutils literal"><span class="pre">path_prefix</span></tt> parameter (string, required).</li>
-<li>Added <tt class="docutils literal"><span class="pre">last_path</span></tt> parameter (string, optional) which skips files older than or same with the specified file path.</li>
-<li>Removed <tt class="docutils literal"><span class="pre">paths</span></tt> parameter.</li>
+<li><code class="docutils literal"><span class="pre">csv</span></code> parser plugin and its guess plugin assume &#8220;true&#8221;, &#8220;yes&#8221;, &#8220;Y&#8221; and &#8220;on&#8221; as a boolean true value.</li>
+<li><code class="docutils literal"><span class="pre">file</span></code> input plugin changed parameters.<ul>
+<li>Added <code class="docutils literal"><span class="pre">path_prefix</span></code> parameter (string, required).</li>
+<li>Added <code class="docutils literal"><span class="pre">last_path</span></code> parameter (string, optional) which skips files older than or same with the specified file path.</li>
+<li>Removed <code class="docutils literal"><span class="pre">paths</span></code> parameter.</li>
 </ul>
 </li>
-<li><tt class="docutils literal"><span class="pre">file</span></tt> output plugin changed parameters.<ul>
-<li>Added <tt class="docutils literal"><span class="pre">sequence_format</span></tt> parameter.</li>
-<li>Removed <tt class="docutils literal"><span class="pre">directory</span></tt> parameters.</li>
-<li>Removed <tt class="docutils literal"><span class="pre">file_name</span></tt> parameters.</li>
-<li>The actual file name is <tt class="docutils literal"><span class="pre">${path_prefix}${sequence_format</span> <span class="pre">%</span> <span class="pre">[processorIndex,</span> <span class="pre">sequenceNumber}${ext_name}</span></tt>.</li>
+<li><code class="docutils literal"><span class="pre">file</span></code> output plugin changed parameters.<ul>
+<li>Added <code class="docutils literal"><span class="pre">sequence_format</span></code> parameter.</li>
+<li>Removed <code class="docutils literal"><span class="pre">directory</span></code> parameters.</li>
+<li>Removed <code class="docutils literal"><span class="pre">file_name</span></code> parameters.</li>
+<li>The actual file name is <code class="docutils literal"><span class="pre">${path_prefix}${sequence_format</span> <span class="pre">%</span> <span class="pre">[processorIndex,</span> <span class="pre">sequenceNumber}${ext_name}</span></code>.</li>
 </ul>
 </li>
-<li>Removed <tt class="docutils literal"><span class="pre">s3</span></tt> file input plugin. It is now embulk-input-s3 gem.</li>
+<li>Removed <code class="docutils literal"><span class="pre">s3</span></code> file input plugin. It is now embulk-input-s3 gem.</li>
 </ul>
 </div>
 <div class="section" id="general-changes">
@@ -117,7 +117,7 @@ Creating embulk-output-foo/
 
 
       </div>
-      <div class="bottomnav">
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
         «&#160;&#160;<a href="release-0.3.2.html">Release 0.3.2</a>
@@ -129,9 +129,9 @@ Creating embulk-output-foo/
 
       </div>
 
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.
     </div>
   </body>
 </html>

@@ -28,12 +28,12 @@
     <link rel="next" title="Release 0.3.1" href="release-0.3.1.html" />
     <link rel="prev" title="Release 0.2.1" href="release-0.2.1.html" /> 
   </head>
-  <body>
-      <div class="header"><h1 class="heading"><a href="../index.html">
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.5 documentation</span></a></h1>
         <h2 class="heading"><span>Release 0.3.0</span></h2>
       </div>
-      <div class="topnav">
+      <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
         «&#160;&#160;<a href="release-0.2.1.html">Release 0.2.1</a>
@@ -64,15 +64,15 @@
 <div class="section" id="plugin-spi">
 <h2>Plugin SPI<a class="headerlink" href="#plugin-spi" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">spi.InputPlugin</span></tt> and <tt class="docutils literal"><span class="pre">spi.OutputPlugin</span></tt> need to implement <tt class="docutils literal"><span class="pre">resume</span></tt> and <tt class="docutils literal"><span class="pre">cleanup</span></tt> methods.</li>
-<li>Added <tt class="docutils literal"><span class="pre">spi.FilterInputPlugin</span></tt> Java API.</li>
-<li>Added <tt class="docutils literal"><span class="pre">Embulk::FilterInputPlugin</span></tt> JRuby API.</li>
+<li><code class="docutils literal"><span class="pre">spi.InputPlugin</span></code> and <code class="docutils literal"><span class="pre">spi.OutputPlugin</span></code> need to implement <code class="docutils literal"><span class="pre">resume</span></code> and <code class="docutils literal"><span class="pre">cleanup</span></code> methods.</li>
+<li>Added <code class="docutils literal"><span class="pre">spi.FilterInputPlugin</span></code> Java API.</li>
+<li>Added <code class="docutils literal"><span class="pre">Embulk::FilterInputPlugin</span></code> JRuby API.</li>
 </ul>
 </div>
 <div class="section" id="cli">
 <h2>CLI<a class="headerlink" href="#cli" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><tt class="docutils literal"><span class="pre">run</span></tt> subcommand supports <tt class="docutils literal"><span class="pre">-r,</span> <span class="pre">--resume-state</span> <span class="pre">PATH</span></tt> option.</li>
+<li><code class="docutils literal"><span class="pre">run</span></code> subcommand supports <code class="docutils literal"><span class="pre">-r,</span> <span class="pre">--resume-state</span> <span class="pre">PATH</span></code> option.</li>
 </ul>
 </div>
 <div class="section" id="general-changes">
@@ -90,7 +90,7 @@
 
 
       </div>
-      <div class="bottomnav">
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
         «&#160;&#160;<a href="release-0.2.1.html">Release 0.2.1</a>
@@ -102,9 +102,9 @@
 
       </div>
 
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright 2015, Embulk Project.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.
     </div>
   </body>
 </html>
