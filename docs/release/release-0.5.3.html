@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Release 0.5.3 &mdash; Embulk 0.5 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Embulk 0.5 documentation" href="../index.html" />
+    <link rel="up" title="Release Notes" href="../release.html" />
+    <link rel="prev" title="Release 0.5.2" href="release-0.5.2.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
+          <span>Embulk 0.5 documentation</span></a></h1>
+        <h2 class="heading"><span>Release 0.5.3</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.5.2.html">Release 0.5.2</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="release-0-5-3">
+<h1>Release 0.5.3<a class="headerlink" href="#release-0-5-3" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="built-in-plugins">
+<h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">guess</span></code> guesses boolean types (&#64;hata++)</li>
+</ul>
+</div>
+<div class="section" id="general-changes">
+<h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">guess</span></code> stops reading the file after first 32KB and ignores remaining data. Execution time of <code class="docutils literal"><span class="pre">guess</span></code> improves significantly especially when the first file is large.</li>
+<li><code class="docutils literal"><span class="pre">guess</span></code> ignores decoders when it reads sample data. This change fixes the problem where guess fails if config file includes <code class="docutils literal"><span class="pre">decoder-gzip</span></code> (&#64;hata++).</li>
+<li>Releases <code class="docutils literal"><span class="pre">embulk-core-VERSION-tests.jar</span></code> in addition to <code class="docutils literal"><span class="pre">embulk-core-VERSION-sources.jar</span></code>.</li>
+</ul>
+</div>
+<div class="section" id="release-date">
+<h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
+<p>2015-03-17</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="release-0.5.2.html">Release 0.5.2</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Embulk Project.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.
+    </div>
+  </body>
+</html>
