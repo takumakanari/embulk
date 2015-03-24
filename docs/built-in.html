@@ -1,0 +1,562 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuration &mdash; Embulk 0.5 documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Embulk 0.5 documentation" href="index.html" />
+    <link rel="next" title="Release Notes" href="release.html" />
+    <link rel="prev" title="Scheduled bulk data loading to Elasticsearch + Kibana 4 from CSV files" href="recipe/scheduled-csv-load-to-elasticsearch-kibana4.html" /> 
+  </head>
+  <body role="document">
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Embulk 0.5 documentation</span></a></h1>
+        <h2 class="heading"><span>Configuration</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="recipe/scheduled-csv-load-to-elasticsearch-kibana4.html">Scheduled bulk data loading to Elasticsearch + Kibana 4 from CSV files</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="release.html">Release Notes</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#embulk-configuration-file-format" id="id13">Embulk configuration file format</a></li>
+<li><a class="reference internal" href="#local-file-input-plugin" id="id14">Local file input plugin</a><ul>
+<li><a class="reference internal" href="#options" id="id15">Options</a></li>
+<li><a class="reference internal" href="#example" id="id16">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#csv-parser-plugin" id="id17">CSV parser plugin</a><ul>
+<li><a class="reference internal" href="#id4" id="id18">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gzip-decoder-plugin" id="id19">Gzip decoder plugin</a><ul>
+<li><a class="reference internal" href="#id5" id="id20">Options</a></li>
+<li><a class="reference internal" href="#id6" id="id21">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#file-output-plugin" id="id22">File output plugin</a><ul>
+<li><a class="reference internal" href="#id7" id="id23">Options</a></li>
+<li><a class="reference internal" href="#id8" id="id24">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#csv-formatter-plugin" id="id25">CSV formatter plugin</a><ul>
+<li><a class="reference internal" href="#id9" id="id26">Options</a></li>
+<li><a class="reference internal" href="#id10" id="id27">Example</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gzip-encoder-plugin" id="id28">Gzip encoder plugin</a><ul>
+<li><a class="reference internal" href="#id11" id="id29">Options</a></li>
+<li><a class="reference internal" href="#id12" id="id30">Example</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="embulk-configuration-file-format">
+<h2><a class="toc-backref" href="#id13">Embulk configuration file format</a><a class="headerlink" href="#embulk-configuration-file-format" title="Permalink to this headline">¶</a></h2>
+<p>Embulk uses a YAML file to define a bulk data loading. Here is an example of the file:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">in</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">file</span>
+  <span class="l-Scalar-Plain">path_prefix</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">./mydata/csv/</span>
+  <span class="l-Scalar-Plain">decoders</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">gzip</span><span class="p-Indicator">}</span>
+  <span class="l-Scalar-Plain">parser</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">charset</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">UTF-8</span>
+    <span class="l-Scalar-Plain">newline</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">CRLF</span>
+    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">csv</span>
+    <span class="l-Scalar-Plain">delimiter</span><span class="p-Indicator">:</span> <span class="s">&#39;,&#39;</span>
+    <span class="l-Scalar-Plain">quote</span><span class="p-Indicator">:</span> <span class="s">&#39;&quot;&#39;</span>
+    <span class="l-Scalar-Plain">escape</span><span class="p-Indicator">:</span> <span class="s">&#39;&#39;</span>
+    <span class="l-Scalar-Plain">null_string</span><span class="p-Indicator">:</span> <span class="s">&#39;NULL&#39;</span>
+    <span class="l-Scalar-Plain">skip_header_lines</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1</span>
+    <span class="l-Scalar-Plain">columns</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">name</span><span class="p-Indicator">:</span> <span class="nv">id</span><span class="p-Indicator">,</span> <span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">long</span><span class="p-Indicator">}</span>
+    <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">name</span><span class="p-Indicator">:</span> <span class="nv">account</span><span class="p-Indicator">,</span> <span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">long</span><span class="p-Indicator">}</span>
+    <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">name</span><span class="p-Indicator">:</span> <span class="nv">time</span><span class="p-Indicator">,</span> <span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">timestamp</span><span class="p-Indicator">,</span> <span class="nv">format</span><span class="p-Indicator">:</span> <span class="s">&#39;%Y-%m-%d</span><span class="nv"> </span><span class="s">%H:%M:%S&#39;</span><span class="p-Indicator">}</span>
+    <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">name</span><span class="p-Indicator">:</span> <span class="nv">purchase</span><span class="p-Indicator">,</span> <span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">timestamp</span><span class="p-Indicator">,</span> <span class="nv">format</span><span class="p-Indicator">:</span> <span class="s">&#39;%Y%m%d&#39;</span><span class="p-Indicator">}</span>
+    <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">name</span><span class="p-Indicator">:</span> <span class="nv">comment</span><span class="p-Indicator">,</span> <span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">string</span><span class="p-Indicator">}</span>
+<span class="l-Scalar-Plain">filters</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">speedometer</span>
+    <span class="l-Scalar-Plain">speed_limit</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">250000</span>
+<span class="l-Scalar-Plain">out</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">stdout</span>
+</pre></div>
+</div>
+<p>A configuration file consists of following sections:</p>
+<ul class="simple">
+<li><strong>in:</strong> Input plugin options. An input plugin is either record-based (<a class="reference external" href="https://github.com/embulk/embulk-input-jdbc">MySQL</a>, <a class="reference external" href="https://github.com/lulichn/embulk-input-dynamodb">DynamoDB</a>, etc) or file-based (<a class="reference external" href="https://github.com/embulk/embulk-input-s3">S3</a>, <a class="reference external" href="https://github.com/takumakanari/embulk-input-http">HTTP</a>, etc).<ul>
+<li><strong>parser:</strong> If the input is file-based, parser plugin parses a file format (built-in csv, <a class="reference external" href="https://github.com/takumakanari/embulk-parser-json">json</a>, etc).</li>
+<li><strong>decoder:</strong> If the input is file-based, decoder plugin decodes compression or encryption (built-in gzip, <a class="reference external" href="https://github.com/hata/embulk-decoder-commons-compress">zip</a>, <a class="reference external" href="https://github.com/hata/embulk-decoder-commons-compress">tar.gz</a>, etc).</li>
+</ul>
+</li>
+<li><strong>out:</strong> Output plugin options. An output plugin is either record-based (<a class="reference external" href="https://github.com/embulk/embulk-output-jdbc">Oracle</a>, <a class="reference external" href="https://github.com/muga/embulk-output-elasticsearch">Elasticsearch</a>, etc) or file-based (<a class="reference external" href="https://github.com/hakobera/embulk-output-gcs">Google Cloud Storage</a>, <a class="reference external" href="https://github.com/embulk/embulk-output-command">Command</a>, etc)<ul>
+<li><strong>formatter:</strong> If the output is file-based, fromatter plugin formats a file format (such as built-in csv, <a class="reference external" href="https://github.com/takei-yuya/embulk-formatter-jsonl">JSON</a>)</li>
+<li><strong>encoder:</strong> If the output is file-based, encoder plugin encodes compression or encryption (such as built-in gzip)</li>
+</ul>
+</li>
+<li><strong>filters:</strong> Filter plugins options (optional).</li>
+<li><strong>exec:</strong> Executor plugin options. An executor plugin control parallel processing (such as built-in thread executor, <a class="reference external" href="https://github.com/embulk/embulk-executor-mapreduce">Hadoop MapReduce executor</a>)</li>
+</ul>
+<p>In many cases, what you need to write is <strong>in:</strong>, <strong>out</strong>: and <strong>formatter</strong> sections only because <code class="docutils literal"><span class="pre">guess</span></code> command guesses <strong>parser</strong> and <strong>decoder</strong> options for you. See also the <a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a>.</p>
+</div>
+<div class="section" id="local-file-input-plugin">
+<h2><a class="toc-backref" href="#id14">Local file input plugin</a><a class="headerlink" href="#local-file-input-plugin" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">file</span></code> input plugin reads files from local file system.</p>
+<div class="section" id="options">
+<h3><a class="toc-backref" href="#id15">Options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="12%" />
+<col width="56%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">type</th>
+<th class="head">description</th>
+<th class="head">required?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>path_prefix</td>
+<td>string</td>
+<td>Path prefix of input files</td>
+<td>required</td>
+</tr>
+<tr class="row-odd"><td>parsers</td>
+<td>hash</td>
+<td>Parsers configurations (see below)</td>
+<td>required</td>
+</tr>
+<tr class="row-even"><td>decoders</td>
+<td>array</td>
+<td>Decoder configuration (see below)</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>last_path</td>
+<td>string</td>
+<td>Name of last read file in previous operation</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal"><span class="pre">path_prefix</span></code> option is required. If you have files as following, you may set <code class="docutils literal"><span class="pre">path_prefix:</span> <span class="pre">/path/to/files/sample_</span></code>:</p>
+<div class="highlight-python"><div class="highlight"><pre>.
+`-- path
+    `-- to
+        `-- files
+            |-- sample_01.csv   -&gt; read
+            |-- sample_02.csv   -&gt; read
+            |-- sample_03.csv   -&gt; read
+            |-- sample_04.csv   -&gt; read
+</pre></div>
+</div>
+<p>The <code class="docutils literal"><span class="pre">last_path</span></code> option is used to skip files older than or same with the file in dictionary order.
+For example, if you set <code class="docutils literal"><span class="pre">last_path:</span> <span class="pre">/path/to/files/sample_02.csv</span></code>, Embulk reads following files:</p>
+<div class="highlight-python"><div class="highlight"><pre>.
+`-- path
+    `-- to
+        `-- files
+            |-- sample_01.csv   -&gt; skip
+            |-- sample_02.csv   -&gt; skip
+            |-- sample_03.csv   -&gt; read
+            |-- sample_04.csv   -&gt; read
+</pre></div>
+</div>
+</div>
+<div class="section" id="example">
+<h3><a class="toc-backref" href="#id16">Example</a><a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">in</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">file</span>
+  <span class="l-Scalar-Plain">path_prefix</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/path/to/files/sample_</span>
+  <span class="l-Scalar-Plain">last_path</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/path/to/files/sample_02.csv</span>
+  <span class="l-Scalar-Plain">parser</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">...</span>
+</pre></div>
+</div>
+<p>In most of cases, you&#8217;ll use guess to configure the parsers and decoders. See also <a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a>.</p>
+</div>
+</div>
+<div class="section" id="csv-parser-plugin">
+<h2><a class="toc-backref" href="#id17">CSV parser plugin</a><a class="headerlink" href="#csv-parser-plugin" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">csv</span></code> parser plugin parses CSV and TSV files.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="6%" />
+<col width="64%" />
+<col width="14%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">type</th>
+<th class="head">description</th>
+<th class="head">required?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>delimiter</td>
+<td>string</td>
+<td>Delimiter character such as <code class="docutils literal"><span class="pre">,</span></code> for CSV, <code class="docutils literal"><span class="pre">&quot;\t&quot;</span></code> for TSV, <code class="docutils literal"><span class="pre">&quot;|&quot;</span></code> or any single-byte character</td>
+<td><code class="docutils literal"><span class="pre">,</span></code> by default</td>
+</tr>
+<tr class="row-odd"><td>quote</td>
+<td>string</td>
+<td>The character surrounding a quoted value</td>
+<td><code class="docutils literal"><span class="pre">\&quot;</span></code> by default</td>
+</tr>
+<tr class="row-even"><td>escape</td>
+<td>string</td>
+<td>Escape character to escape a special character</td>
+<td><code class="docutils literal"><span class="pre">\\</span></code> by default</td>
+</tr>
+<tr class="row-odd"><td>skip_header_lines</td>
+<td>integer</td>
+<td>Skip this number of lines first. Set 1 if the file has header line.</td>
+<td><code class="docutils literal"><span class="pre">0</span></code> by default</td>
+</tr>
+<tr class="row-even"><td>null_string</td>
+<td>string</td>
+<td>If a value is this string, converts it to NULL. For example, set <code class="docutils literal"><span class="pre">\N</span></code> for CSV files created by mysqldump</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>trim_if_not_quoted</td>
+<td>boolean</td>
+<td>If true, remove spaces of a value if the value is not surrounded by the quote character</td>
+<td><code class="docutils literal"><span class="pre">false</span></code> by default</td>
+</tr>
+<tr class="row-even"><td>allow_optional_columns</td>
+<td>boolean</td>
+<td>If true, set null to insufficient columns. Otherwise, skip the row in case of insufficient number of columns</td>
+<td><code class="docutils literal"><span class="pre">false</span></code> by default</td>
+</tr>
+<tr class="row-odd"><td>max_quoted_size_limit</td>
+<td>integer</td>
+<td>Maximum number of bytes of a quoted value. If a value exceeds the limit, the row will be skipped</td>
+<td><code class="docutils literal"><span class="pre">131072</span></code> by default</td>
+</tr>
+<tr class="row-even"><td>default_timezone</td>
+<td>string</td>
+<td>Time zone of timestamp columns if the value itself doesn&#8217;t include time zone description (eg. Asia/Tokyo)</td>
+<td><code class="docutils literal"><span class="pre">UTC</span></code> by default</td>
+</tr>
+<tr class="row-odd"><td>newline</td>
+<td>enum</td>
+<td>Newline character (CRLF, LF or CR)</td>
+<td><code class="docutils literal"><span class="pre">CRLF</span></code> by default</td>
+</tr>
+<tr class="row-even"><td>charset</td>
+<td>enum</td>
+<td>Character encoding (eg. ISO-8859-1, UTF-8)</td>
+<td><code class="docutils literal"><span class="pre">UTF-8</span></code> by default</td>
+</tr>
+<tr class="row-odd"><td>columns</td>
+<td>hash</td>
+<td>Columns (see below)</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal"><span class="pre">columns</span></code> option declares the list of columns. This CSV parser plugin ignores the header line.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name</td>
+<td>Name of the column</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td>Type of the column (see below)</td>
+</tr>
+<tr class="row-even"><td>format</td>
+<td>Format of the timestamp if type is timestamp</td>
+</tr>
+</tbody>
+</table>
+<p>List of types:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>boolean</td>
+<td>true or false</td>
+</tr>
+<tr class="row-odd"><td>long</td>
+<td>64-bit signed integers</td>
+</tr>
+<tr class="row-even"><td>timestamp</td>
+<td>Date and time with nano-seconds precision</td>
+</tr>
+<tr class="row-odd"><td>double</td>
+<td>64-bit floating point numbers</td>
+</tr>
+<tr class="row-even"><td>string</td>
+<td>Strings</td>
+</tr>
+</tbody>
+</table>
+<p>You can use <code class="docutils literal"><span class="pre">guess</span></code> to automatically generate the column settings. See also <a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a>.</p>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#id18">Example</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">in</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">...</span>
+  <span class="l-Scalar-Plain">parser</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">csv</span>
+    <span class="l-Scalar-Plain">charset</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">UTF-8</span>
+    <span class="l-Scalar-Plain">newline</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">CRLF</span>
+    <span class="l-Scalar-Plain">delimiter</span><span class="p-Indicator">:</span> <span class="s">&quot;\t&quot;</span>
+    <span class="l-Scalar-Plain">quote</span><span class="p-Indicator">:</span> <span class="s">&#39;&quot;&#39;</span>
+    <span class="l-Scalar-Plain">escape</span><span class="p-Indicator">:</span> <span class="s">&#39;&#39;</span>
+    <span class="l-Scalar-Plain">null_string</span><span class="p-Indicator">:</span> <span class="s">&#39;NULL&#39;</span>
+    <span class="l-Scalar-Plain">skip_header_lines</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1</span>
+    <span class="l-Scalar-Plain">columns</span><span class="p-Indicator">:</span>
+    <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">name</span><span class="p-Indicator">:</span> <span class="nv">id</span><span class="p-Indicator">,</span> <span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">long</span><span class="p-Indicator">}</span>
+    <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">name</span><span class="p-Indicator">:</span> <span class="nv">account</span><span class="p-Indicator">,</span> <span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">long</span><span class="p-Indicator">}</span>
+    <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">name</span><span class="p-Indicator">:</span> <span class="nv">time</span><span class="p-Indicator">,</span> <span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">timestamp</span><span class="p-Indicator">,</span> <span class="nv">format</span><span class="p-Indicator">:</span> <span class="s">&#39;%Y-%m-%d</span><span class="nv"> </span><span class="s">%H:%M:%S&#39;</span><span class="p-Indicator">}</span>
+    <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">name</span><span class="p-Indicator">:</span> <span class="nv">purchase</span><span class="p-Indicator">,</span> <span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">timestamp</span><span class="p-Indicator">,</span> <span class="nv">format</span><span class="p-Indicator">:</span> <span class="s">&#39;%Y%m%d&#39;</span><span class="p-Indicator">}</span>
+    <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">name</span><span class="p-Indicator">:</span> <span class="nv">comment</span><span class="p-Indicator">,</span> <span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">string</span><span class="p-Indicator">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="gzip-decoder-plugin">
+<h2><a class="toc-backref" href="#id19">Gzip decoder plugin</a><a class="headerlink" href="#gzip-decoder-plugin" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">gzip</span></code> decoder plugin decompresses gzip files before input plugins read them.</p>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#id20">Options</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>This plugin doesn&#8217;t have any options.</p>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#id21">Example</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">in</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">...</span>
+  <span class="l-Scalar-Plain">decoders</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="p-Indicator">{</span><span class="nv">type</span><span class="p-Indicator">:</span> <span class="nv">gzip</span><span class="p-Indicator">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="file-output-plugin">
+<h2><a class="toc-backref" href="#id22">File output plugin</a><a class="headerlink" href="#file-output-plugin" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">file</span></code> output plugin writes records to local file system.</p>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#id23">Options</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="9%" />
+<col width="47%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">type</th>
+<th class="head">description</th>
+<th class="head">required?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>path_prefix</td>
+<td>string</td>
+<td>Path prefix of the output files</td>
+<td>required</td>
+</tr>
+<tr class="row-odd"><td>sequence_format</td>
+<td>string</td>
+<td>Format of the sequence number of the output files</td>
+<td><code class="docutils literal"><span class="pre">.%03d.%02d</span></code> by default</td>
+</tr>
+<tr class="row-even"><td>file_ext</td>
+<td>string</td>
+<td>Path suffix of the output files</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<p>For example, if you set <code class="docutils literal"><span class="pre">path_prefix:</span> <span class="pre">/path/to/output</span></code>, <code class="docutils literal"><span class="pre">sequence_format:</span> <span class="pre">&quot;.%03d.%02d&quot;</span></code>, and <code class="docutils literal"><span class="pre">file_ext:</span> <span class="pre">.csv</span></code>, name of the output files will be as following:</p>
+<div class="highlight-python"><div class="highlight"><pre>.
+`-- path
+    `-- to
+        `-- output
+            |-- sample.01.000.csv
+            |-- sample.02.000.csv
+            |-- sample.03.000.csv
+            |-- sample.04.000.csv
+</pre></div>
+</div>
+<p><code class="docutils literal"><span class="pre">sequence_format</span></code> formats task index and sequence number in a task.</p>
+</div>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#id24">Example</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">out</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">file</span>
+  <span class="l-Scalar-Plain">path_prefix</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">/path/to/output/sample</span>
+  <span class="l-Scalar-Plain">file_ext</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">.csv</span>
+  <span class="l-Scalar-Plain">formatter</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="csv-formatter-plugin">
+<h2><a class="toc-backref" href="#id25">CSV formatter plugin</a><a class="headerlink" href="#csv-formatter-plugin" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">csv</span></code> formatter plugin formats records using CSV or TSV format.</p>
+<div class="section" id="id9">
+<h3><a class="toc-backref" href="#id26">Options</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="10%" />
+<col width="7%" />
+<col width="67%" />
+<col width="16%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">type</th>
+<th class="head">description</th>
+<th class="head">required?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>delimiter</td>
+<td>string</td>
+<td>Delimiter character such as <code class="docutils literal"><span class="pre">,</span></code> for CSV, <code class="docutils literal"><span class="pre">&quot;\t&quot;</span></code> for TSV, <code class="docutils literal"><span class="pre">&quot;|&quot;</span></code> or any single-byte character</td>
+<td><code class="docutils literal"><span class="pre">,</span></code> by default</td>
+</tr>
+<tr class="row-odd"><td>header_line</td>
+<td>boolean</td>
+<td>If true, write the header line with column name at the first line</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>newline</td>
+<td>enum</td>
+<td>Newline character (CRLF, LF or CR)</td>
+<td><code class="docutils literal"><span class="pre">CRLF</span></code> by default</td>
+</tr>
+<tr class="row-odd"><td>charset</td>
+<td>enum</td>
+<td>Character encoding (eg. ISO-8859-1, UTF-8)</td>
+<td><code class="docutils literal"><span class="pre">UTF-8</span></code> by default</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id10">
+<h3><a class="toc-backref" href="#id27">Example</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">out</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">...</span>
+  <span class="l-Scalar-Plain">formatter</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">csv</span>
+    <span class="l-Scalar-Plain">delimiter</span><span class="p-Indicator">:</span> <span class="s">&quot;\t&quot;</span>
+    <span class="l-Scalar-Plain">newline</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">LF</span>
+    <span class="l-Scalar-Plain">charset</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">UTF-8</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="gzip-encoder-plugin">
+<h2><a class="toc-backref" href="#id28">Gzip encoder plugin</a><a class="headerlink" href="#gzip-encoder-plugin" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal"><span class="pre">gzip</span></code> encoder plugin compresses output files using gzip.</p>
+<div class="section" id="id11">
+<h3><a class="toc-backref" href="#id29">Options</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="8%" />
+<col width="9%" />
+<col width="64%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">name</th>
+<th class="head">type</th>
+<th class="head">description</th>
+<th class="head">required?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>level</td>
+<td>integer</td>
+<td>Compression level. From 0 (no compression) to 9 (best compression).</td>
+<td><code class="docutils literal"><span class="pre">6</span></code> by default</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id12">
+<h3><a class="toc-backref" href="#id30">Example</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-yaml"><div class="highlight"><pre><span class="l-Scalar-Plain">out</span><span class="p-Indicator">:</span>
+  <span class="l-Scalar-Plain">...</span>
+  <span class="l-Scalar-Plain">encoders</span><span class="p-Indicator">:</span>
+  <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">gzip</span>
+    <span class="l-Scalar-Plain">level</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="recipe/scheduled-csv-load-to-elasticsearch-kibana4.html">Scheduled bulk data loading to Elasticsearch + Kibana 4 from CSV files</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="release.html">Release Notes</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, Embulk Project.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>
