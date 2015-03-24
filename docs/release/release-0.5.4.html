@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Release 0.5.3 &mdash; Embulk 0.5 documentation</title>
+    <title>Release 0.5.4 &mdash; Embulk 0.5 documentation</title>
     
     <link rel="stylesheet" href="../_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,47 +25,44 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="top" title="Embulk 0.5 documentation" href="../index.html" />
     <link rel="up" title="Release Notes" href="../release.html" />
-    <link rel="next" title="Release 0.5.4" href="release-0.5.4.html" />
-    <link rel="prev" title="Release 0.5.2" href="release-0.5.2.html" /> 
+    <link rel="prev" title="Release 0.5.3" href="release-0.5.3.html" /> 
   </head>
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="../index.html">
           <span>Embulk 0.5 documentation</span></a></h1>
-        <h2 class="heading"><span>Release 0.5.3</span></h2>
+        <h2 class="heading"><span>Release 0.5.4</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.5.2.html">Release 0.5.2</a>
+        «&#160;&#160;<a href="release-0.5.3.html">Release 0.5.3</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
-        &#160;&#160;::&#160;&#160;
-        <a href="release-0.5.4.html">Release 0.5.4</a>&#160;&#160;»
         </p>
 
       </div>
       <div class="content">
         
         
-  <div class="section" id="release-0-5-3">
-<h1>Release 0.5.3<a class="headerlink" href="#release-0-5-3" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="release-0-5-4">
+<h1>Release 0.5.4<a class="headerlink" href="#release-0-5-4" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="built-in-plugins">
 <h2>Built-in plugins<a class="headerlink" href="#built-in-plugins" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">guess</span></code> guesses boolean types (&#64;hata++)</li>
+<li><code class="docutils literal"><span class="pre">parser-csv</span></code> supports <code class="docutils literal"><span class="pre">allow_optional_columns</span></code> option. With this option set to <code class="docutils literal"><span class="pre">true</span></code>, the parser sets null to insufficient columns rather than skipping the entire row (&#64;kamatama41++)</li>
+<li>Fixed exception handling of <code class="docutils literal"><span class="pre">parser-csv</span></code> so that the transaction properly fails with underlaying exceptions such as IOException</li>
 </ul>
 </div>
 <div class="section" id="general-changes">
 <h2>General Changes<a class="headerlink" href="#general-changes" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><code class="docutils literal"><span class="pre">guess</span></code> stops reading the file after first 32KB and ignores remaining data. Execution time of <code class="docutils literal"><span class="pre">guess</span></code> improves significantly especially when the first file is large.</li>
-<li><code class="docutils literal"><span class="pre">guess</span></code> ignores decoders when it reads sample data. This change fixes the problem where guess fails if config file includes <code class="docutils literal"><span class="pre">decoder-gzip</span></code> (&#64;hata++).</li>
-<li>Releases <code class="docutils literal"><span class="pre">embulk-core-VERSION-tests.jar</span></code> in addition to <code class="docutils literal"><span class="pre">embulk-core-VERSION-sources.jar</span></code>.</li>
+<li>Increased buffer size from 256 bytes to 32 KB. This improves performance significantly. (&#64;hito4t++)</li>
+<li>If plugin type is null, suggest to use <code class="docutils literal"><span class="pre">{type:</span> <span class="pre">&quot;null&quot;}</span></code> (&#64;hito4t++)</li>
 </ul>
 </div>
 <div class="section" id="release-date">
 <h2>Release Date<a class="headerlink" href="#release-date" title="Permalink to this headline">¶</a></h2>
-<p>2015-03-17</p>
+<p>2015-03-23</p>
 </div>
 </div>
 
@@ -74,11 +71,9 @@
       <div class="bottomnav" role="navigation" aria-label="bottom navigation">
       
         <p>
-        «&#160;&#160;<a href="release-0.5.2.html">Release 0.5.2</a>
+        «&#160;&#160;<a href="release-0.5.3.html">Release 0.5.3</a>
         &#160;&#160;::&#160;&#160;
         <a class="uplink" href="../index.html">Contents</a>
-        &#160;&#160;::&#160;&#160;
-        <a href="release-0.5.4.html">Release 0.5.4</a>&#160;&#160;»
         </p>
 
       </div>
