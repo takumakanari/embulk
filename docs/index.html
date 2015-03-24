@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Embulk documentation &mdash; Embulk 0.5 documentation</title>
+    <title>Embulk &mdash; Embulk 0.5 documentation</title>
     
     <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -29,7 +29,7 @@
   <body role="document">
       <div class="header" role="banner"><h1 class="heading"><a href="#">
           <span>Embulk 0.5 documentation</span></a></h1>
-        <h2 class="heading"><span>Embulk documentation</span></h2>
+        <h2 class="heading"><span>Embulk</span></h2>
       </div>
       <div class="topnav" role="navigation" aria-label="top navigation">
       
@@ -43,16 +43,33 @@
       <div class="content">
         
         
-  <div class="section" id="embulk-documentation">
-<h1>Embulk documentation<a class="headerlink" href="#embulk-documentation" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/embulk/embulk">https://github.com/embulk/embulk</a></p>
+  <div class="section" id="embulk">
+<h1>Embulk<a class="headerlink" href="#embulk" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="_static/embulk-logo.png"><img alt="_static/embulk-logo.png" src="_static/embulk-logo.png" style="width: 512px;" /></a>
+<p>Embulk is a open-source bulk data loader that helps data transfer between various databases, storages, file formats, and cloud services.</p>
+<p>Embulk supports:</p>
+<ul class="simple">
+<li>Automatic guessing of file formats</li>
+<li>Resuming</li>
+<li>Parallel &amp; distributed execution to deal with big data sets</li>
+<li>Transaction control to guarantee All-or-Nothing</li>
+<li>Plugins released on RubyGems.org</li>
+</ul>
+<p>You can define a bulk data flow by combination of input and output plugins. For example, <a class="reference external" href="recipe/scheduled-csv-load-to-elasticsearch-kibana4.html">this tutorial</a> shows how to use <strong>file</strong> input plugin with <strong>csv</strong> parser plugin and <strong>gzip</strong> decoder plugin to read files, and <strong>elasticsearch</strong> output plugin to load the records to Elasticsearch.</p>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a><ul>
 <li><a class="reference external" href="https://github.com/embulk/embulk#linux--mac--bsd">Linux and Mac OS X</a></li>
 <li><a class="reference external" href="https://github.com/embulk/embulk#windows">Windows</a></li>
 </ul>
 </li>
-<li><a class="reference external" href="http://www.embulk.org/plugins/">List of Plugins by Category</a></li>
+<li><a class="reference external" href="http://www.embulk.org/plugins/">List of Plugins by Category</a><ul>
+<li><a class="reference external" href="http://www.embulk.org/plugins/#input">Input plugins</a></li>
+<li><a class="reference external" href="http://www.embulk.org/plugins/#output">Output plugins</a></li>
+<li><a class="reference external" href="http://www.embulk.org/plugins/#file-parser">File parser plugins</a></li>
+<li><a class="reference external" href="http://www.embulk.org/plugins/#file-formatter">File formatter plugins</a></li>
+<li><a class="reference external" href="http://www.embulk.org/plugins/#filter">Filter plugins</a></li>
+</ul>
+</li>
 </ul>
 <div class="toctree-wrapper compound">
 <ul>
@@ -90,6 +107,7 @@
 <ul class="simple">
 <li><a class="reference external" href="javadoc/index.html">JavaDoc</a></li>
 <li><a class="reference external" href="rdoc/_index.html">RDoc</a></li>
+<li><a class="reference external" href="https://github.com/embulk/embulk">Github</a></li>
 </ul>
 </div>
 
