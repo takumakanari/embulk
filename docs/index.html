@@ -45,23 +45,39 @@
         
   <div class="section" id="embulk">
 <h1>Embulk<a class="headerlink" href="#embulk" title="Permalink to this headline">¶</a></h1>
-<a class="reference internal image-reference" href="_static/embulk-logo.png"><img alt="_static/embulk-logo.png" src="_static/embulk-logo.png" style="width: 512px;" /></a>
+<a class="reference external image-reference" href="https://github.com/embulk/embulk"><img alt="_static/embulk-logo.png" src="_static/embulk-logo.png" style="width: 512px;" /></a>
+<div class="section" id="what-s-embulk">
+<h2>What&#8217;s Embulk?<a class="headerlink" href="#what-s-embulk" title="Permalink to this headline">¶</a></h2>
 <p>Embulk is a open-source bulk data loader that helps data transfer between various databases, storages, file formats, and cloud services.</p>
 <p>Embulk supports:</p>
 <ul class="simple">
-<li>Automatic guessing of file formats</li>
-<li>Resuming</li>
+<li>Automatic guessing of input file formats</li>
 <li>Parallel &amp; distributed execution to deal with big data sets</li>
 <li>Transaction control to guarantee All-or-Nothing</li>
+<li>Resuming</li>
 <li>Plugins released on RubyGems.org</li>
 </ul>
-<p>You can define a bulk data flow by combination of input and output plugins. For example, <a class="reference external" href="recipe/scheduled-csv-load-to-elasticsearch-kibana4.html">this tutorial</a> shows how to use <strong>file</strong> input plugin with <strong>csv</strong> parser plugin and <strong>gzip</strong> decoder plugin to read files, and <strong>elasticsearch</strong> output plugin to load the records to Elasticsearch.</p>
+<p>You can define a bulk data loading using combination of input and output plugins. For example, <a class="reference external" href="recipe/scheduled-csv-load-to-elasticsearch-kibana4.html">this tutorial</a> describes how to use <strong>file</strong> input plugin with <strong>csv</strong> parser plugin and <strong>gzip</strong> decoder plugin to read CSV files, and <strong>elasticsearch</strong> output plugin to load the records to Elasticsearch.</p>
+</div>
+<div class="section" id="documents">
+<h2>Documents<a class="headerlink" href="#documents" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="https://github.com/embulk/embulk#quick-start">Quick Start</a><ul>
-<li><a class="reference external" href="https://github.com/embulk/embulk#linux--mac--bsd">Linux and Mac OS X</a></li>
+<li><a class="reference external" href="https://github.com/embulk/embulk#linux--mac--bsd">Linux</a></li>
+<li><a class="reference external" href="https://github.com/embulk/embulk#linux--mac--bsd">Mac OS X</a></li>
 <li><a class="reference external" href="https://github.com/embulk/embulk#windows">Windows</a></li>
 </ul>
 </li>
+</ul>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="recipe.html">Recipes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recipe/scheduled-csv-load-to-elasticsearch-kibana4.html">Scheduled bulk data loading to Elasticsearch + Kibana 4 from CSV files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul class="simple">
 <li><a class="reference external" href="http://www.embulk.org/plugins/">List of Plugins by Category</a><ul>
 <li><a class="reference external" href="http://www.embulk.org/plugins/#input">Input plugins</a></li>
 <li><a class="reference external" href="http://www.embulk.org/plugins/#output">Output plugins</a></li>
@@ -73,10 +89,6 @@
 </ul>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="recipe.html">Recipes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="recipe/scheduled-csv-load-to-elasticsearch-kibana4.html">Scheduled bulk data loading to Elasticsearch + Kibana 4 from CSV files</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="release.html">Release Notes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="release/release-0.1.0.html">Release 0.1.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="release/release-0.2.0.html">Release 0.2.0</a></li>
@@ -109,6 +121,7 @@
 <li><a class="reference external" href="rdoc/_index.html">RDoc</a></li>
 <li><a class="reference external" href="https://github.com/embulk/embulk">Github</a></li>
 </ul>
+</div>
 </div>
 
 
