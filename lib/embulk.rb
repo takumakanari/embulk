@@ -13,4 +13,5 @@ module Embulk
   require 'embulk/plugin'
   require 'embulk/buffer'
   require 'embulk/data_source'
+  require 'embulk/dsl/parser'
 end

@@ -1,25 +1,19 @@
 package org.embulk.command;
 
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
-import java.io.File;
-import java.io.IOException;
-import java.io.FileOutputStream;
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+
+import org.embulk.config.*;
+import org.jruby.embed.ScriptingContainer;
 import org.yaml.snakeyaml.Yaml;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.base.Function;
 import com.google.inject.Injector;
-import org.embulk.config.ConfigSource;
-import org.embulk.config.DataSource;
-import org.embulk.config.ConfigLoader;
-import org.embulk.config.ConfigDiff;
-import org.embulk.config.ModelManager;
-import org.embulk.config.ConfigException;
 import org.embulk.plugin.PluginType;
 import org.embulk.exec.BulkLoader;
 import org.embulk.exec.ExecutionResult;
@@ -28,7 +22,6 @@ import org.embulk.exec.PreviewExecutor;
 import org.embulk.exec.PreviewResult;
 import org.embulk.exec.ResumeState;
 import org.embulk.exec.PartialExecutionException;
-import org.embulk.spi.time.Timestamp;
 import org.embulk.spi.ExecSession;
 import org.embulk.EmbulkService;
 
@@ -116,7 +109,7 @@ public class Runner
 
     public void run(String configPath)
     {
-        ConfigSource config = loadYamlConfig(configPath);
+        ConfigSource config = loadConfigByPath(configPath);
         checkFileWritable(options.getNextConfigOutputPath());
         checkFileWritable(options.getResumeStatePath());
 
@@ -139,6 +132,7 @@ public class Runner
         }
 
         ExecSession exec = newExecSession(config);
+
         BulkLoader loader = injector.getInstance(BulkLoader.class);
         ExecutionResult result;
         try {
@@ -177,13 +171,12 @@ public class Runner
         writeNextConfig(options.getNextConfigOutputPath(), config, configDiff);
     }
 
-    public void cleanup(String configPath)
-    {
+    public void cleanup(String configPath) {
         String resumePath = options.getResumeStatePath();
         if (resumePath == null) {
             throw new IllegalArgumentException("Resume path is required for cleanup");
         }
-        ConfigSource config = loadYamlConfig(configPath);
+        ConfigSource config = loadConfigByPath(configPath);
         ConfigSource resumeConfig = loadYamlConfig(resumePath);
         ResumeState resume = resumeConfig.loadConfig(ResumeState.class);
 
@@ -197,7 +190,7 @@ public class Runner
 
     public void guess(String partialConfigPath)
     {
-        ConfigSource config = loadYamlConfig(partialConfigPath);
+        ConfigSource config = loadConfigByPath(partialConfigPath);
         checkFileWritable(options.getNextConfigOutputPath());
 
         ExecSession exec = newExecSession(config);
@@ -244,7 +237,7 @@ public class Runner
 
     public void preview(String partialConfigPath)
     {
-        ConfigSource config = loadYamlConfig(partialConfigPath);
+        ConfigSource config = loadConfigByPath(partialConfigPath);
         ExecSession exec = newExecSession(config);
         PreviewExecutor preview = injector.getInstance(PreviewExecutor.class);
         PreviewResult result = preview.preview(exec, config);
@@ -275,12 +268,31 @@ public class Runner
         }
     }
 
+    private ConfigSource loadConfigByPath(String configPath)
+    {
+        if (configPath.endsWith(".rb")) {
+            return loadRubyDSLConfig(configPath);
+        }
+        return loadYamlConfig(configPath);
+    }
+
     private ConfigSource loadYamlConfig(String yamlPath)
     {
         try {
             return injector.getInstance(ConfigLoader.class).fromYamlFile(new File(yamlPath));
-
         } catch (IOException ex) {
+            throw new ConfigException(ex);
+        }
+    }
+
+    private ConfigSource loadRubyDSLConfig(String rubyDSLPath)
+    {
+        ScriptingContainer jruby = injector.getInstance(ScriptingContainer.class);
+        try {
+            byte[] contentBytes = Files.readAllBytes(Paths.get(rubyDSLPath));
+            String configString = new String(contentBytes, StandardCharsets.UTF_8);
+            return injector.getInstance(ConfigLoader.class).fromRubyDSLFile(jruby, configString);
+        } catch (Exception ex) {
             throw new ConfigException(ex);
         }
     }
