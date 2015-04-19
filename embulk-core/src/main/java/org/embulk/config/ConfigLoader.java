@@ -10,6 +10,8 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import org.embulk.jruby.JrubyExecEvent;
+import org.jruby.embed.ScriptingContainer;
 import org.yaml.snakeyaml.Yaml;
 
 public class ConfigLoader
@@ -29,7 +31,7 @@ public class ConfigLoader
         return new DataSourceImpl(model, source);
     }
 
-    public ConfigSource fromYamlFile(File path) throws IOException
+    public ExecConfig fromYamlFile(File path) throws IOException
     {
         Yaml yaml = new Yaml();
         Object parsedYaml;
@@ -37,7 +39,23 @@ public class ConfigLoader
             parsedYaml = yaml.load(is);
         }
         ObjectNode source = objectToJsonObject(parsedYaml);
-        return new DataSourceImpl(model, source);
+        ConfigSource config = new DataSourceImpl(model, source);
+
+        return new ExecConfig(config);
+    }
+
+    public ExecConfig fromRubyDSLFile(ScriptingContainer jruby, String path)
+    {
+        final Object rubyDslParser = jruby.runScriptlet("Embulk::DSLParser");
+        final Object dslObject = jruby.callMethod(rubyDslParser, "parse", path);
+
+        Object dlsConfig = jruby.callMethod(dslObject, "root_element");
+        ObjectNode source = objectToJsonObject(dlsConfig);
+
+        final ConfigSource config = new DataSourceImpl(model, source);
+        final ExecEvent event = new JrubyExecEvent(jruby, dslObject);
+
+        return new ExecConfig(config, event);
     }
 
     public ConfigSource fromPropertiesYamlLiteral(Properties props, String keyPrefix)

@@ -1,25 +1,19 @@
 package org.embulk.command;
 
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
-import java.io.File;
-import java.io.IOException;
-import java.io.FileOutputStream;
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+
+import org.embulk.config.*;
+import org.jruby.embed.ScriptingContainer;
 import org.yaml.snakeyaml.Yaml;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.base.Function;
 import com.google.inject.Injector;
-import org.embulk.config.ConfigSource;
-import org.embulk.config.DataSource;
-import org.embulk.config.ConfigLoader;
-import org.embulk.config.ConfigDiff;
-import org.embulk.config.ModelManager;
-import org.embulk.config.ConfigException;
 import org.embulk.plugin.PluginType;
 import org.embulk.exec.BulkLoader;
 import org.embulk.exec.ExecutionResult;
@@ -28,7 +22,6 @@ import org.embulk.exec.PreviewExecutor;
 import org.embulk.exec.PreviewResult;
 import org.embulk.exec.ResumeState;
 import org.embulk.exec.PartialExecutionException;
-import org.embulk.spi.time.Timestamp;
 import org.embulk.spi.ExecSession;
 import org.embulk.EmbulkService;
 
@@ -106,7 +99,8 @@ public class Runner
 
     public void run(String configPath)
     {
-        ConfigSource config = loadYamlConfig(configPath);
+        ExecConfig execConfig = loadConfigByPath(configPath);
+        ConfigSource config = execConfig.getConfigSource();
         checkFileWritable(options.getNextConfigOutputPath());
         checkFileWritable(options.getResumeStatePath());
 
@@ -116,7 +110,7 @@ public class Runner
         if (resumePath != null) {
             ConfigSource resumeConfig = null;
             try {
-                resumeConfig = loadYamlConfig(resumePath);
+                resumeConfig = loadYamlConfig(resumePath).getConfigSource();
                 if (resumeConfig.isEmpty()) {
                     resumeConfig = null;
                 }
@@ -128,7 +122,14 @@ public class Runner
             }
         }
 
+        ExecEvent execEvent = execConfig.getExecEvent();
         ExecSession exec = newExecSession(config);
+
+        if (execEvent != null) {
+            exec.getLogger(Runner.class).info("Run event: 'onStart'");
+            execEvent.onStart();
+        }
+
         BulkLoader loader = injector.getInstance(BulkLoader.class);
         ExecutionResult result;
         try {
@@ -165,16 +166,20 @@ public class Runner
         exec.getLogger(Runner.class).info("Committed.");
         exec.getLogger(Runner.class).info("Next config diff: {}", configDiff.toString());
         writeNextConfig(options.getNextConfigOutputPath(), config, configDiff);
+
+        if (execEvent != null) {
+            exec.getLogger(Runner.class).info("Run event: 'onComplete'");
+            execEvent.onComplete(configDiff);
+        }
     }
 
-    public void cleanup(String configPath)
-    {
+    public void cleanup(String configPath) {
         String resumePath = options.getResumeStatePath();
         if (resumePath == null) {
             throw new IllegalArgumentException("Resume path is required for cleanup");
         }
-        ConfigSource config = loadYamlConfig(configPath);
-        ConfigSource resumeConfig = loadYamlConfig(resumePath);
+        ConfigSource config = loadConfigByPath(configPath).getConfigSource();
+        ConfigSource resumeConfig = loadYamlConfig(resumePath).getConfigSource();
         ResumeState resume = resumeConfig.loadConfig(ResumeState.class);
 
         //ExecSession exec = newExecSession(config);  // not necessary
@@ -187,7 +192,7 @@ public class Runner
 
     public void guess(String partialConfigPath)
     {
-        ConfigSource config = loadYamlConfig(partialConfigPath);
+        ConfigSource config = loadConfigByPath(partialConfigPath).getConfigSource();
         checkFileWritable(options.getNextConfigOutputPath());
 
         ExecSession exec = newExecSession(config);
@@ -234,7 +239,8 @@ public class Runner
 
     public void preview(String partialConfigPath)
     {
-        ConfigSource config = loadYamlConfig(partialConfigPath);
+        ExecConfig execConfig = loadConfigByPath(partialConfigPath);
+        ConfigSource config = execConfig.getConfigSource();
         ExecSession exec = newExecSession(config);
         PreviewExecutor preview = injector.getInstance(PreviewExecutor.class);
         PreviewResult result = preview.preview(exec, config);
@@ -265,12 +271,31 @@ public class Runner
         }
     }
 
-    private ConfigSource loadYamlConfig(String yamlPath)
+    private ExecConfig loadConfigByPath(String configPath)
+    {
+        if (configPath.endsWith(".rb")) {
+            return loadRubyDSLConfig(configPath);
+        }
+        return loadYamlConfig(configPath);
+    }
+
+    private ExecConfig loadYamlConfig(String yamlPath)
     {
         try {
             return injector.getInstance(ConfigLoader.class).fromYamlFile(new File(yamlPath));
-
         } catch (IOException ex) {
+            throw new ConfigException(ex);
+        }
+    }
+
+    private ExecConfig loadRubyDSLConfig(String rubyDSLPath)
+    {
+        ScriptingContainer jruby = injector.getInstance(ScriptingContainer.class);
+        try {
+            byte[] contentBytes = Files.readAllBytes(Paths.get(rubyDSLPath));
+            String configString = new String(contentBytes, StandardCharsets.UTF_8);
+            return injector.getInstance(ConfigLoader.class).fromRubyDSLFile(jruby, configString);
+        } catch (Exception ex) {
             throw new ConfigException(ex);
         }
     }
