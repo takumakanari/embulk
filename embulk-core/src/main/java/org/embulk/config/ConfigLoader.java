@@ -10,6 +10,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import org.jruby.embed.ScriptingContainer;
 import org.yaml.snakeyaml.Yaml;
 
 public class ConfigLoader
@@ -37,7 +38,19 @@ public class ConfigLoader
             parsedYaml = yaml.load(is);
         }
         ObjectNode source = objectToJsonObject(parsedYaml);
-        return new DataSourceImpl(model, source);
+        ConfigSource config = new DataSourceImpl(model, source);
+
+        return config;
+    }
+
+    public ConfigSource fromRubyDSLFile(ScriptingContainer jruby, String configString)
+    {
+        Object rubyDslParser = jruby.runScriptlet("Embulk::DSLParser");
+        Object dslObject = jruby.callMethod(rubyDslParser, "parse", configString);
+        ObjectNode source = objectToJsonObject(dslObject);
+
+        final ConfigSource config = new DataSourceImpl(model, source);
+        return config;
     }
 
     public ConfigSource fromPropertiesYamlLiteral(Properties props, String keyPrefix)
