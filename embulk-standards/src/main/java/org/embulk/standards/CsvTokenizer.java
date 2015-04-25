@@ -81,7 +81,7 @@ public class CsvTokenizer
     {
         // If at the end of record, read the next line and initialize the state
         if (recordState != RecordState.END) {
-            throw new TooManyColumnsException("Too many columns");
+            throw new StandardException.TooManyColumnsException("Too many columns");
         }
 
         boolean hasNext = nextLine(true);
@@ -121,7 +121,7 @@ public class CsvTokenizer
     public String nextColumn()
     {
         if (!hasNextColumn()) {
-            throw new TooFewColumnsException("Too few columns");
+            throw new StandardException.TooFewColumnsException("Too few columns");
         }
 
         // reset last state
@@ -350,15 +350,6 @@ public class CsvTokenizer
         return c == escape;
     }
 
-    public static class InvalidFormatException
-            extends RuntimeException
-    {
-        public InvalidFormatException(String message)
-        {
-            super(message);
-        }
-    }
-
     public static class InvalidValueException
             extends RuntimeException
     {
@@ -377,21 +368,4 @@ public class CsvTokenizer
         }
     }
 
-    public class TooManyColumnsException
-            extends InvalidFormatException
-    {
-        public TooManyColumnsException(String message)
-        {
-            super(message);
-        }
-    }
-
-    public class TooFewColumnsException
-            extends InvalidFormatException
-    {
-        public TooFewColumnsException(String message)
-        {
-            super(message);
-        }
-    }
 }

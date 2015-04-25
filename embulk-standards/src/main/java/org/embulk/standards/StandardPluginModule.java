@@ -29,6 +29,7 @@ public class StandardPluginModule
 
         // parser plugins
         registerPluginTo(binder, ParserPlugin.class, "csv", CsvParserPlugin.class);
+        registerPluginTo(binder, ParserPlugin.class, "ltsv", LtsvParserPlugin.class);
 
         // file decoder plugins
         registerPluginTo(binder, DecoderPlugin.class, "gzip", GzipFileDecoderPlugin.class);
